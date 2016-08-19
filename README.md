@@ -98,3 +98,7 @@ Number | Número de parcelas, **se for uma transação de crédito parcelado**
 5. Uso de biblioteca de terceiros
 6. Criatividade
 7. :trophy: Testes de unidade e _mocking_
+
+### Inspiração
+
+Esse desafio foi inspirado no layout maravilhoso do projeto [hire.me feito pela Bemobi](https://github.com/bemobi/hire.me).
