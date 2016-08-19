@@ -27,8 +27,8 @@ Deve haver duas telas principais:
 
 Criar um catálogo de cartões virtuais (o número que você achar razoável para testar diferentes cenários), que estarão disponíveis quando o cliente for fazer uma compra. Esses cartões deverão ter propriedades a mais do que o cartão "básico" descrito abaixo.
 
-* Cada cartão do catálogo deve estar criptografado de algum jeito.
-* Com esse catálogo, a verificação da senha do cartão deve ser feita apenas pelo servidor.
+* A senha de cada cartão do catálogo deve estar criptografada de algum jeito
+* Com esse catálogo, a verificação da senha do cartão deve ser feita apenas pelo servidor
 
 ### O servidor (dê um nome legal pra ele)
 
@@ -36,12 +36,12 @@ O servidor irá simular justamente o que a Stone é, uma **adquirente**. No mund
 
 Sinta-se livre para utilizar a tecnologia que quiser, desde que cumpra os requisitos abaixo. õ/
 
-O servidor deve esperar por uma transação. Assim que o cliente enviar uma requisição (como demonstrado no esquema a seguir), o servidor deve usar **parâmetros randômicos** _(você pode usar outro parâmetro, mas documente em algum canto!)_ para retornar sucesso ou erro na transação. 
+O servidor deve esperar por uma transação. Assim que o cliente enviar uma requisição (como demonstrado no esquema a seguir), o servidor deve usar **parâmetros de validação dos dados a transação** e **parâmetros randômicos** _(você pode usar outro parâmetro, mas documente em algum canto!)_ para retornar sucesso ou erro na transação. 
 
 **Códigos de retorno**
 
 Código | Explicação
--- | --
+--- | ---
 Aprovado | Transação aprovada
 Transação negada | Transação negada
 Saldo insuficiente | Portador do cartão não possui saldo
