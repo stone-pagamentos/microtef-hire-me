@@ -7,7 +7,10 @@ Desafio para avaliar as suas habilidades como desenvolvedor.
 Você deve:
 
 1. Clonar esse repositório
-2. Em seu _fork_, atenda os requisitos descritos abaixo e, se quiser/puder, os _bonus points_. **Tudo que tiver o :trophy: ao lado, considere bonus point**.
+2. Em seu _fork_, atenda os requisitos descritos abaixo:
+  * Para desenvolvedores juniores, não é necessário fazer nenhum bonus point
+  * Para desenvolvedores plenos, fazer os bonus point -> tópicos que tiverem :trophy: ao lado
+  * Para desenvolvedores seniores, fazer os bônus points + diamond points -> tópicos que tiverem :gem: ao lado
 3. [Nos envie um e-mail](mailto:devmicrotef@stone.com.br) com seu nome e link do repositório
 
 ## O desafio
@@ -23,7 +26,7 @@ Deve haver duas telas principais:
 * **Tela de transação**: input dos dados da transação e envio da transação para o servidor.
 * **Tela de consulta das transações efetuadas**: lista das transações efetuadas.
 
-#### :trophy: Catálogo de cartões virtuais
+#### :gem: Catálogo de cartões virtuais
 
 Criar um catálogo de cartões virtuais (o número que você achar razoável para testar diferentes cenários), que estarão disponíveis quando o cliente for fazer uma compra. Esses cartões deverão ter propriedades a mais do que o cartão "básico" descrito abaixo.
 
@@ -51,6 +54,10 @@ Erro no tamanho da senha | Senha deve ter entre 4 e 6 dítigos
 :trophy: Senha inválida | A senha enviada é inválida
 
 :trophy: Você pode (_e deve!_) adicionar novos códigos de retorno.
+
+#### :trophy: Cadastro dos clientes
+
+Deverá ser capaz de cadastrar clientes que possam passar transações no seu servidor. O limite de crédito de cada cliente deve ser considerado.
 
 ### Comunicação entre cliente e servidor
 
@@ -94,10 +101,10 @@ Number | Número de parcelas, **se for uma transação de crédito parcelado**
 1. Desenho e arquitetura da solução
 2. Padrões do projeto utilizados
 3. Organização, documentação e legibilidade do código
-4. Mapeamento ORM
+4. :trophy: Mapeamento ORM
 5. Uso de biblioteca de terceiros
 6. Criatividade
-7. :trophy: Testes de unidade e _mocking_
+7. :trophy: :gem: Testes de unidade e _mocking_
 
 ### Inspiração
 
