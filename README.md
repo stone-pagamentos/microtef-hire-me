@@ -8,14 +8,14 @@ Você deve:
 
 1. Clonar esse repositório
 2. Em seu _fork_, atenda os requisitos descritos abaixo:
-  * Para desenvolvedores juniores, não é necessário fazer nenhum bonus point
-  * Para desenvolvedores plenos, fazer os bonus point -> tópicos que tiverem :trophy: ao lado
-  * Para desenvolvedores seniores, fazer os bônus points + diamond points -> tópicos que tiverem :gem: ao lado
+  * Para desenvolvedores **juniores**, não é necessário fazer nenhum bonus point. Qualquer atividade feita a mais, será contada como diferencial
+  * Para desenvolvedores **plenos**, fazer os **bonus point -> tópicos que tiverem :trophy: ao lado**
+  * Para desenvolvedores **seniores**, fazer os **bônus points + diamond points -> tópicos que tiverem :gem: ao lado**
 3. [Nos envie um e-mail](mailto:devmicrotef@stone.com.br) com seu nome e link do repositório
 
 ## O desafio
 
-O projeto consiste na implementação de duas aplicações (cliente-servidor) que simulem o processo de uma transação financeira.
+O projeto consiste na implementação de duas aplicações (cliente-servidor) que **simulem o processo de uma transação financeira**.
 
 ### O cliente (dê um nome legal pra ele)
 
@@ -35,11 +35,13 @@ Criar um catálogo de cartões virtuais (o número que você achar razoável par
 
 ### O servidor (dê um nome legal pra ele)
 
-O servidor irá simular justamente o que a Stone é, uma **adquirente**. No mundo real, uma adquirente se comunica com o banco (emissor do cartão de crédito/débito) e com a bandeira (Visa, MasterCard, American Express, etc). O servidor não precisará se preocupar com isso, apenas irá simular uma transação financeira de acordo com alguns parâmetros.
+O servidor irá simular justamente o que a Stone é, uma **adquirente**. 
+
+    No mundo real, uma adquirente se comunica com o banco (emissor do cartão de crédito/débito) e com a bandeira (Visa, MasterCard, American Express, etc). O servidor não precisará se preocupar com isso, apenas irá simular uma transação financeira de acordo com alguns parâmetros.
 
 Sinta-se livre para utilizar a tecnologia que quiser, desde que cumpra os requisitos abaixo. õ/
 
-O servidor deve esperar por uma transação. Assim que o cliente enviar uma requisição (como demonstrado no esquema a seguir), o servidor deve usar **parâmetros de validação dos dados a transação** e **parâmetros randômicos** _(você pode usar outro parâmetro, mas documente em algum canto!)_ para retornar sucesso ou erro na transação. 
+O servidor deve esperar por uma transação. Assim que o cliente enviar uma requisição (como demonstrado no esquema a seguir), o servidor deve usar **parâmetros de validação dos dados da transação** e **parâmetros randômicos** _(você pode usar outro parâmetro, mas documente em algum canto!)_ para retornar sucesso ou erro na transação. 
 
 **Códigos de retorno**
 
