@@ -8,16 +8,17 @@ Você deve:
 
 1. Clonar esse repositório
 2. Em seu _fork_, atenda os requisitos descritos abaixo:
-  * Para desenvolvedores **juniores**, não é necessário fazer nenhum bonus point. Qualquer atividade feita a mais, será contada como diferencial
-  * Para desenvolvedores **plenos**, fazer os **bonus point -> tópicos que tiverem :trophy: ao lado**
-  * Para desenvolvedores **seniores**, fazer os **bônus points + diamond points -> tópicos que tiverem :gem: ao lado**
+  * Para **aprendizes de padawan**: tópicos que tiverem :hatching_chick:
+  * Para **padawans**: tópicos que tiverem :hatching_chick: e :hatched_chick:
+  * Para **jedis**: tópicos que tiverem :hatching_chick:, :hatched_chick: e :baby_chick: 
+  * Para **mestres jedi**: tópicos que tiverem :hatching_chick:, :hatched_chick:, :baby_chick: e :chicken:
 3. [Nos envie um e-mail](mailto:devmicrotef@stone.com.br) com seu nome e link do repositório
 
 ## O desafio
 
 O projeto consiste na implementação de duas aplicações (cliente-servidor) que **simulem o processo de uma transação financeira**.
 
-### O cliente (dê um nome legal pra ele)
+### :hatching_chick: O cliente (dê um nome legal pra ele)
 
 Deve ser uma aplicação desktop **simples** utilizando WPF. O layout **não será avaliado**, mas a escolha de componentes e estrutura do XAML serão.
 
@@ -26,14 +27,16 @@ Deve haver duas telas principais:
 * **Tela de transação**: input dos dados da transação e envio da transação para o servidor.
 * **Tela de consulta das transações efetuadas**: lista das transações efetuadas.
 
-#### :gem: Catálogo de cartões virtuais
+**:warning: Apenas para :hatching_chick:: como você não precisa fazer o servidor, faça mock dos dados da transação.**
+
+#### :chicken: Catálogo de cartões virtuais
 
 Criar um catálogo de cartões virtuais (o número que você achar razoável para testar diferentes cenários), que estarão disponíveis quando o cliente for fazer uma compra. Esses cartões deverão ter propriedades a mais do que o cartão "básico" descrito abaixo.
 
 * A senha de cada cartão do catálogo deve estar criptografada de algum jeito
 * Com esse catálogo, a verificação da senha do cartão deve ser feita apenas pelo servidor
 
-### O servidor (dê um nome legal pra ele)
+### :hatched_chick: O servidor (dê um nome legal pra ele)
 
 O servidor irá simular justamente o que a Stone é, uma **adquirente**. 
 
@@ -53,11 +56,11 @@ Saldo insuficiente | Portador do cartão não possui saldo
 Valor inválido | Mínimo de 10 centavos
 Cartão bloqueado | Quando o cartão está bloqueado (_dãa!_)
 Erro no tamanho da senha | Senha deve ter entre 4 e 6 dítigos
-:trophy: Senha inválida | A senha enviada é inválida
+:baby_chick: Senha inválida | A senha enviada é inválida
 
-:trophy: Você pode (_e deve!_) adicionar novos códigos de retorno.
+:baby_chick: Você pode (_e deve!_) adicionar novos códigos de retorno.
 
-#### :trophy: Cadastro dos clientes
+#### :baby_chick: Cadastro dos clientes
 
 Deverá ser capaz de cadastrar clientes que possam passar transações no seu servidor. O limite de crédito de cada cliente deve ser considerado.
 
@@ -69,13 +72,13 @@ A comunicação pode acontecer em **JSON ou XML**.
 
 ![Relação cliente-servidor](image/client-server.png)
 
-#### :trophy: Sondagem das transações
+#### :baby_chick: Sondagem das transações
 
 ![Relação cliente-servidor com sonda](image/client-server-advanced.png)
 
 ## O modelo de dados
 
-:trophy: O modelo descrito aqui pode (_e deve!_) ser incrementado.
+:baby_chick: O modelo descrito aqui pode (_e deve!_) ser incrementado.
 
 ### Card
 
@@ -103,10 +106,10 @@ Number | Número de parcelas, **se for uma transação de crédito parcelado**
 1. Desenho e arquitetura da solução
 2. Padrões do projeto utilizados
 3. Organização, documentação e legibilidade do código
-4. :trophy: Mapeamento ORM
+4. :baby_chick: Mapeamento ORM
 5. Uso de biblioteca de terceiros
 6. Criatividade
-7. :trophy: :gem: Testes de unidade e _mocking_
+7. :baby_chick: Testes de unidade e _mocking_
 
 ### Inspiração
 
