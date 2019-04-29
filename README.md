@@ -132,7 +132,7 @@ Para realizar a criptografia e descriptografia da senha foi utilizado a classe *
 ## Sobre as Regras de Negócio do Desafio Proposto pela Stone
 1. **Cliente WPF (AmonRa)**
 	
-	*Deve haver duas telas principais:
+	* Deve haver duas telas principais:
 		
 		* **Tela de transação**: input dos dados da transação e envio da transação para o servidor
 		
