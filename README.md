@@ -98,7 +98,10 @@ Os dados utilizados para instalação:
 3. O scrit sql para geração dos objetos está aqui -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/KarnakCore/sql/GenerateDataBase.sql
 
 ### Sobre o Microsoft SQL Server
-Os dados são armazenados no banco de dados Microsoft SQL Server
+Os dados são armazenados no banco de dados Microsoft SQL Server.
+
+A estrutura do banco de dados:
+![AmonRa - Banco de dados - Estrutura](image/banco_de_dados_relacionamentos.png)
 
 ### Biblioteca de Terceiros
 Para realizar a criptografia e descriptografia da senha foi utilizado a classe **StringCipher**.
