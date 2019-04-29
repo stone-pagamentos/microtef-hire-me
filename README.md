@@ -64,7 +64,7 @@ Para simular um sistema de transação financeira foi implementado:
 3. **Limite de Crédito**
 	* O limite de crédito para cada cliente deve ser considerado
 
-4. **Comunicação entre cliente e servidor
+4. **Comunicação entre cliente e servidor**
 	* A comunicação pode acontecer em JSON ou XML
 
 ## Como o desafio foi resolvido
@@ -84,6 +84,20 @@ Veja abaixo as senhas criptografadas no banco de dados.
 ![AmonRa - Banco de dados - Senhas Criptografadas](image/senhas_criptografadas_armazenadas_bd.png)
 
 **Os cartões armazenados no banco de dados possuem senha 985471**
+
+### Sobre o Docker
+O banco de dados **Microsoft SQL Server** foi instalado dentro de um container Docker
+
+Os procedimentos de instalação do Microsoft SQL Server dentro de um container Docker podem ser visualizadas aqui -> https://medium.com/@renato.groffe/net-sql-server-2017-parte-1-executando-o-sql-server-em-um-container-docker-83abbed8eb7e
+
+Os dados utilizados para instalação:
+	* Nome do servidor: localhost, 11433
+	* Autenticação:		
+			* Usuario: sa
+			* Senha: DockerSql2017!
+
+### Sobre o Microsoft SQL Server
+Os dados são armazenados no banco de dados Microsoft SQL Server
 
 ### Biblioteca de Terceiros
 Para realizar a criptografia e descriptografia da senha foi utilizado a classe **StringCipher**.
