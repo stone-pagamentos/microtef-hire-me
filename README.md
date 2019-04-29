@@ -119,6 +119,21 @@ Banco de dados - Mapeamento ORM
 Por se tratar de um desafio, no qual são realizadas transações com cartões, visando uma maior segurança e rastreabilidade
 optou-se por implmentar o **Event Sourcing**.
 
+### Possíveis Retornos do Servidor
+1. Senha inválida
+2. Cartão bloqueado
+3. Mínimo de 10 centavos
+4. Registro não encontrado
+5. Senha Incorreta
+6. Aprovado
+7. Valor inválido
+8. Transação aprovada
+9. Saldo insuficiente
+10. Senha entre 4 e 6 dítigos
+11. Transação negada
+12. Erro no tamanho da senha
+13. Cartão vencido
+
 A finalidade do Event Sourcing é armazenar no banco de dados histórico de todas as operações recebidas ou enviadas 
 pelo servidor de comunicações (Karnak).
 
@@ -293,22 +308,6 @@ Passos para realizar o cadastro de um cliente e cartão
 		* Diversas validações são realizadas pelo servidor de comunicações, caso alguma não seja satisfatória o mesmo irá retornar com erro. Os possíveis retornos podem ser vistos no item **Possíveis Retornos do Servidor**
 	* **Em caso de sucesso**
 		* Uma mensagem de **SUCESSO** será exibida para o cadastro do cliente e do cartão 
-
-### Possíveis Retornos do Servidor
-1. Senha inválida
-2. Cartão bloqueado
-3. Mínimo de 10 centavos
-4. Registro não encontrado
-5. Senha Incorreta
-6. Aprovado
-7. Valor inválido
-8. Transação aprovada
-9. Saldo insuficiente
-10. Senha entre 4 e 6 dítigos
-11. Transação negada
-12. Erro no tamanho da senha
-13. Cartão vencido
-
 
 ## Sobre CQRS
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
