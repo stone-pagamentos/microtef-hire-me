@@ -568,7 +568,7 @@ Todas as api´s rest podem ser utilizadas com Swagger ou através do projeto de te
 ![Api´s Rest Swagger](image/swagger.png)
 
 
-## Gerar DataBase
+## Gerar Banco de Dados
 * Executar script -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/KarnakCore/sql/GenerateDataBase.sql
 
 
