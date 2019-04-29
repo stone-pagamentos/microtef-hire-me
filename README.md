@@ -267,6 +267,26 @@ Passos para realizar uma transação:
 		12. Erro no tamanho da senha
 		13. Cartão vencido
 
+### Cadastro de Cliente e Cartão
+Passos para realizar o cadastro de um cliente e cartão
+1. Informar o nome
+2. Informar o e-mail
+3. Informar data de aniversário
+4. Escolher tipo do cartão
+	* Se cartão escolhido for **CHIP** a opção para informar senha do cartão será exibida
+5. Escolher a bandeira do cartão
+6. Informar o número do cartão
+7. Data de expiração do cartão
+8. Limite do cartão
+9. Pressionar Salvar
+	* **Em caso de falha**
+		* Todas as informações serão validatas, caso alguma não satisfaça alguma condição, um ou mais erros podem retornar
+		* Validações diferentes são realizadas para cartão e cliente
+		* Caso o servidor de comunicações retorne erro(s) os mesmos serão exibidos na tela
+	* **Em caso de sucesso**
+		* Uma mensagem de **SUCESSO** será exibida para o cadastro do cliente e do cartão 
+
+
 
 
 ## Sobre CQRS
