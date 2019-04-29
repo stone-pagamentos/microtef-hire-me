@@ -1,4 +1,4 @@
-![Relação cliente-servidor com sonda](image/CQRS_BUS.png)
+![Relação cliente-servidor com sonda](image/CQRS_BUS.jpg)
 
 ## Technologies implemented:
 
