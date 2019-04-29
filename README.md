@@ -52,6 +52,8 @@ Cliente WPF - Tela Transações
 ![AmonRa - Cliente WPF - Tela Tipo Transação](image/amonra_cliente_wpf_tela_tipo_transacao.jpg)
 Cliente WPF - Tela Tipo Transações
 
+![AmonRa - Cliente WPF - Tela Status Transação](image/amonra_cliente_wpf_tela_status_transacao.jpg)
+Cliente WPF - Tela Tipo Transações
 
 ## Sobre CQRS
 
