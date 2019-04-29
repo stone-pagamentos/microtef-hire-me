@@ -27,8 +27,8 @@
 - Unit Tests
 
 ## Sobre o desafio:
-O desafio foi proposto pela Stone Payments.
-Para ver o desafio o link é https://github.com/stone-payments/microtef-hire-me
+- O desafio foi proposto pela Stone Payments.
+- Para acessar o desafio click aqui -> https://github.com/stone-payments/microtef-hire-me
 
 
 
