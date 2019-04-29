@@ -25,6 +25,7 @@
 - ASP.NET Identity working throught WebAPI services
 - Different ways to read and write data
 - Unit Tests
+- Integration Tests
 
 ## Used Software
 * Microsoft Visual Studio Professional 2019 (versão 16.0.2)
@@ -40,7 +41,14 @@ Para resolver o desafio foi necessário criar 4 projetos distintos:
 3. **UnitTesteKarnakStone** - responsável por realizar os testes unitários e de integração
 4. **KarnakCore** - o coração do projeto, responsável por tudo, é o cara!
 
-# O projeto AmonRa - Cliente WPF
+### Sobre a senha
+Como em qualquer transação do Mundo real, na solução do desafio proposta não foi diferente. 
+Senha sempre é uma questão delicada, para não termos nenhum problema as senhas **sempre são transitadas de forma criptografada**.
+As senhas enviadas do cliente WPF (AmonRa) para o servidor de comunicações (Karnak) saem de forma criptografada utilizando criptografia de 256 bits.
+Todas as senhas armazenadas no banco de dados são criptografadas utilizando criptografia de 256 bits.
+A verificação da senha fica a cargo do servidor de comunicações (Karnak), o qual verifica se a senha informada é a mesma armazenada no banco de dados.
+
+# 1 - O projeto AmonRa - Cliente WPF
 
 O nome AmonRa foi escolhido por se tratar do pai dos Deuses, o senhor da verdade, no antigo egito.
 
