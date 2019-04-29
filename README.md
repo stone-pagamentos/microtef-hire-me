@@ -522,6 +522,15 @@ são interpretados pelos CommandHandlers e retornam um evento de sucesso ou falha
 Toda vez que um Command é disparado e altera o estado de uma entidade no banco de gravação um processo tem que ser disparado para 
 os agentes que irão atualizar os dados necessários no banco de leitura.
 
+## Arquitetura comparativa
+A imagem do lado esquerdo representa uma aplicação padrão.
+
+A imagem do lado direito representa uma aplicação CQRS.
+
+![Arquitetura comparativa](image/arquitetura_comparativa.png)
+
+## Arquitetura utilizada na resolução do desafio Stone
+
 ![Relação cliente-servidor com sonda](image/CQRS_BUS.jpg)
 
 ## Vantagens de utilizar CQRS
