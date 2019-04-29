@@ -46,14 +46,16 @@ Como em qualquer transação do Mundo real, na solução do desafio proposta não foi
 
 Senha sempre é uma questão delicada, para não termos nenhum problema as senhas **sempre são transmitidas de forma criptografada**.
 
-As senhas enviadas do cliente WPF (AmonRa) para o servidor de comunicações (Karnak) saem de forma criptografada utilizando criptografia de 256 bits.
-
-Todas as senhas armazenadas no banco de dados são criptografadas utilizando criptografia de 256 bits.
+As senhas enviadas do cliente WPF (AmonRa) para o servidor de comunicações (Karnak) são transmitidas de forma criptografada utilizando criptografia de 256 bits.
 
 A verificação da senha fica a cargo do servidor de comunicações (Karnak), o qual verifica se a senha informada é a mesma armazenada no banco de dados.
 
+Todas as senhas armazenadas no banco de dados são criptografadas utilizando criptografia de 256 bits.
+
 Veja abaixo as senhas criptografadas no banco de dados.
 ![AmonRa - Banco de dados - Senhas Criptografadas](image/senhas_criptografadas_armazenadas_bd.png)
+
+**Os cartões armazenados no banco de dados possuem senha 985471**
 
 ## Biblioteca de Terceiros
 Para realizar a criptografia e descriptografia da senha foi utilizado a classe **StringCipher**.
