@@ -26,8 +26,11 @@
 - Integration Tests
 
 ## Used Software
+* Microsft Windows 10 Pro
 * Microsoft Visual Studio Professional 2019 (versão 16.0.2)
+* Docker Desktop Community Version 2.0.0.3 (31259) - Channel: stable - Build: 8858db3
 * Microsoft SQL Server 2017 (RTM-CU13) (KB4466404) - 14.0.3048.4 (X64) Developer Edition 
+* SQL Server Management Studio v17.4
 
 ## Sobre o desafio:
 O desafio proposto pela Stone Payments pode ser acessado aqui -> https://github.com/stone-payments/microtef-hire-me
