@@ -30,7 +30,18 @@
 
 O desafio proposto pela Stone Payments pode ser acessado aqui -> https://github.com/stone-payments/microtef-hire-me
 
+Para resolver o desafio foi necessário criar 4 projetos distintos:
+* AmonRa - cliente WPF
+* EFCoreMapStone - entity framework, cria o banco de dados, as tabelas, PK´s e FK´s
+* UnitTesteKarnakStone - responsável por realizar os testes unitários e de integração
+* KarnakCore - o coração do projeto, responsável por tudo, é o cara!
+
+# O projeto AmonRa - Cliente WPF
+
+O nome AmonRa foi escolhido por se tratar do pai dos Deuses, o senhor da verdade, no antigo egito.
+
 ## Sobre CQRS
+
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
 
 CQRS é um pattern, um padrão arquitetural assim como Event Sourcing, Transaction Script e etc. 
@@ -38,25 +49,27 @@ CQRS é um pattern, um padrão arquitetural assim como Event Sourcing, Transaction
 O CQRS não é um estilo arquitetural como desenvolvimento em camadas, modelo client-server, REST e etc.
 
 ## Onde posso aplicar CQRS
+
 Atualmente as aplicações não são mais para atender 10 usuários simultâneos, a maioria das novas aplicações nascem com
 premisas de escalabilidade, performance e disponibilidade, fazer uma aplicação funcionar bem para cargas de trabalho 
 de forma elástica é uma tarefa extremamente complexa.
 
-O CQRS prega a divisão de responsabilidade de gravação e escrita de forma conceitual e física. Isto significa que além 
-de ter meios separados para gravar e obter um dado os bancos de dados também são diferentes. 
+O CQRS prega a divisão de responsabilidade de gravação e escrita de forma conceitual e física. 
 
-As consultas são feitas de 
-forma síncrona em uma base desnormalizada separada e as gravações de forma assíncrona em um banco normalizado.
+Isto significa que além de ter meios separados para gravar e obter um dado os bancos de dados também são diferentes. 
+
+As consultas são feitas de forma síncrona em uma base desnormalizada separada e as gravações de forma assíncrona em um banco normalizado.
 
 ![Relação cliente-servidor com sonda](image/CQRS_FluxoSimples.jpg)
 
 # Segregar as responsabilidades em QueryStack e CommandStack
+
 A ideia básica é segregar as responsabilidades da aplicação em:
 
 * Command – Operações que modificam o estado dos dados na aplicação.
 * Query – Operações que recuperam informações dos dados na aplicação.
 
-**Numa arquitetura de N camadas poderíamos pensar em separar as responsabilidades em CommandStack e QueryStack.**
+**Para resolver o desafio foi utilizado uma arquitetura de N camadas, separarando as responsabilidades em CommandStack e QueryStack.**
 
 ## QueryStack
 
@@ -70,7 +83,7 @@ O CommandStack segue uma abordagem behavior-centric onde toda intenção de negóci
 
 Utilizamos o conceito de Commands para representar uma intenção de negócio. 
 
-Os Commands são declarados de forma imperativa (ex. FinalizarCompraCommand) e são disparados assincronamente no formato de eventos, 
+Os Commands são declarados de forma imperativa (ex. Transaction) e são disparados assincronamente no formato de eventos, 
 são interpretados pelos CommandHandlers e retornam um evento de sucesso ou falha.
 
 Toda vez que um Command é disparado e altera o estado de uma entidade no banco de gravação um processo tem que ser disparado para 
