@@ -41,7 +41,7 @@ Para simular um sistema de transação financeira foi implementado:
 1. **Cliente WPF**
 2. **Servidor de comunicações**
 
-Para resolver o desafio foi necessário criar 4 projetos distintos:
+### Para resolver o desafio foi necessário criar 4 projetos distintos:
 1. **AmonRa** - cliente WPF
 2. **EFCoreMapStone** - entity framework, cria o banco de dados, as tabelas, PK´s e FK´s
 3. **UnitTesteKarnakStone** - responsável por realizar os testes unitários e de integração
