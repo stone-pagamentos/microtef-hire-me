@@ -208,12 +208,13 @@ Cliente WPF - Tela Sondagem das Transacoes
 Cliente WPF - Tela Cadastro Cliente
 
 ![AmonRa - Cliente WPF - Estutura Pastas](image/amonra_estutura_pastas.png)
+
 O projeto está estruturado da seguinte forma:
 1. **Pasta Common**: classes comuns ao projeto
 	* Classe StringCipher.cs: responsável por realizar a criptografia e descriptografia da senha
 2. **Pasta Core**: responsável por efetuar transações
 	* Classe TransactionServer.cs: enviar transações para o servidor Karnak  
-3. **Pasta Model**: os modelos de dados		  
+3. **Pasta Models**: os modelos de dados		  
 	* São as classes que ajudam na realização dos parser´s dos dados que são enviados para o servidor ou que chegam do mesmo
 4. **Pasta SendRequestToServer**: enviar requisições para o servidor Karnak 
 	* São as classes que realizam conexão diretamente com o api rest do servidor Karnak
