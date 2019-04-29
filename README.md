@@ -110,7 +110,7 @@ Para realizar a criptografia e descriptografia da senha foi utilizado a classe *
 ### Mapemanento ORM
 Para atender ao desafio proposto pela Stone foi estruturado um banco de dados com algumas tabelas básicas para a operação do sistema.
 
-O sistema é composto por 7 tabelas, abaixo suas estruturas e seus relacionamentos.
+O sistema é composto por sete tabelas, abaixo suas estruturas e seus relacionamentos.
 
 ![AmonRa - Banco de dados - Mapeamento ORM](image/banco_de_dados_relacionamentos.png)
 Banco de dados - Mapeamento ORM
