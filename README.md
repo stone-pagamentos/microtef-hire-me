@@ -56,10 +56,10 @@ Para simular um sistema de transação financeira foi implementado:
 			* Com esse catálogo, a verificação da senha do cartão deve ser feita apenas pelo servidor
 
 2. **Servidor Comunicações (Karnak)**
-		* O servidor irá simular justamente o que a Stone é, uma **adquirente**
-		* Tipos de cartão aceitos: **crédito** e **débito**
-		* Bandeiras: **Visa**, **MasterCard**, **American Express**
-		* O servidor deve esperar por uma transação
+	* O servidor irá simular justamente o que a Stone é, uma **adquirente**
+	* Tipos de cartão aceitos: **crédito** e **débito**
+	* Bandeiras: **Visa**, **MasterCard**, **American Express**
+	* O servidor deve esperar por uma transação
 
 3. **Limite de Crédito**
 	* O limite de crédito para cada cliente deve ser considerado
