@@ -1,5 +1,4 @@
 ## Technologies implemented:
-
 - ASP.NET Core 2.2 (with .NET Core 2.2)
  - ASP.NET MVC Core 2.
  - ASP.NET WebApi Core 2.2
@@ -12,7 +11,6 @@
 - Swagger UI
 
 ## Architecture:
-
 - Full architecture with responsibility separation concerns, SOLID and Clean Code
 - Domain Model Pattern, CQRS and ES concepts
 - Domain Driven Design (Layers and Domain Model Pattern)
@@ -32,7 +30,6 @@
 * Microsoft SQL Server 2017 (RTM-CU13) (KB4466404) - 14.0.3048.4 (X64) Developer Edition 
 
 ## Sobre o desafio:
-
 O desafio proposto pela Stone Payments pode ser acessado aqui -> https://github.com/stone-payments/microtef-hire-me
 
 Para resolver o desafio foi necessário criar 4 projetos distintos:
@@ -43,13 +40,16 @@ Para resolver o desafio foi necessário criar 4 projetos distintos:
 
 ### Sobre a senha
 Como em qualquer transação do Mundo real, na solução do desafio proposta não foi diferente. 
+
 Senha sempre é uma questão delicada, para não termos nenhum problema as senhas **sempre são transitadas de forma criptografada**.
+
 As senhas enviadas do cliente WPF (AmonRa) para o servidor de comunicações (Karnak) saem de forma criptografada utilizando criptografia de 256 bits.
+
 Todas as senhas armazenadas no banco de dados são criptografadas utilizando criptografia de 256 bits.
+
 A verificação da senha fica a cargo do servidor de comunicações (Karnak), o qual verifica se a senha informada é a mesma armazenada no banco de dados.
 
 # 1 - O projeto AmonRa - Cliente WPF
-
 O nome AmonRa foi escolhido por se tratar do pai dos Deuses, o senhor da verdade, no antigo egito.
 
 Para atender aos requisitos do desafio, foram criadas telas adicionais:
@@ -178,7 +178,6 @@ Todas as transações possuem status de **aprovada** ou **negada**.
 	* Listagem das transações com relacionamento de dados
 
 ## Sobre CQRS
-
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
 
 CQRS é um pattern, um padrão arquitetural assim como Event Sourcing, Transaction Script e etc. 
@@ -186,7 +185,6 @@ CQRS é um pattern, um padrão arquitetural assim como Event Sourcing, Transaction
 O CQRS não é um estilo arquitetural como desenvolvimento em camadas, modelo client-server, REST e etc.
 
 ## Onde posso aplicar CQRS
-
 Atualmente as aplicações não são mais para atender 10 usuários simultâneos, a maioria das novas aplicações nascem com
 premisas de escalabilidade, performance e disponibilidade, fazer uma aplicação funcionar bem para cargas de trabalho 
 de forma elástica é uma tarefa extremamente complexa.
@@ -200,7 +198,6 @@ As consultas são feitas de forma síncrona em uma base desnormalizada separada e 
 ![Relação cliente-servidor com sonda](image/CQRS_FluxoSimples.jpg)
 
 # Segregar as responsabilidades em QueryStack e CommandStack
-
 A ideia básica é segregar as responsabilidades da aplicação em:
 
 * Command – Operações que modificam o estado dos dados na aplicação.
@@ -209,11 +206,9 @@ A ideia básica é segregar as responsabilidades da aplicação em:
 **Para resolver o desafio foi utilizado uma arquitetura de N camadas, separarando as responsabilidades em CommandStack e QueryStack.**
 
 ## QueryStack
-
 A QueryStack é uma camada síncrona que recupera os dados de um banco de leitura desnormalizado.
 
 ## CommandStack
-
 O CommandStack por sua vez é potencialmente assíncrono. 
 
 O CommandStack segue uma abordagem behavior-centric onde toda intenção de negócio é inicialmente disparada pela UI como um caso de uso. 
@@ -230,7 +225,6 @@ os agentes que irão atualizar os dados necessários no banco de leitura.
 
 
 ## Vantagens de utilizar CQRS
-
 A implementação do CQRS quebra o conceito monolítico clássico de uma implementação de arquitetura em N camadas onde todo o processo 
 de escrita e leitura passa pelas mesma camadas e concorre entre si no processamento de regras de negócio e uso de banco de dados.
 
@@ -248,9 +242,6 @@ Toda a implementação do CQRS pattern pode ser feito manualmente, sendo necessári
 
 Apesar da minha preferência ser sempre codificar tudo por conta própria eu encontrei alguns frameworks bem interessantes que servem inclusive 
 para estudo e melhoria do entendimento no assunto.
-
-
-
 
 ## Swagger
 
