@@ -131,11 +131,17 @@ Para realizar a criptografia e descriptografia da senha foi utilizado a classe *
 
 ## Sobre as Regras de Negócio do Desafio Proposto pela Stone
 1. **Cliente WPF (AmonRa)**
+	
 	*Deve haver duas telas principais:
+		
 		* **Tela de transação**: input dos dados da transação e envio da transação para o servidor
+		
 		* **Tela de consulta das transações efetuadas**: lista das transações efetuadas
+		
 		* **Sondagem das transações**: listagem de todas as operações realizadas referente a um único cartão
+	
 	* Catálogo de cartões virtuais com o número razoável de cartões para testar diferentes cenários
+		
 		* **Propriedades básicas**
 			* A senha de cada cartão do catálogo deve estar criptografada de algum jeito
 			* Com esse catálogo, a verificação da senha do cartão deve ser feita apenas pelo servidor
