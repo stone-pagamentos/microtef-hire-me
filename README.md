@@ -41,7 +41,14 @@ O CQRS não é um estilo arquitetural como desenvolvimento em camadas, modelo clie
 ## Onde posso aplicar CQRS
 
 Atualmente as aplicações não são mais para atender 10 usuários simultâneos, a maioria das novas aplicações nascem com
-premisas de escalabilidade, performance e disponibilidade.
+premisas de escalabilidade, performance e disponibilidade, fazer uma aplicação funcionar bem para cargas de trabalho 
+de forma elástica é uma tarefa extremamente complexa.
+
+O CQRS prega a divisão de responsabilidade de gravação e escrita de forma conceitual e física. Isto significa que além 
+de ter meios separados para gravar e obter um dado os bancos de dados também são diferentes. As consultas são feitas de 
+forma síncrona em uma base desnormalizada separada e as gravações de forma assíncrona em um banco normalizado.
+
+![Relação cliente-servidor com sonda](image/CQRS_FluxoSimples.jpg)
 
 ## Swagger
 
