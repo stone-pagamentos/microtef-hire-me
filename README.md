@@ -58,6 +58,50 @@ A ideia básica é segregar as responsabilidades da aplicação em:
 
 **Numa arquitetura de N camadas poderíamos pensar em separar as responsabilidades em CommandStack e QueryStack.**
 
+## QueryStack
+
+A QueryStack é uma camada síncrona que recupera os dados de um banco de leitura desnormalizado.
+
+## CommandStack
+
+O CommandStack por sua vez é potencialmente assíncrono. 
+
+O CommandStack segue uma abordagem behavior-centric onde toda intenção de negócio é inicialmente disparada pela UI como um caso de uso. 
+
+Utilizamos o conceito de Commands para representar uma intenção de negócio. 
+
+Os Commands são declarados de forma imperativa (ex. FinalizarCompraCommand) e são disparados assincronamente no formato de eventos, 
+são interpretados pelos CommandHandlers e retornam um evento de sucesso ou falha.
+
+Toda vez que um Command é disparado e altera o estado de uma entidade no banco de gravação um processo tem que ser disparado para 
+os agentes que irão atualizar os dados necessários no banco de leitura.
+
+![Relação cliente-servidor com sonda](image/CQRS_BUS.jpg)
+
+
+## Vantagens de utilizar CQRS
+
+A implementação do CQRS quebra o conceito monolítico clássico de uma implementação de arquitetura em N camadas onde todo o processo 
+de escrita e leitura passa pelas mesma camadas e concorre entre si no processamento de regras de negócio e uso de banco de dados.
+
+Este tipo de abordagem aumenta a disponibilidade e escalabilidade da aplicação e a melhoria na performance surge principalmente pelos aspectos:
+* Todos comandos são assíncronos e processados em fila, assim diminui-se o tempo de espera.
+* Os processos que envolvem regras de negócio existem apenas no sentido da inclusão ou alteração do estado das informações.
+* As consultas na QueryStack são feitas de forma separada e independente e não dependem do processamento da CommandStack.
+* É possível escalar separadamente os processos da CommandStack e da QueryStack.
+ 
+Uma outra vantagem de utilizar o CQRS é que toda representação do seu domínio será mais expressiva e reforçará a utilização da linguagem ubíqua 
+nas intenções de negócio.
+
+Toda a implementação do CQRS pattern pode ser feito manualmente, sendo necessário escrever diversos tipos de classes para cada aspecto, porém 
+é possível encontrar alguns frameworks de CQRS que vão facilitar um pouco a implementação e reduzir o tempo de codificação.
+
+Apesar da minha preferência ser sempre codificar tudo por conta própria eu encontrei alguns frameworks bem interessantes que servem inclusive 
+para estudo e melhoria do entendimento no assunto.
+
+
+
+
 ## Swagger
 
 - See the list of APIs: URL: https://localhost:44338/swagger/index.html
@@ -67,4 +111,3 @@ A ideia básica é segregar as responsabilidades da aplicação em:
 - Run the scrit /sql/GenerateDataBase.sql
 
 
-![Relação cliente-servidor com sonda](image/CQRS_BUS.jpg)
