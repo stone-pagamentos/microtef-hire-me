@@ -55,6 +55,29 @@ Cliente WPF - Tela Tipo Transações
 ![AmonRa - Cliente WPF - Tela Status Transação](image/amonra_cliente_wpf_tela_status_transacao.jpg)
 Cliente WPF - Tela Tipo Transações
 
+![AmonRa - Cliente WPF - Tela Bandeira Cartão](image/amonra_cliente_wpf_tela_bandeira_cartao.jpg)
+Cliente WPF - Tela Bandeira Cartao
+
+![AmonRa - Cliente WPF - Tela Tipo Cartão](image/amonra_cliente_wpf_tela_tipo_cartao.jpg)
+Cliente WPF - Tela Tipo Cartão
+
+![AmonRa - Cliente WPF - Tela Clientes](image/amonra_cliente_wpf_tela_clientes.jpg)
+Cliente WPF - Tela Clientes
+
+![AmonRa - Cliente WPF - Tela Cartões](image/amonra_cliente_wpf_tela_cartões.jpg)
+Cliente WPF - Tela Cartões
+
+![AmonRa - Cliente WPF - Tela Listagem Transações](image/amonra_cliente_wpf_tela_listagem_transacoes.jpg)
+Cliente WPF - Tela Listagem Transacoes
+
+![AmonRa - Cliente WPF - Tela Sondagem das Transações](image/amonra_cliente_wpf_tela_sondagem_das_transacoes.jpg)
+Cliente WPF - Tela Sondagem das Transacoes
+
+![AmonRa - Cliente WPF - Tela Cadastro de Clientes](image/amonra_cliente_wpf_tela_cadastro_cliente.jpg)
+Cliente WPF - Tela Cadastro Cliente
+
+
+
 ## Sobre CQRS
 
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
