@@ -207,6 +207,7 @@ Cliente WPF - Tela Sondagem das Transacoes
 ![AmonRa - Cliente WPF - Tela Cadastro de Clientes](image/amonra_cliente_wpf_tela_cadastro_cliente.jpg)
 Cliente WPF - Tela Cadastro Cliente
 
+![AmonRa - Cliente WPF - Estutura Pastas](image/amonra_estutura_pastas.png)
 O projeto está estruturado da seguinte forma:
 1. **Pasta Common**: classes comuns ao projeto
 	* Classe StringCipher.cs: responsável por realizar a criptografia e descriptografia da senha
