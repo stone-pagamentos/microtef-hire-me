@@ -309,6 +309,11 @@ Passos para realizar o cadastro de um cliente e cartão
 	* **Em caso de sucesso**
 		* Uma mensagem de **SUCESSO** será exibida para o cadastro do cliente e do cartão 
 
+### App.config
+O arquivo App.config possuí a **KEY** de configuração de conexão com o servidor de comunicações (Karnak).
+
+Caso seja necessário realizar a troca da url, o arquivo está aqui -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/AmonRa/AmonRa/App.config
+
 ## Sobre CQRS
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
 
