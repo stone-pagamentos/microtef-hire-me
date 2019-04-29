@@ -87,7 +87,14 @@ O projeto está estruturado da seguinte forma:
 	* São as classes que realizam conexão diretamente com o api rest do servidor Karnak
 5. **Pasta Services**: são os serviços que chamam as classes do passo 4
 	* As telas WPF chamam as classes de serviços, que por sua vez chamam as classes do passo 4
-				 
+
+### Catálogo de cartões virtuais
+São os cartões cadastrados no banco de dados, as informações dos cartões são:
+1. Número do cartão (cardnumber)
+2. Senha do cartão (password), a senha será exigida somente para cartões com chip
+3. Valor da transação (amount)
+4. Tipo da transação, pode ser crédito ou débito
+5. Pacelas, quantidade de parcelas exibida somente para compras do tipo crédito
 
 
 ## Sobre CQRS
