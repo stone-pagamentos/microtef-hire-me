@@ -26,6 +26,10 @@
 - Different ways to read and write data
 - Unit Tests
 
+## Used Software
+* Microsoft Visual Studio Professional 2019 (versão 16.0.2)
+* Microsoft SQL Server 2017 (RTM-CU13) (KB4466404) - 14.0.3048.4 (X64) Developer Edition 
+
 ## Sobre o desafio:
 
 O desafio proposto pela Stone Payments pode ser acessado aqui -> https://github.com/stone-payments/microtef-hire-me
@@ -39,6 +43,12 @@ Para resolver o desafio foi necessário criar 4 projetos distintos:
 # O projeto AmonRa - Cliente WPF
 
 O nome AmonRa foi escolhido por se tratar do pai dos Deuses, o senhor da verdade, no antigo egito.
+
+Para atender aos requisitos do desafio, foram criadas telas adicionais:
+
+![AmonRa - Cliente WPF - Tela Transações](image/amonra_cliente_wpf_tela_transacoes.jpg)
+
+
 
 ## Sobre CQRS
 
