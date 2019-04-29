@@ -115,10 +115,6 @@ O sistema é composto por 7 tabelas, abaixo suas estruturas e seus relacionamento
 ![AmonRa - Banco de dados - Mapeamento ORM](image/banco_de_dados_relacionamentos.png)
 Banco de dados - Mapeamento ORM
 
-### Sobre Event Sourcing
-Por se tratar de um desafio, no qual são realizadas transações com cartões, visando uma maior segurança e rastreabilidade
-optou-se por implmentar o **Event Sourcing**.
-
 ### Possíveis Retornos do Servidor
 1. Senha inválida
 2. Cartão bloqueado
@@ -133,6 +129,10 @@ optou-se por implmentar o **Event Sourcing**.
 11. Transação negada
 12. Erro no tamanho da senha
 13. Cartão vencido
+
+### Sobre Event Sourcing
+Por se tratar de um desafio, no qual são realizadas transações com cartões, visando uma maior segurança e rastreabilidade
+optou-se por implmentar o **Event Sourcing**.
 
 A finalidade do Event Sourcing é armazenar no banco de dados histórico de todas as operações recebidas ou enviadas 
 pelo servidor de comunicações (Karnak).
