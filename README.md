@@ -484,7 +484,6 @@ CQRS é um pattern, um padrão arquitetural assim como Event Sourcing, Transaction
 
 O CQRS não é um estilo arquitetural como desenvolvimento em camadas, modelo client-server, REST e etc.
 
-## Onde Posso Aplicar CQRS
 Atualmente as aplicações não são mais para atender dez usuários simultâneos, a maioria das novas aplicações nascem com
 premisas de escalabilidade, performance e disponibilidade, fazer uma aplicação funcionar bem para cargas de trabalho 
 de forma elástica é uma tarefa extremamente complexa.
@@ -497,7 +496,7 @@ As consultas são feitas de forma síncrona em uma base desnormalizada separada e 
 
 ![Relação cliente-servidor com sonda](image/CQRS_FluxoSimples.jpg)
 
-# Segregar as responsabilidades em QueryStack e CommandStack
+## Segregar as responsabilidades em QueryStack e CommandStack
 A ideia básica é segregar as responsabilidades da aplicação em:
 
 * Command
@@ -525,16 +524,15 @@ os agentes que irão atualizar os dados necessários no banco de leitura.
 
 ![Relação cliente-servidor com sonda](image/CQRS_BUS.jpg)
 
-
 ## Vantagens de utilizar CQRS
 A implementação do CQRS quebra o conceito monolítico clássico de uma implementação de arquitetura em N camadas onde todo o processo 
 de escrita e leitura passa pelas mesma camadas e concorre entre si no processamento de regras de negócio e uso de banco de dados.
 
 Este tipo de abordagem aumenta a disponibilidade e escalabilidade da aplicação e a melhoria na performance surge principalmente pelos aspectos:
-* Todos comandos são assíncronos e processados em fila, assim diminui-se o tempo de espera.
-* Os processos que envolvem regras de negócio existem apenas no sentido da inclusão ou alteração do estado das informações.
-* As consultas na QueryStack são feitas de forma separada e independente e não dependem do processamento da CommandStack.
-* É possível escalar separadamente os processos da CommandStack e da QueryStack.
+* ** Todos comandos são assíncronos e processados em fila, assim diminui-se o tempo de espera.
+* ** Os processos que envolvem regras de negócio existem apenas no sentido da inclusão ou alteração do estado das informações.
+* ** As consultas na QueryStack são feitas de forma separada e independente e não dependem do processamento da CommandStack.
+* ** É possível escalar separadamente os processos da CommandStack e da QueryStack.
  
 Uma outra vantagem de utilizar o CQRS é que toda representação do seu domínio será mais expressiva e reforçará a utilização da linguagem ubíqua 
 nas intenções de negócio.
