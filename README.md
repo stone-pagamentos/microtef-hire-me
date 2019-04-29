@@ -106,6 +106,17 @@ São todas as transações realizadas pelo servidor.
 É possível acompanhar o histórico das transações de um determinado cartão.
 Todas as transações possuem status de **aprovada** ou **negada**.
 
+### Funções disponíveis por tela:
+1. **Tipo Transação**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+
+
+
 ## Sobre CQRS
 
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
