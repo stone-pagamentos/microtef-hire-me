@@ -1,9 +1,9 @@
 ## Technologies implemented:
 
 - ASP.NET Core 2.2 (with .NET Core 2.2)
- - ASP.NET MVC Core 
- - ASP.NET WebApi Core
- - ASP.NET Identity Core
+ - ASP.NET MVC Core 2.
+ - ASP.NET WebApi Core 2.2
+ - ASP.NET Identity Core 2.2
 - Entity Framework Core 2.2
 - .NET Core Native DI
 - AutoMapper
@@ -14,13 +14,17 @@
 ## Architecture:
 
 - Full architecture with responsibility separation concerns, SOLID and Clean Code
+- Domain Model Pattern, CQRS and ES concepts
 - Domain Driven Design (Layers and Domain Model Pattern)
 - Domain Events
 - Domain Notification
-- CQRS (Imediate Consistency)
+- CQRS - Command Query Responsibility Segregation
 - Event Sourcing
 - Unit of Work
 - Repository and Generic Repository
+- ASP.NET Identity working throught WebAPI services
+- Different ways to read and write data
+- Unit Tests
 
 ## Swagger
 
