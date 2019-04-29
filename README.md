@@ -320,12 +320,12 @@ Após criar as tabelas necessárias e realizar os devidos relacionamentos, configu
 Pesquisar no arquivo pelo termo "optionsBuilder.UseSqlServer" e realizar os ajustes necessários.
 
 **Seguir os passos**:
-	1. dotnet ef migrations add mig1 -p EFCoreMapStoneV13
-	2. verificar se na lista de migracoes disponiveis esta a nova migracao 'mig1'
-	3. dotnet ef migrations list -p EFCoreMapStoneV13
-	4. Wooouuuu, tudo pronto! Agora vamos criar o banco de dados e as tabelas.
-	5. dotnet ef database -v update -v -p EFCoreMapStoneV13
-	6. se tudo correu bem, os scripts devem começar a serem exibodos
+1. dotnet ef migrations add mig1 -p EFCoreMapStoneV13
+2. verificar se na lista de migracoes disponiveis esta a nova migracao 'mig1'
+3. dotnet ef migrations list -p EFCoreMapStoneV13
+4. Wooouuuu, tudo pronto! Agora vamos criar o banco de dados e as tabelas.
+5. dotnet ef database -v update -v -p EFCoreMapStoneV13
+6. se tudo correu bem, os scripts devem começar a serem exibidos
 
 # 3 - Sobre os Testes Unitários
 Testes unitários foram realizados em todas as api´s rest.
