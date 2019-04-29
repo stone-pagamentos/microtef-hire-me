@@ -379,6 +379,14 @@ nas intenções de negócio.
 Toda a implementação do CQRS pattern pode ser feito manualmente, sendo necessário escrever diversos tipos de classes para cada aspecto, porém 
 é possível encontrar alguns frameworks de CQRS que vão facilitar um pouco a implementação e reduzir o tempo de codificação.
 
+## Arquitetura Sugerida
+Abaixo arquitetura sugerida para resolução do desafio de uma forma mais escalável. 
+
+Essa arquitetura trabalha diretamente com microserviços, fila e event-driven.
+
+![Arquitetura Sugerida](image/arquitetura_sugerida.png)
+
+![Arquitetura Sugerida Detalhada](image/arquitetura_sugerida_detalhada.png)
 
 ## Swagger
 Todas as api´s rest podem ser utilizadas com Swagger ou através do projeto de testes unitários.
