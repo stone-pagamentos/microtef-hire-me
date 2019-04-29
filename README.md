@@ -530,13 +530,13 @@ de escrita e leitura passa pelas mesma camadas e concorre entre si no processame
 
 Este tipo de abordagem aumenta a disponibilidade e escalabilidade da aplicação e a melhoria na performance surge principalmente pelos aspectos:
 
-*** Todos comandos são assíncronos e processados em fila, assim diminui-se o tempo de espera.
+* ** Todos comandos são assíncronos e processados em fila, assim diminui-se o tempo de espera.
 
-*** Os processos que envolvem regras de negócio existem apenas no sentido da inclusão ou alteração do estado das informações.
+* ** Os processos que envolvem regras de negócio existem apenas no sentido da inclusão ou alteração do estado das informações.
 
-*** As consultas na QueryStack são feitas de forma separada e independente e não dependem do processamento da CommandStack.
+* ** As consultas na QueryStack são feitas de forma separada e independente e não dependem do processamento da CommandStack.
 
-*** É possível escalar separadamente os processos da CommandStack e da QueryStack.
+* ** É possível escalar separadamente os processos da CommandStack e da QueryStack.
  
 Uma outra vantagem de utilizar o CQRS é que toda representação do seu domínio será mais expressiva e reforçará a utilização da linguagem ubíqua 
 nas intenções de negócio.
