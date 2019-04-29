@@ -47,7 +47,10 @@ O nome AmonRa foi escolhido por se tratar do pai dos Deuses, o senhor da verdade
 Para atender aos requisitos do desafio, foram criadas telas adicionais:
 
 ![AmonRa - Cliente WPF - Tela Transações](image/amonra_cliente_wpf_tela_transacoes.jpg)
+Cliente WPF - Tela Transações
 
+![AmonRa - Cliente WPF - Tela Tipo Transação](image/amonra_cliente_wpf_tipo_transacao.jpg)
+Cliente WPF - Tela Tipo Transações
 
 
 ## Sobre CQRS
