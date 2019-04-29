@@ -1,3 +1,5 @@
+![Relação cliente-servidor com sonda](image/CQRS_BUS.png)
+
 ## Technologies implemented:
 
 - ASP.NET Core 2.2 (with .NET Core 2.2)
