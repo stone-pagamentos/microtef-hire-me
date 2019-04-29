@@ -101,7 +101,7 @@ Os dados utilizados para instalação:
 Os dados são armazenados no banco de dados Microsoft SQL Server.
 
 A estrutura do banco de dados:
-![AmonRa - Banco de dados - Estrutura](image/banco_de_dados_relacionamentos.png)
+![AmonRa - Banco de dados - Estrutura](image/sql_server_estrutura_tabelas.png)
 
 ### Biblioteca de Terceiros
 Para realizar a criptografia e descriptografia da senha foi utilizado a classe **StringCipher**.
