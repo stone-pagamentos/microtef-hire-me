@@ -314,6 +314,61 @@ O arquivo App.config possuí a **KEY** de configuração de conexão com o servidor 
 
 Caso seja necessário realizar a troca da url, o arquivo está aqui -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/AmonRa/AmonRa/App.config
 
+# 3 - Sobre os Testes Unitários
+Testes unitários foram realizados em todas as api´s rest.
+
+Abaixo a lista de todos os testes efetuados.
+
+1. CardUnitTest 
+	* Post_CardBrand_The_Name_Is_Required
+	* Delete_ByIdCardBrand_Valido
+	* Get_ByNameCardBrand
+	* Delete_ByIdCardBrand_Registro_nao_encontrado
+	* Post_CardBrand_Valido
+	* Put_CardBrand_The_Name_must_have_between_2_and_30_characters
+	* Put_CardBrand_The_Guid_is_invalid_and_contains_00000000
+	* Post_CardBrand_The_card_brand_id_has_already_been_taken_Run_2_Times
+	* Post_CardBrand_The_Guid_is_empty
+	* Put_CardBrand_Valido
+	* Post_CardBrand_The_Guid_is_invalid_and_contains_00000000
+	* Put_CardBrand_The_Name_is_Required
+	* Post_CardBrand_The_card_brand_name_has_already_been_taken_Run
+	* Delete_ByIdCardBrand_The_Guid_is_empty
+	* Get_AllCardBrand
+	* Put_CardBrand_The_card_brand_name_has_already_been_taken
+	* Get_HistorycByIdCardBrand
+	* Get_ByIdCardBrand
+	* Put_CardBrand_The_Guid_is_empty
+	* Post_CardBrand_The_Name_must_have_between_2_and_30_characters
+	* Delete_ByIdCardBrand_The_Guid_is_invalid_and_contains_00000000
+2. CardTypeUnitTest
+	* Put_CardType_The_card_type_name_has_already_been_taken
+	* Get_AllCardType
+	* Post_CardType_Valido
+	* Delete_ByIdCardType_The_Guid_is_invalid_and_contains_00000000
+	* Delete_ByIdCardType_Registro_nao_encontrado
+	* Post_CardType_The_card_type_id_has_already_been_taken_Run_2_Times
+	* Get_HistorycByIdCardType
+	* Post_CardType_The_Guid_is_empty
+	* Post_CardType_The_Name_must_have_between_2_and_30_characters
+	* Get_ByIdCardType
+	* Put_CardType_The_Name_must_have_between_2_and_30_characters
+	* Post_CardType_The_Name_Is_Required
+	* Put_CardType_The_Name_is_Required
+	* Put_CardType_Valido
+	* Post_CardType_The_card_type_name_has_already_been_taken_Run
+	* Get_ByNameCardType
+	* Post_CardType_The_Guid_is_invalid_and_contains_00000000
+	* Put_CardType_The_Guid_is_invalid_and_contains_00000000
+	* Delete_ByIdCardType_The_Guid_is_empty
+	* Delete_ByIdCardType_Valido
+	* Put_CardType_The_Guid_is_empty
+
+
+
+
+
+
 ## Sobre CQRS
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
 
