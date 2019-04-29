@@ -253,6 +253,7 @@ Passos para realizar uma transação:
 5. Pressionou o botão e todas as informações preenchidas
 	* Será enviada para o servidor de comunicações (Karnak) uma requisição para realizar uma transação
 	* O servidor irá validar as informações enviadas, caso ocorra alguma restrição, um ou mais erros podem ser retornados:
+6. Diversas validações são realizadas pelo servidor de comunicações, caso alguma não seja satisfatória o mesmo irá retornar com erro. Os possíveis retornos podem ser vistos no item **Possíveis Retornos do Servidor**
 
 ### Cadastro de Cliente e Cartão
 Passos para realizar o cadastro de um cliente e cartão
@@ -270,10 +271,11 @@ Passos para realizar o cadastro de um cliente e cartão
 		* Todas as informações serão validatas, caso alguma não satisfaça alguma condição, um ou mais erros podem retornar
 		* Validações diferentes são realizadas para cartão e cliente
 		* Caso o servidor de comunicações retorne erro(s) os mesmos serão exibidos na tela
+		* Diversas validações são realizadas pelo servidor de comunicações, caso alguma não seja satisfatória o mesmo irá retornar com erro. Os possíveis retornos podem ser vistos no item **Possíveis Retornos do Servidor**
 	* **Em caso de sucesso**
 		* Uma mensagem de **SUCESSO** será exibida para o cadastro do cliente e do cartão 
 
-### Possíveis retornos do servidor
+### Possíveis Retornos do Servidor
 1. Senha inválida
 2. Cartão bloqueado
 3. Mínimo de 10 centavos
