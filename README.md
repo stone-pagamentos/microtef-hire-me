@@ -95,6 +95,7 @@ Os dados utilizados para instalação:
 2. Autenticação:		
 	* Usuario: sa
 	* Senha: DockerSql2017!
+3. O scrit sql para geração dos objetos está aqui -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/KarnakCore/sql/GenerateDataBase.sql
 
 ### Sobre o Microsoft SQL Server
 Os dados são armazenados no banco de dados Microsoft SQL Server
