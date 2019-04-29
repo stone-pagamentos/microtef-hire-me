@@ -322,7 +322,7 @@ CQRS é um pattern, um padrão arquitetural assim como Event Sourcing, Transaction
 O CQRS não é um estilo arquitetural como desenvolvimento em camadas, modelo client-server, REST e etc.
 
 ## Onde Posso Aplicar CQRS
-Atualmente as aplicações não são mais para atender 10 usuários simultâneos, a maioria das novas aplicações nascem com
+Atualmente as aplicações não são mais para atender dez usuários simultâneos, a maioria das novas aplicações nascem com
 premisas de escalabilidade, performance e disponibilidade, fazer uma aplicação funcionar bem para cargas de trabalho 
 de forma elástica é uma tarefa extremamente complexa.
 
