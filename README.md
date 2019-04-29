@@ -93,8 +93,8 @@ Os procedimentos de instalação do Microsoft SQL Server dentro de um container Do
 Os dados utilizados para instalação:
 	* Nome do servidor: localhost, 11433
 	* Autenticação:		
-			* Usuario: sa
-			* Senha: DockerSql2017!
+		* Usuario: sa
+		* Senha: DockerSql2017!
 
 ### Sobre o Microsoft SQL Server
 Os dados são armazenados no banco de dados Microsoft SQL Server
