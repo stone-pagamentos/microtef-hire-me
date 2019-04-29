@@ -41,13 +41,69 @@ Para simular um sistema de transação financeira foi implementado:
 1. **Cliente WPF**
 2. **Servidor de comunicações**
 
-### Para resolver o desafio foi necessário criar 4 projetos distintos:
-1. **AmonRa** - cliente WPF
-2. **EFCoreMapStone** - entity framework, cria o banco de dados, as tabelas, PK´s e FK´s
-3. **UnitTesteKarnakStone** - responsável por realizar os testes unitários e de integração
-4. **KarnakCore** - o coração do projeto, responsável por tudo, é o cara!
+## Sobre as Regras de Negócio do Desafio Proposto pela Stone
+1. **Cliente WPF (AmonRa)**
+	
+	* Deve haver 4 telas principais:
+		* **Tela de transação**: input dos dados da transação e envio da transação para o servidor
+		* **Tela de consulta das transações efetuadas**: lista das transações efetuadas
+		* **Sondagem das transações**: listagem de todas as operações realizadas referente a um único cartão
+		* **Cadastro de clientes**: deverá ser capaz de cadastrar clientes que possam passar transações
+	
+	* Catálogo de cartões virtuais com o número razoável de cartões para testar diferentes cenários
+		* **Propriedades básicas**
+			* A senha de cada cartão do catálogo deve estar criptografada de algum jeito
+			* Com esse catálogo, a verificação da senha do cartão deve ser feita apenas pelo servidor
 
-## Funções Disponíveis por Tipo de Operação:
+2. **Servidor Comunicações (Karnak)**
+		* O servidor irá simular justamente o que a Stone é, uma **adquirente**
+		* Tipos de cartão aceitos: **crédito** e **débito**
+		* Bandeiras: **Visa**, **MasterCard**, **American Express**
+		* O servidor deve esperar por uma transação
+
+3. **Limite de Crédito**
+	* O limite de crédito para cada cliente deve ser considerado
+
+4. **Comunicação entre cliente e servidor
+	* A comunicação pode acontecer em JSON ou XML
+
+## Como o desafio foi resolvido
+
+### Sobre a Senha
+Como em qualquer transação do Mundo real, na solução do desafio proposta não foi diferente. 
+
+Senha sempre é uma questão delicada, para não termos nenhum problema as senhas **sempre são transmitidas de forma criptografada**.
+
+As senhas enviadas do cliente WPF (AmonRa) para o servidor de comunicações (Karnak) são transmitidas de forma criptografada utilizando criptografia de 256 bits.
+
+A verificação da senha fica a cargo do servidor de comunicações (Karnak), o qual verifica se a senha informada é a mesma armazenada no banco de dados.
+
+Todas as senhas armazenadas no banco de dados são criptografadas utilizando criptografia de 256 bits.
+
+Veja abaixo as senhas criptografadas no banco de dados.
+![AmonRa - Banco de dados - Senhas Criptografadas](image/senhas_criptografadas_armazenadas_bd.png)
+
+**Os cartões armazenados no banco de dados possuem senha 985471**
+
+### Biblioteca de Terceiros
+Para realizar a criptografia e descriptografia da senha foi utilizado a classe **StringCipher**.
+
+### Mapemanento ORM
+Para atender ao desafio proposto pela Stone foi estruturado um banco de dados com algumas tabelas básicas para a operação do sistema.
+
+O sistema é composto por 7 tabelas, abaixo suas estruturas e seus relacionamentos.
+
+![AmonRa - Banco de dados - Mapeamento ORM](image/banco_de_dados_relacionamentos.png)
+Banco de dados - Mapeamento ORM
+
+### Sobre Event Sourcing
+Por se tratar de um desafio, no qual são realizadas transações com cartões, visando uma maior segurança e rastreabilidade
+optou-se por implmentar o **Event Sourcing**.
+
+A finalidade do Event Sourcing é armazenar no banco de dados histórico de todas as operações recebidas ou enviadas 
+pelo servidor de comunicações (Karnak).
+
+### Funções Disponíveis por Tipo de Operação:
 1. **Tipo Transação**
 	* Incluir
 	* Alterar
@@ -110,53 +166,11 @@ Para simular um sistema de transação financeira foi implementado:
 	* Listagem somente das transações efetuadas
 	* Listagem das transações com os relacionamentos de dados
 
-## Sobre a Senha
-Como em qualquer transação do Mundo real, na solução do desafio proposta não foi diferente. 
-
-Senha sempre é uma questão delicada, para não termos nenhum problema as senhas **sempre são transmitidas de forma criptografada**.
-
-As senhas enviadas do cliente WPF (AmonRa) para o servidor de comunicações (Karnak) são transmitidas de forma criptografada utilizando criptografia de 256 bits.
-
-A verificação da senha fica a cargo do servidor de comunicações (Karnak), o qual verifica se a senha informada é a mesma armazenada no banco de dados.
-
-Todas as senhas armazenadas no banco de dados são criptografadas utilizando criptografia de 256 bits.
-
-Veja abaixo as senhas criptografadas no banco de dados.
-![AmonRa - Banco de dados - Senhas Criptografadas](image/senhas_criptografadas_armazenadas_bd.png)
-
-**Os cartões armazenados no banco de dados possuem senha 985471**
-
-## Biblioteca de Terceiros
-Para realizar a criptografia e descriptografia da senha foi utilizado a classe **StringCipher**.
-
-## Sobre as Regras de Negócio do Desafio Proposto pela Stone
-1. **Cliente WPF (AmonRa)**
-	
-	* Deve haver três telas principais:
-		* **Tela de transação**: input dos dados da transação e envio da transação para o servidor
-		* **Tela de consulta das transações efetuadas**: lista das transações efetuadas
-		* **Sondagem das transações**: listagem de todas as operações realizadas referente a um único cartão
-	
-	* Catálogo de cartões virtuais com o número razoável de cartões para testar diferentes cenários
-		
-		* **Propriedades básicas**
-			* A senha de cada cartão do catálogo deve estar criptografada de algum jeito
-			* Com esse catálogo, a verificação da senha do cartão deve ser feita apenas pelo servidor
-
-## Mapemanento ORM
-Para atender ao desafio proposto pela Stone foi estruturado um banco de dados com algumas tabelas básicas para a operação do sistema.
-
-O sistema é composto por 7 tabelas, abaixo suas estruturas e seus relacionamentos.
-
-![AmonRa - Banco de dados - Mapeamento ORM](image/banco_de_dados_relacionamentos.png)
-Banco de dados - Mapeamento ORM
-
-## Sobre Event Sourcing
-Por se tratar de um desafio, no qual são realizadas transações com cartões, visando uma maior segurança e rastreabilidade
-optou-se por implmentar o **Event Sourcing**.
-
-A finalidade do Event Sourcing é armazenar no banco de dados histórico de todas as operações recebidas ou enviadas 
-pelo servidor de comunicações (Karnak).
+### Para resolver o desafio foi necessário criar 4 projetos distintos:
+1. **AmonRa** - cliente WPF
+2. **EFCoreMapStone** - entity framework, cria o banco de dados, as tabelas, PK´s e FK´s
+3. **UnitTesteKarnakStone** - responsável por realizar os testes unitários e de integração
+4. **KarnakCore** - o coração do projeto, responsável por tudo, é o cara!
 
 # 1 - O Projeto AmonRa - Cliente WPF
 O nome AmonRa foi escolhido por se tratar do pai dos Deuses, o senhor da verdade, no antigo egito.
