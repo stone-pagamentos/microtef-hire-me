@@ -253,19 +253,6 @@ Passos para realizar uma transação:
 5. Pressionou o botão e todas as informações preenchidas
 	* Será enviada para o servidor de comunicações (Karnak) uma requisição para realizar uma transação
 	* O servidor irá validar as informações enviadas, caso ocorra alguma restrição, um ou mais erros podem ser retornados:
-		1. Senha inválida
-		2. Cartão bloqueado
-		3. Mínimo de 10 centavos
-		4. Registro não encontrado
-		5. Senha Incorreta
-		6. Aprovado
-		7. Valor inválido
-		8. Transação aprovada
-		9. Saldo insuficiente
-		10. Senha entre 4 e 6 dítigos
-		11. Transação negada
-		12. Erro no tamanho da senha
-		13. Cartão vencido
 
 ### Cadastro de Cliente e Cartão
 Passos para realizar o cadastro de um cliente e cartão
@@ -286,7 +273,20 @@ Passos para realizar o cadastro de um cliente e cartão
 	* **Em caso de sucesso**
 		* Uma mensagem de **SUCESSO** será exibida para o cadastro do cliente e do cartão 
 
-
+### Possíveis retornos do servidor
+1. Senha inválida
+2. Cartão bloqueado
+3. Mínimo de 10 centavos
+4. Registro não encontrado
+5. Senha Incorreta
+6. Aprovado
+7. Valor inválido
+8. Transação aprovada
+9. Saldo insuficiente
+10. Senha entre 4 e 6 dítigos
+11. Transação negada
+12. Erro no tamanho da senha
+13. Cartão vencido
 
 
 ## Sobre CQRS
