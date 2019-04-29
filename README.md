@@ -32,7 +32,9 @@ O desafio proposto pela Stone Payments pode ser acessado aqui -> https://github.
 
 ## Sobre CQRS
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
+
 CQRS é um pattern, um padrão arquitetural assim como Event Sourcing, Transaction Script e etc. 
+
 O CQRS não é um estilo arquitetural como desenvolvimento em camadas, modelo client-server, REST e etc.
 
 ## Onde posso aplicar CQRS
@@ -50,8 +52,10 @@ forma síncrona em uma base desnormalizada separada e as gravações de forma assín
 
 # Segregar as responsabilidades em QueryStack e CommandStack
 A ideia básica é segregar as responsabilidades da aplicação em:
--> Command – Operações que modificam o estado dos dados na aplicação.
--> Query – Operações que recuperam informações dos dados na aplicação.
+
+* Command – Operações que modificam o estado dos dados na aplicação.
+* Query – Operações que recuperam informações dos dados na aplicação.
+
 **Numa arquitetura de N camadas poderíamos pensar em separar as responsabilidades em CommandStack e QueryStack.**
 
 ## Swagger
