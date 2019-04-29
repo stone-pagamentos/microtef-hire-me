@@ -106,7 +106,7 @@ São todas as transações realizadas pelo servidor.
 É possível acompanhar o histórico das transações de um determinado cartão.
 Todas as transações possuem status de **aprovada** ou **negada**.
 
-### Funções disponíveis por tela:
+## Funções disponíveis por tela:
 1. **Tipo Transação**
 	* Incluir
 	* Alterar
@@ -114,8 +114,60 @@ Todas as transações possuem status de **aprovada** ou **negada**.
 	* Consultar
 		* Por nome
 		* Por id
-
-
+	* Listagem
+	* Historico
+2. **Status Transação**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+	* Listagem
+	* Historico
+3. **Bandeira Cartão**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+	* Listagem
+	* Historico
+4. **Tipo Cartão**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+	* Listagem
+	* Historico
+5. **Clientes**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+	* Listagem
+	* Historico
+6. **Cartões**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+	* Listagem
+	* Historico
+7. **Transações**
+	* Incluir
+	* Consultar
+		* Por id
+	* Sondagem das transações
+	* Listagem somente das transações
+	* Listagem das transações com relacionamento de dados
 
 ## Sobre CQRS
 
