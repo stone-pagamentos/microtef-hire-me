@@ -83,11 +83,11 @@ O projeto está estruturado da seguinte forma:
 	* Classe TransactionServer.cs: enviar transações para o servidor Karnak  
 3. **Pasta Model**: os modelos de dados		  
 	* São as classes que ajudam na realização dos parser´s dos dados que são enviados para o servidor ou que chegam do mesmo
-4 . **Pasta SendRequestToServer**: enviar requisições para o servidor Karnak 
+4. **Pasta SendRequestToServer**: enviar requisições para o servidor Karnak 
 	* São as classes que realizam conexão diretamente com o api rest do servidor Karnak
 5. **Pasta Services**: são os serviços que chamam as classes do passo 4
 	* As telas WPF chamam as classes de serviços, que por sua vez chamam as classes do passo 4
-	
+				 
 
 
 ## Sobre CQRS
