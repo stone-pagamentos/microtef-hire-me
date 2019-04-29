@@ -1,8 +1,8 @@
-## Technologies implemented:
+## Technologies Implemented:
 - ASP.NET Core 2.2 (with .NET Core 2.2)
- - ASP.NET MVC Core 2.2
- - ASP.NET WebApi Core 2.2
- - ASP.NET Identity Core 2.2
+- ASP.NET MVC Core 2.2
+- ASP.NET WebApi Core 2.2
+- ASP.NET Identity Core 2.2
 - Entity Framework Core 2.2
 - .NET Core Native DI
 - AutoMapper
@@ -32,7 +32,7 @@
 * Microsoft SQL Server 2017 (RTM-CU13) (KB4466404) - 14.0.3048.4 (X64) Developer Edition 
 * SQL Server Management Studio v17.4
 
-## Sobre o desafio:
+## Sobre o Desafio:
 O desafio proposto pela Stone Payments pode ser acessado aqui -> https://github.com/stone-payments/microtef-hire-me
 
 Para resolver o desafio foi necessário criar 4 projetos distintos:
@@ -41,7 +41,7 @@ Para resolver o desafio foi necessário criar 4 projetos distintos:
 3. **UnitTesteKarnakStone** - responsável por realizar os testes unitários e de integração
 4. **KarnakCore** - o coração do projeto, responsável por tudo, é o cara!
 
-## Sobre a senha
+## Sobre a Senha
 Como em qualquer transação do Mundo real, na solução do desafio proposta não foi diferente. 
 
 Senha sempre é uma questão delicada, para não termos nenhum problema as senhas **sempre são transmitidas de forma criptografada**.
@@ -51,6 +51,15 @@ As senhas enviadas do cliente WPF (AmonRa) para o servidor de comunicações (Karn
 Todas as senhas armazenadas no banco de dados são criptografadas utilizando criptografia de 256 bits.
 
 A verificação da senha fica a cargo do servidor de comunicações (Karnak), o qual verifica se a senha informada é a mesma armazenada no banco de dados.
+
+Veja abaixo as senhas criptografadas no banco de dados.
+![AmonRa - Banco de dados - Senhas Criptografadas](image/senhas_criptografadas_armazenadas_bd.png)
+
+## Biblioteca de Terceiros
+Para realizar a criptografia e descriptografia da senha foi utilizado a classe **StringCipher**.
+
+## Sobre as Regras de Negócio do Desafio Proposto pela Stone
+
 
 ## Mapemanento ORM
 Para atender ao desafio proposto pela Stone foi estruturado um banco de dados com algumas tabelas básicas para a operação do sistema.
@@ -67,7 +76,7 @@ optou-se por implmentar o **Event Sourcing**.
 A finalidade do Event Sourcing é armazenar no banco de dados histórico de todas as operações recebidas ou enviadas 
 pelo servidor de comunicações (Karnak).
 
-# 1 - O projeto AmonRa - Cliente WPF
+# 1 - O Projeto AmonRa - Cliente WPF
 O nome AmonRa foi escolhido por se tratar do pai dos Deuses, o senhor da verdade, no antigo egito.
 
 Para atender aos requisitos do desafio, foram criadas telas adicionais:
@@ -132,7 +141,7 @@ São todas as transações realizadas pelo servidor.
 É possível acompanhar o histórico das transações de um determinado cartão.
 Todas as transações possuem status de **aprovada** ou **negada**.
 
-## Funções disponíveis por tela:
+## Funções Disponíveis por Tela:
 1. **Tipo Transação**
 	* Incluir
 	* Alterar
@@ -202,7 +211,7 @@ CQRS é um pattern, um padrão arquitetural assim como Event Sourcing, Transaction
 
 O CQRS não é um estilo arquitetural como desenvolvimento em camadas, modelo client-server, REST e etc.
 
-## Onde posso aplicar CQRS
+## Onde Posso Aplicar CQRS
 Atualmente as aplicações não são mais para atender 10 usuários simultâneos, a maioria das novas aplicações nascem com
 premisas de escalabilidade, performance e disponibilidade, fazer uma aplicação funcionar bem para cargas de trabalho 
 de forma elástica é uma tarefa extremamente complexa.
