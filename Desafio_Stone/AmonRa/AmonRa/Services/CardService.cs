@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Dynamic;
 using System.Net;
 using System.Net.Http;
@@ -219,7 +220,7 @@ namespace AmonRa.Services
 
         public async Task<dynamic> GetCardTypeByName(string url, string name)
         {
-            string urlInfo = "https://localhost:44338/api/v1/cardtype-management/";
+            string urlInfo = ConfigurationManager.AppSettings["url_servidor_comunicacoes"] + "/cardtype-management/";
 
             CardType cardType = null;
 
@@ -244,7 +245,7 @@ namespace AmonRa.Services
 
         public async Task<dynamic> GetCustomerByName(string url, string name)
         {
-            string urlInfo = "https://localhost:44338/api/v1/customer-management/";
+            string urlInfo = ConfigurationManager.AppSettings["url_servidor_comunicacoes"] + "/customer-management/";
 
             Customers customer = null;
 
@@ -269,7 +270,7 @@ namespace AmonRa.Services
 
         public async Task<dynamic> GetCardBrandByName(string url, string name)
         {
-            string urlInfo = "https://localhost:44338/api/v1/CardBrand-management/";
+            string urlInfo = ConfigurationManager.AppSettings["url_servidor_comunicacoes"] + "/CardBrand-management/";
 
             CardBrand cardBrand = null;
 

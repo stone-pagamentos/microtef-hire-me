@@ -1,6 +1,7 @@
 ﻿using AmonRa.Models;
 using AmonRa.Services;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@ namespace AmonRa.SendRequestToServer
     public class GetCard
     {
         private static readonly HttpClient _httpClient = new HttpClient();
-        private static string requestUri = "https://localhost:44338/api/v1/Card-management/";
+        private static string requestUri = ConfigurationManager.AppSettings["url_servidor_comunicacoes"] + "/Card-management/";
 
         public static async Task<dynamic> Information()
         {

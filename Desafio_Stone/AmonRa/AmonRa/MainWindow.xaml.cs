@@ -1,6 +1,7 @@
 ﻿using AmonRa.Core;
 using AmonRa.Services;
 using System;
+using System.Configuration;
 using System.Net;
 using System.Net.Http;
 using System.Windows;
@@ -14,7 +15,7 @@ namespace AmonRa
     public partial class MainWindow : Window
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private string requestUri = "https://localhost:44338/api/v1/";
+        private string requestUri = ConfigurationManager.AppSettings["url_servidor_comunicacoes"] + "/";
 
         protected string CARTAO_TEM_SENHA = "false";
         protected string EscolheuCartao = string.Empty;

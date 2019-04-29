@@ -1,6 +1,5 @@
-﻿using AmonRa.Services;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Configuration;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -9,7 +8,7 @@ namespace AmonRa.SendRequestToServer
     public class Sondagem
     {
         private static readonly HttpClient _httpClient = new HttpClient();
-        private static string requestUri = "https://localhost:44338/api/v1/Transaction-management/SondagemTransacoes?cardNumber=";
+        private static string requestUri = ConfigurationManager.AppSettings["url_servidor_comunicacoes"] + "/Transaction-management/SondagemTransacoes?cardNumber=";
 
         public static async Task<dynamic> Information(string cardNumber)
         {

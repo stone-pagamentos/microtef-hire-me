@@ -2,6 +2,7 @@
 using AmonRa.Services;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -12,8 +13,9 @@ namespace AmonRa.Core
     public class TransactionServer
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private string requestUri = "https://localhost:44338/api/v1/";
-                                            
+        private string requestUri = ConfigurationManager.AppSettings["url_servidor_comunicacoes"] + "/";
+
+
         public async Task<dynamic> SendTransaction(string EscolheuCartao, string INPUT_SENHA, string INPUT_VALOR, string COMBO_TIPO_TRANSACAO, string COMBO_NUMERO_PARCELAS, string HAS_PASSWORD)
         {
             Transaction transaction = null;

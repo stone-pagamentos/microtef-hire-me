@@ -2,6 +2,7 @@
 using AmonRa.Services;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -10,7 +11,7 @@ namespace AmonRa.SendRequestToServer
     public class GetTypeTransactions
     {
         private static readonly HttpClient _httpClient = new HttpClient();
-        private static string requestUri = "https://localhost:44338/api/v1/TransactionType-management/";
+        private static string requestUri = ConfigurationManager.AppSettings["url_servidor_comunicacoes"] + "/TransactionType-management/";
 
         public static async Task<dynamic> Information()
         {
