@@ -238,7 +238,37 @@ Para ver as transações realizads por algum cartão, é necessário escolher um cart
 São todas as transações realizadas pelo servidor. 
 É possível acompanhar o histórico das transações de um determinado cartão.
 Todas as transações possuem status de **aprovada** ou **negada**.
- 
+
+### Realizando uma transação 
+Passos para realizar uma transação:
+1. Informar o valor
+2. Escolher um cartão do catálogo
+	* Se o cartão escolhido for do tipo **CHIP** o campo de senha **SERÁ** exibido
+	* Se o cartão escolhido for do tipo **TARJA** o campo de senha **NÃO SERÁ** exibido
+3. Escolher crédito ou débito
+	* Se a opção escolhida for **CRÉDITO** a opção parcelamento **SERÁ** exibida
+	* Se a opção escolhida for **DÉBITO** a opção parcelamento **NÃO SERÁ** exibida
+4. Confirmar a transação pressionando o botão
+	* Se ao pressionar o botão **CONFIRMAR** estiver faltando alguma informação obrigatória, um alerta será exibido
+5. Pressionou o botão e todas as informações preenchidas
+	* Será enviada para o servidor de comunicações (Karnak) uma requisição para realizar uma transação
+	* O servidor irá validar as informações enviadas, caso ocorra alguma restrição, um ou mais erros podem ser retornados:
+		1. Senha inválida
+		2. Cartão bloqueado
+		3. Mínimo de 10 centavos
+		4. Registro não encontrado
+		5. Senha Incorreta
+		6. Aprovado
+		7. Valor inválido
+		8. Transação aprovada
+		9. Saldo insuficiente
+		10. Senha entre 4 e 6 dítigos
+		11. Transação negada
+		12. Erro no tamanho da senha
+		13. Cartão vencido
+
+
+
 ## Sobre CQRS
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
 
