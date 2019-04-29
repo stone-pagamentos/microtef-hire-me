@@ -88,14 +88,23 @@ O projeto está estruturado da seguinte forma:
 5. **Pasta Services**: são os serviços que chamam as classes do passo 4
 	* As telas WPF chamam as classes de serviços, que por sua vez chamam as classes do passo 4
 
-### Catálogo de cartões virtuais
+### Catálogo de Cartões Virtuais
 São os cartões cadastrados no banco de dados, as informações dos cartões são:
 1. Número do cartão (cardnumber)
 2. Senha do cartão (password), a senha será exigida somente para cartões com chip
 3. Valor da transação (amount)
-4. Tipo da transação, pode ser crédito ou débito
+4. Tipo da transação (crédito ou débito)
 5. Pacelas, quantidade de parcelas exibida somente para compras do tipo crédito
+6. Validade do cartão
+7. Bandeira do cartão (visa, master, amex)
 
+### Sondagem das Transações
+Para ver as transações realizads por algum cartão, é necessário escolher um cartão na tela da **Listagem Transações**.
+
+### Listagem Transações
+São todas as transações realizadas pelo servidor. 
+É possível acompanhar o histórico das transações de um determinado cartão.
+Todas as transações possuem status de **aprovada** ou **negada**.
 
 ## Sobre CQRS
 
