@@ -1,5 +1,3 @@
-![Relação cliente-servidor com sonda](image/CQRS_BUS.jpg)
-
 ## Technologies implemented:
 
 - ASP.NET Core 2.2 (with .NET Core 2.2)
@@ -28,6 +26,12 @@
 - Different ways to read and write data
 - Unit Tests
 
+## Sobre o desafio:
+O desafio foi proposto pela Stone Payments.
+Para ver o desafio o link é https://github.com/stone-payments/microtef-hire-me
+
+
+
 ## Swagger
 
 - See the list of APIs: URL: https://localhost:44338/swagger/index.html
@@ -35,3 +39,6 @@
 ## Generation Database
 
 - Run the scrit /sql/GenerateDataBase.sql
+
+
+![Relação cliente-servidor com sonda](image/CQRS_BUS.jpg)
