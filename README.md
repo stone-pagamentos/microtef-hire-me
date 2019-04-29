@@ -28,9 +28,11 @@
 
 ## Sobre o desafio:
 
-- O desafio foi proposto pela Stone Payments pode ser acessado aqui -> https://github.com/stone-payments/microtef-hire-me
+O desafio proposto pela Stone Payments pode ser acessado aqui -> https://github.com/stone-payments/microtef-hire-me
 
-> teste
+## Sobre CQRS
+
+
 
 
 ## Swagger
