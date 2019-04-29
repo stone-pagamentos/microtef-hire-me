@@ -332,8 +332,10 @@ As consultas são feitas de forma síncrona em uma base desnormalizada separada e 
 # Segregar as responsabilidades em QueryStack e CommandStack
 A ideia básica é segregar as responsabilidades da aplicação em:
 
-* Command – Operações que modificam o estado dos dados na aplicação.
-* Query – Operações que recuperam informações dos dados na aplicação.
+* Command
+	* Operações que modificam o estado dos dados na aplicação.
+* Query 
+	* Operações que recuperam informações dos dados na aplicação.
 
 **Para resolver o desafio foi utilizado uma arquitetura de N camadas, separarando as responsabilidades em CommandStack e QueryStack.**
 
