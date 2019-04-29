@@ -26,7 +26,7 @@ namespace Karnak.Services.Api
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", true, true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true);
-
+                         
             if (env.IsDevelopment())
             {
                 builder.AddUserSecrets<Startup>();
