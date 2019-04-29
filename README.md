@@ -41,13 +41,22 @@ Para resolver o desafio foi necessário criar 4 projetos distintos:
 ### Sobre a senha
 Como em qualquer transação do Mundo real, na solução do desafio proposta não foi diferente. 
 
-Senha sempre é uma questão delicada, para não termos nenhum problema as senhas **sempre são transitadas de forma criptografada**.
+Senha sempre é uma questão delicada, para não termos nenhum problema as senhas **sempre são transmitidas de forma criptografada**.
 
 As senhas enviadas do cliente WPF (AmonRa) para o servidor de comunicações (Karnak) saem de forma criptografada utilizando criptografia de 256 bits.
 
 Todas as senhas armazenadas no banco de dados são criptografadas utilizando criptografia de 256 bits.
 
 A verificação da senha fica a cargo do servidor de comunicações (Karnak), o qual verifica se a senha informada é a mesma armazenada no banco de dados.
+
+### Mapemanento ORM
+Para atender ao desafio proposto pela Stone foi estruturado um banco de dados com algumas tabelas básicas para a operação do sistema.
+
+O sistema é composto por 7 tabelas, abaixo suas estruturas e seus relacionamentos.
+
+![AmonRa - Banco de dados - Mapeamento ORM](image/banco_de_dados_relacionamentos.png)
+Cliente WPF - Banco de dados - Mapeamento ORM
+
 
 # 1 - O projeto AmonRa - Cliente WPF
 O nome AmonRa foi escolhido por se tratar do pai dos Deuses, o senhor da verdade, no antigo egito.
