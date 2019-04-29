@@ -204,7 +204,7 @@ pelo servidor de comunicações (Karnak).
 1. **AmonRa** - cliente WPF
 2. **EFCoreMapStone** - entity framework, cria o banco de dados, as tabelas, PK´s e FK´s
 3. **UnitTesteKarnakStone** - responsável por realizar os testes unitários e de integração
-4. **KarnakCore** - o coração do projeto, responsável por tudo, é o cara!
+4. **KarnakCore** - o coração do projeto, responsável por tudo, **é o cara!**
 
 # 1 - O Projeto AmonRa - Cliente WPF
 O nome AmonRa foi escolhido por se tratar do pai dos Deuses, o senhor da verdade, no antigo egito.
@@ -462,6 +462,20 @@ Abaixo a lista de todos os testes efetuados.
 	* Post_Transaction_Cartao_Vencido
 	* Get_AllTransaction
 	* Get_ByNameTransaction
+
+# 4 - Sobre o KarnakCore - Servidor de Comunicações
+
+O servidor de comunicações é o projeto responsável por fazer tudo funcionar, **ele é o cara!**
+
+Por que o nome **Karnak**:
+
+Templo de Carnaque, ou simplesmente Carnaque, é um templo dedicado ao deus Amom-Rá. 
+
+Tem esse nome devido a uma aldeia vizinha chamada Carnaque, mas no tempo dos antigos faraós a aldeia 
+era conhecida como Ipet-sut.
+
+Maiores informações sobre o templo de Karnak aqui -> https://www.penaestrada.blog.br/luxor-o-templo-de-karnak/
+
 
 ## Sobre CQRS
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
