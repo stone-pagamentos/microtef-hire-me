@@ -61,10 +61,10 @@ Cliente WPF - Tela Bandeira Cartao
 ![AmonRa - Cliente WPF - Tela Tipo Cartão](image/amonra_cliente_wpf_tela_tipo_cartao.jpg)
 Cliente WPF - Tela Tipo Cartão
 
-![AmonRa - Cliente WPF - Tela Clientes](image/amonra_cliente_wpf_tela_clientes.jpg)
+![AmonRa - Cliente WPF - Tela Clientes](image/amonra_cliente_wpf_tela_cliente.jpg)
 Cliente WPF - Tela Clientes
 
-![AmonRa - Cliente WPF - Tela Cartões](image/amonra_cliente_wpf_tela_cartões.jpg)
+![AmonRa - Cliente WPF - Tela Cartões](image/amonra_cliente_wpf_tela_cartoes.jpg)
 Cliente WPF - Tela Cartões
 
 ![AmonRa - Cliente WPF - Tela Listagem Transações](image/amonra_cliente_wpf_tela_listagem_transacoes.jpg)
