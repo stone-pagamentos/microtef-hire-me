@@ -374,12 +374,12 @@ nas intenções de negócio.
 Toda a implementação do CQRS pattern pode ser feito manualmente, sendo necessário escrever diversos tipos de classes para cada aspecto, porém 
 é possível encontrar alguns frameworks de CQRS que vão facilitar um pouco a implementação e reduzir o tempo de codificação.
 
-Apesar da minha preferência ser sempre codificar tudo por conta própria eu encontrei alguns frameworks bem interessantes que servem inclusive 
-para estudo e melhoria do entendimento no assunto.
 
 ## Swagger
+Todas as api´s rest podem ser utilizadas com Swagger ou através do projeto de testes unitários.
 
-- See the list of APIs: URL: https://localhost:44338/swagger/index.html
+![Api´s Rest Swagger](image/swagger.png)
+
 
 ## Generation Database
 
