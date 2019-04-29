@@ -101,6 +101,7 @@ Os dados utilizados para instalação:
 Os dados são armazenados no banco de dados Microsoft SQL Server.
 
 A estrutura do banco de dados:
+
 ![AmonRa - Banco de dados - Estrutura](image/sql_server_estrutura_tabelas.png)
 
 ### Biblioteca de Terceiros
