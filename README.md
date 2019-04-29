@@ -35,10 +35,10 @@
 O desafio proposto pela Stone Payments pode ser acessado aqui -> https://github.com/stone-payments/microtef-hire-me
 
 Para resolver o desafio foi necessário criar 4 projetos distintos:
-* AmonRa - cliente WPF
-* EFCoreMapStone - entity framework, cria o banco de dados, as tabelas, PK´s e FK´s
-* UnitTesteKarnakStone - responsável por realizar os testes unitários e de integração
-* KarnakCore - o coração do projeto, responsável por tudo, é o cara!
+1. **AmonRa - cliente WPF**
+2. **EFCoreMapStone - entity framework, cria o banco de dados, as tabelas, PK´s e FK´s**
+3. **UnitTesteKarnakStone - responsável por realizar os testes unitários e de integração**
+4. **KarnakCore - o coração do projeto, responsável por tudo, é o cara!**
 
 # O projeto AmonRa - Cliente WPF
 
