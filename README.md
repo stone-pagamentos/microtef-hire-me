@@ -319,7 +319,7 @@ Testes unitários foram realizados em todas as api´s rest.
 
 Abaixo a lista de todos os testes efetuados.
 
-1. CardUnitTest 
+1. Bandeira Cartão
 	* Post_CardBrand_The_Name_Is_Required
 	* Delete_ByIdCardBrand_Valido
 	* Get_ByNameCardBrand
@@ -341,7 +341,7 @@ Abaixo a lista de todos os testes efetuados.
 	* Put_CardBrand_The_Guid_is_empty
 	* Post_CardBrand_The_Name_must_have_between_2_and_30_characters
 	* Delete_ByIdCardBrand_The_Guid_is_invalid_and_contains_00000000
-2. CardTypeUnitTest
+2. Tipo Cartão
 	* Put_CardType_The_card_type_name_has_already_been_taken
 	* Get_AllCardType
 	* Post_CardType_Valido
@@ -363,11 +363,92 @@ Abaixo a lista de todos os testes efetuados.
 	* Delete_ByIdCardType_The_Guid_is_empty
 	* Delete_ByIdCardType_Valido
 	* Put_CardType_The_Guid_is_empty
-
-
-
-
-
+3. Cartão
+	* Get_ByCardNumber
+	* Get_HistorycByIdCard
+	* Get_ByIdCard
+	* Delete_ByIdCard_Valido
+	* Post_Card_Valido
+	* Get_AllCard
+4. Cliente
+	* Post_Customer_The_Name_must_have_between_2_and_30_characters
+	* Post_Customer_Valido
+	* Put_Customer_The_Name_must_have_between_2_and_100_characters
+	* Put_Customer_Valido
+	* Put_Customer_The_Guid_is_invalid_and_contains_00000000
+	* Post_Customer_The_Guid_is_empty
+	* Put_Customer_The_customer_name_has_already_been_taken
+	* Post_Customer_The_customer_e_mail_has_already_been_taken_Run_2_Times
+	* Put_Customer_The_Name_is_Required
+	* Delete_ByIdCustomer_The_Guid_is_empty
+	* Delete_ByIdCustomer_The_Guid_is_invalid_and_contains_00000000
+	* Put_Customer_The_Guid_is_empty
+	* Post_Customer_The_customer_id_has_already_been_taken_Run
+	* Post_Customer_The_Name_Is_Required
+	* Post_Customer_The_Guid_is_invalid_and_contains_00000000
+	* Delete_ByIdCustomer_Valido
+	* Delete_ByIdCustomer_Registro_nao_encontrado
+	* Get_AllCustomer
+	* Get_ByIdCustomer
+	* Get_HistorycByIdCustomer
+	* Get_ByNameCustomer
+5. Senha
+	* PasswordDecryptFail
+	* PasswordDecryptSuccess
+	* PasswordEncrypt
+6. Transação Status
+	* Get_ByIdTransactionStatus
+	* Put_TransactionStatus_The_Guid_is_empty
+	* Put_TransactionStatus_The_Name_must_have_between_2_and_30_characters
+	* Delete_ByIdTransactionStatus_Valido
+	* Delete_ByIdTransactionStatus_The_Guid_is_invalid_and_contains_00000000
+	* Get_HistorycByIdTransactionStatus
+	* Delete_ByIdTransactionStatus_Registro_nao_encontrado
+	* Post_TransactionStatus_The_Name_must_have_between_2_and_30_characters
+	* Post_TransactionStatus_The_Guid_is_invalid_and_contains_00000000
+	* Get_AllTransactionStatus
+	* Put_TransactionStatus_The_transaction_status_name_has_already_been_taken
+	* Get_ByNameTransactionStatus
+	* Put_TransactionStatus_Valido
+	* Put_TransactionStatus_The_Name_is_Required
+	* Post_TransactionStatus_The_transaction_status_id_has_already_been_taken_Run_2_Times
+	* Post_TransactionStatus_The_Guid_is_empty
+	* Post_TransactionStatus_Valido
+	* Delete_ByIdTransactionStatus_The_Guid_is_empty
+	* Put_TransactionStatus_The_Guid_is_invalid_and_contains_00000000
+	* Post_TransactionStatus_The_Name_Is_Required
+	* Post_TransactionStatus_The_transaction_status_name_has_already_been_taken
+7. Transação Tipo
+	* Post_TransactionType_The_Name_Is_Required
+	* Delete_ByIdTransactionType_The_Guid_is_empty
+	* Get_HistorycByIdTransactionType
+	* Post_TransactionType_The_Guid_is_invalid_and_contains_00000000
+	* Post_TransactionType_The_transaction_type_name_has_already_been_taken
+	* Get_ByIdTransactionType
+	* Post_TransactionType_The_Name_must_have_between_2_and_30_characters
+	* Delete_ByIdTransactionType_Valido
+	* Get_AllTransactionType
+	* Put_TransactionType_The_Name_is_Required
+	* Put_TransactionType_The_transaction_type_name_has_already_been_taken
+	* Delete_ByIdTransactionType_The_Guid_is_invalid_and_contains_00000000
+	* Get_ByNameTransactionType
+	* Post_TransactionType_Valido
+	* Put_TransactionType_The_Guid_is_empty
+	* Put_TransactionType_The_Name_must_have_between_2_and_30_characters
+	* Post_TransactionType_The_Guid_is_empty
+	* Delete_ByIdTransactionType_Registro_nao_encontrado
+	* Put_TransactionType_Valido
+	* Put_TransactionType_The_Guid_is_invalid_and_contains_00000000
+	* Post_TransactionType_The_transaction_type_id_has_already_been_taken_Run_2_Times
+8. Transação
+	* Post_Transaction_CHIP
+	* Delete_ByIdTransaction_Valido
+	* Post_Transaction_TARJA
+	* Get_HistorycByIdTransaction
+	* Get_ByIdTransaction
+	* Post_Transaction_Cartao_Vencido
+	* Get_AllTransaction
+	* Get_ByNameTransaction
 
 ## Sobre CQRS
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
