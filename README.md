@@ -1,6 +1,6 @@
 ## Technologies implemented:
 - ASP.NET Core 2.2 (with .NET Core 2.2)
- - ASP.NET MVC Core 2.
+ - ASP.NET MVC Core 2.2
  - ASP.NET WebApi Core 2.2
  - ASP.NET Identity Core 2.2
 - Entity Framework Core 2.2
@@ -38,7 +38,7 @@ Para resolver o desafio foi necessário criar 4 projetos distintos:
 3. **UnitTesteKarnakStone** - responsável por realizar os testes unitários e de integração
 4. **KarnakCore** - o coração do projeto, responsável por tudo, é o cara!
 
-### Sobre a senha
+## Sobre a senha
 Como em qualquer transação do Mundo real, na solução do desafio proposta não foi diferente. 
 
 Senha sempre é uma questão delicada, para não termos nenhum problema as senhas **sempre são transmitidas de forma criptografada**.
@@ -49,14 +49,20 @@ Todas as senhas armazenadas no banco de dados são criptografadas utilizando crip
 
 A verificação da senha fica a cargo do servidor de comunicações (Karnak), o qual verifica se a senha informada é a mesma armazenada no banco de dados.
 
-### Mapemanento ORM
+## Mapemanento ORM
 Para atender ao desafio proposto pela Stone foi estruturado um banco de dados com algumas tabelas básicas para a operação do sistema.
 
 O sistema é composto por 7 tabelas, abaixo suas estruturas e seus relacionamentos.
 
 ![AmonRa - Banco de dados - Mapeamento ORM](image/banco_de_dados_relacionamentos.png)
-Cliente WPF - Banco de dados - Mapeamento ORM
+Banco de dados - Mapeamento ORM
 
+## Sobre Event Sourcing
+Por se tratar de um desafio, no qual são realizadas transações com cartões, visando uma maior segurança e rastreabilidade
+optou-se por implmentar o **Event Sourcing**.
+
+A finalidade do Event Sourcing é armazenar no banco de dados histórico de todas as operações recebidas ou enviadas 
+pelo servidor de comunicações (Karnak).
 
 # 1 - O projeto AmonRa - Cliente WPF
 O nome AmonRa foi escolhido por se tratar do pai dos Deuses, o senhor da verdade, no antigo egito.
