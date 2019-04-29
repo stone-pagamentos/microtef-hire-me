@@ -35,11 +35,80 @@
 ## Sobre o Desafio:
 O desafio proposto pela Stone Payments pode ser acessado aqui -> https://github.com/stone-payments/microtef-hire-me
 
+Basicamente o desafio consiste na implementação de um sistema que simule o processo de uma transação financeira.
+
+Para simular um sistema de transação financeira foi implementado:
+1. **Cliente WPF**
+2. **Servidor de comunicações**
+
 Para resolver o desafio foi necessário criar 4 projetos distintos:
 1. **AmonRa** - cliente WPF
 2. **EFCoreMapStone** - entity framework, cria o banco de dados, as tabelas, PK´s e FK´s
 3. **UnitTesteKarnakStone** - responsável por realizar os testes unitários e de integração
 4. **KarnakCore** - o coração do projeto, responsável por tudo, é o cara!
+
+## Funções Disponíveis por Tipo de Operação:
+1. **Tipo Transação**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+	* Listagem
+	* Historico
+2. **Status Transação**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+	* Listagem
+	* Historico
+3. **Bandeira Cartão**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+	* Listagem
+	* Historico
+4. **Tipo Cartão**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+	* Listagem
+	* Historico
+5. **Clientes**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+	* Listagem
+	* Historico
+6. **Cartões**
+	* Incluir
+	* Alterar
+	* Excluir
+	* Consultar
+		* Por nome
+		* Por id
+	* Listagem
+	* Historico
+7. **Transações**
+	* Incluir
+	* Consultar
+		* Por id
+	* Sondagem das transações efetuadas
+	* Listagem somente das transações efetuadas
+	* Listagem das transações com os relacionamentos de dados
 
 ## Sobre a Senha
 Como em qualquer transação do Mundo real, na solução do desafio proposta não foi diferente. 
@@ -61,7 +130,15 @@ Veja abaixo as senhas criptografadas no banco de dados.
 Para realizar a criptografia e descriptografia da senha foi utilizado a classe **StringCipher**.
 
 ## Sobre as Regras de Negócio do Desafio Proposto pela Stone
-
+1. **Cliente WPF (AmonRa)**
+	*Deve haver duas telas principais:
+		* **Tela de transação**: input dos dados da transação e envio da transação para o servidor
+		* **Tela de consulta das transações efetuadas**: lista das transações efetuadas
+		* **Sondagem das transações**: listagem de todas as operações realizadas referente a um único cartão
+	* Catálogo de cartões virtuais com o número razoável de cartões para testar diferentes cenários
+		* **Propriedades básicas**
+			* A senha de cada cartão do catálogo deve estar criptografada de algum jeito
+			* Com esse catálogo, a verificação da senha do cartão deve ser feita apenas pelo servidor
 
 ## Mapemanento ORM
 Para atender ao desafio proposto pela Stone foi estruturado um banco de dados com algumas tabelas básicas para a operação do sistema.
@@ -142,70 +219,7 @@ Para ver as transações realizads por algum cartão, é necessário escolher um cart
 São todas as transações realizadas pelo servidor. 
 É possível acompanhar o histórico das transações de um determinado cartão.
 Todas as transações possuem status de **aprovada** ou **negada**.
-
-## Funções Disponíveis por Tela:
-1. **Tipo Transação**
-	* Incluir
-	* Alterar
-	* Excluir
-	* Consultar
-		* Por nome
-		* Por id
-	* Listagem
-	* Historico
-2. **Status Transação**
-	* Incluir
-	* Alterar
-	* Excluir
-	* Consultar
-		* Por nome
-		* Por id
-	* Listagem
-	* Historico
-3. **Bandeira Cartão**
-	* Incluir
-	* Alterar
-	* Excluir
-	* Consultar
-		* Por nome
-		* Por id
-	* Listagem
-	* Historico
-4. **Tipo Cartão**
-	* Incluir
-	* Alterar
-	* Excluir
-	* Consultar
-		* Por nome
-		* Por id
-	* Listagem
-	* Historico
-5. **Clientes**
-	* Incluir
-	* Alterar
-	* Excluir
-	* Consultar
-		* Por nome
-		* Por id
-	* Listagem
-	* Historico
-6. **Cartões**
-	* Incluir
-	* Alterar
-	* Excluir
-	* Consultar
-		* Por nome
-		* Por id
-	* Listagem
-	* Historico
-7. **Transações**
-	* Incluir
-	* Consultar
-		* Por id
-	* Sondagem das transações
-	* Listagem somente das transações
-	* Listagem das transações com relacionamento de dados
-
+ 
 ## Sobre CQRS
 CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
 
