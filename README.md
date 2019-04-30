@@ -130,8 +130,10 @@ Application started. Press Ctrl+C to shut down.
 
 O servidor de comunicações possuí diversas api´s rest de acesso. Para saber quais são acessar os controllers da aplicação.
 
-**Dica**: para ver os logs em tempo real dos containers docker utilizar o comando **docker logs -f <nome do container>**, 
+**Dica 1**: para ver os logs em tempo real dos containers docker utilizar o comando **docker logs -f <nome do container>**, 
 exemplo: docker logs -f karnakservicesapi 
+	
+**Dica 2**: Dockerhub, pull e push nas suas imagens -> https://medium.com/trainingcenter/docker-dockerhub-pull-e-push-nas-suas-imagens-57dffa0232ad
 
 ### Sobre o Docker - SQL Server
 O banco de dados **Microsoft SQL Server** foi instalado dentro de um container Docker
