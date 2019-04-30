@@ -518,7 +518,8 @@ Abaixo a lista de todos os testes efetuados.
 # 4 - Sobre o KarnakCore - Servidor de Comunicações
 
 * Para que a conexão com banco de dados funcione é necessário configurar o arquivo appsettings.json
-* Na key **ConnectionStrings** alterar DefaultConnection para o IP do computador onde está rodando o servidor de comunicações.
+* Na key **ConnectionStrings** alterar DefaultConnection para o IP do computador onde está rodando o servidor de comunicações
+* Setar o projeto **Karnak.Services.Api** como **StartUp Project**
 
 O servidor de comunicações é o projeto responsável por fazer tudo funcionar, **ele é o cara!**
 
