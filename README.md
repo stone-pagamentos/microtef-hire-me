@@ -107,7 +107,7 @@ Para gerar uma imagem docker do servidor de comunicações seguir os passos:
 Para iniciar a imagem Docker do servidor de comunicações seguir os passos:
 1. Abrir uma tela do PowerShell ou Command Prompt **em modo Administrador**
 2. Digitar o comando **docker images**
-3. Localizar o nome da imagem **karnakservicesapi**
+3. Localizar o nome da imagem **karnakstone**
 4. Pegar o **IMAGE ID**
 5. Digitar o comando: **docker run -p 5001:80 95255d998610**
 	* Onde: -p: porta
