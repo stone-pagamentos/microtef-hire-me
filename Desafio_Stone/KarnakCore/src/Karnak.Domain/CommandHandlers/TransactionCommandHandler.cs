@@ -8,6 +8,7 @@ using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -47,21 +48,116 @@ namespace Karnak.Domain.CommandHandlers
             // Validate message
             if (!message.IsValid()) { NotifyValidationErrors(message); return Task.FromResult(false); }
 
-            // pegar as configuracoes
-            var config = new ConfigurationBuilder().SetBasePath(_env.ContentRootPath).AddJsonFile("appsettings.json").Build();
-            
+            #region Dados Mockados
+
+            List<TransactionStatusMock> listTransactionStatus = new List<TransactionStatusMock>();
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("9B8745FD-BDA2-41D3-8F49-8C893461FBE1"),
+                Name = "Valor inválido",
+                NameTag = "ValorInvalido"
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("47748064-E751-4E2C-93DC-E4A8FF2388BC"),
+                Name = "Transação negada",
+                NameTag = "TransacaoNegada"
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("105DCD64-4498-4B06-8A74-914D1020DBE4"),
+                Name = "Transação aprovada",
+                NameTag = "TransacaoAprovada"
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("D5117C58-2962-4B2A-938E-05698AA76A2B"),
+                Name = "Senha inválida",
+                NameTag = "SenhaInvalida"
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("FCD03359-22A7-41E3-B9DE-70F8FBA47805"),
+                Name = "Senha Incorreta",
+                NameTag = "SenhaIncorreta"
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("7614057A-AB4B-4447-82D5-EF88A097CBD4"),
+                Name = "Erro no tamanho da senha",
+                NameTag = "ErroNoTamanhoDaSenha"
+
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("D87358AF-6800-4545-BB11-A6114627DF6A"),
+                Name = "Saldo insuficiente",
+                NameTag = "SaldoInsuficiente"
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("A92807BA-A7A8-4BFF-B198-502A26306E53"),
+                Name = "Cartão bloqueado",
+                NameTag = "CartaoBloqueado"
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("61F61682-65B9-424A-BB1B-7B04B3264114"),
+                Name = "Aprovado",
+                NameTag = "Aprovado"
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("A73D8B79-8985-4CF8-AC2C-5C4AA4B84BA5"),
+                Name = "Registro não encontrado",
+                NameTag = "RegistroNaoEncontrado"
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("E23F6900-CB87-475A-9DBE-E490552967C3"),
+                Name = "Senha entre 4 e 6 dítigos",
+                NameTag = "SenhaEntre4e6Ditigos"
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("526F6B9A-2248-49AE-8119-56F03C9A9824"),
+                Name = "Mínimo de 10 centavos",
+                NameTag = "MinimoDe10Centavos"
+            });
+
+            listTransactionStatus.Add(new TransactionStatusMock
+            {
+                Id = new Guid("7614057a-ab4b-4447-82d5-ef88a097cbd9"),
+                Name = "Cartão vencido",
+                NameTag = "CartaoVencido"
+            });
+
+            #endregion
+
             // pegar informacoes do cartao
             Card card = _cardRepository.GetById(message.IdCard);
 
             // cartao bloqueado
             if (card.Blocked == 0)
             {
-                TransactionStatus statusNegada = GetItemStatus(config, "TransacaoNegada");
+                TransactionStatus statusNegada = GetItemStatus(listTransactionStatus.Find(x => x.NameTag.Equals("TransacaoNegada")).Name);
                 var transactionNgada = new Transaction(message.Id, message.Amount, message.IdTransactionType, message.IdCard, statusNegada.Id, message.Number, DateTime.Now);
                 _transactionTypeRepository.Add(transactionNgada);
                 if (Commit())
                 {
-                    TransactionStatus status = GetItemStatus(config, "CartaoBloqueado");
+                    TransactionStatus status = GetItemStatus(listTransactionStatus.Find(x => x.NameTag.Equals("CartaoBloqueado")).Name);
                     Bus.RaiseEvent(new DomainNotification(message.MessageType, status.Name));
                     Bus.RaiseEvent(new TransactionRegisteredEvent(Guid.NewGuid(), message.Amount, message.IdTransactionType, message.IdCard, status.Id, message.Number, message.TransactionDate));
                 }
@@ -72,12 +168,12 @@ namespace Karnak.Domain.CommandHandlers
             // cartao expirado
             if (card.ExpirationDate < DateTime.Now)
             {
-                TransactionStatus statusNegada = GetItemStatus(config, "TransacaoNegada");
+                TransactionStatus statusNegada = GetItemStatus(listTransactionStatus.Find(x => x.NameTag.Equals("TransacaoNegada")).Name);
                 var transactionNgada = new Transaction(message.Id, message.Amount, message.IdTransactionType, message.IdCard, statusNegada.Id, message.Number, DateTime.Now);
                 _transactionTypeRepository.Add(transactionNgada);
                 if (Commit())
                 {
-                    TransactionStatus status = GetItemStatus(config, "CartaoVencido");
+                    TransactionStatus status = GetItemStatus(listTransactionStatus.Find(x => x.NameTag.Equals("CartaoVencido")).Name);
                     Bus.RaiseEvent(new DomainNotification(message.MessageType, status.Name));
                     Bus.RaiseEvent(new TransactionRegisteredEvent(Guid.NewGuid(), message.Amount, message.IdTransactionType, message.IdCard, status.Id, message.Number, message.TransactionDate));
                 }
@@ -101,12 +197,12 @@ namespace Karnak.Domain.CommandHandlers
                     _cardRepository.Update(card);
                     if (Commit())
                     {
-                        TransactionStatus statusNegada = GetItemStatus(config, "TransacaoNegada");
+                        TransactionStatus statusNegada = GetItemStatus(listTransactionStatus.Find(x => x.NameTag.Equals("TransacaoNegada")).Name);
                         var transactionNgada = new Transaction(message.Id, message.Amount, message.IdTransactionType, message.IdCard, statusNegada.Id, message.Number, DateTime.Now);
                         _transactionTypeRepository.Add(transactionNgada);
                         if (Commit())
                         {
-                            TransactionStatus status = GetItemStatus(config, "CartaoBloqueado");
+                            TransactionStatus status = GetItemStatus(listTransactionStatus.Find(x => x.NameTag.Equals("CartaoBloqueado")).Name);
                             Bus.RaiseEvent(new DomainNotification(message.MessageType, status.Name));
                             Bus.RaiseEvent(new TransactionRegisteredEvent(Guid.NewGuid(), message.Amount, message.IdTransactionType, message.IdCard, status.Id, message.Number, message.TransactionDate));
                         }
@@ -117,12 +213,12 @@ namespace Karnak.Domain.CommandHandlers
                     _cardRepository.Update(card);
                     if (Commit())
                     {
-                        TransactionStatus statusNegada = GetItemStatus(config, "TransacaoNegada");
+                        TransactionStatus statusNegada = GetItemStatus(listTransactionStatus.Find(x => x.NameTag.Equals("TransacaoNegada")).Name);
                         var transactionNgada = new Transaction(message.Id, message.Amount, message.IdTransactionType, message.IdCard, statusNegada.Id, message.Number, DateTime.Now);
                         _transactionTypeRepository.Add(transactionNgada);
                         if (Commit())
                         {
-                            TransactionStatus status = GetItemStatus(config, "SenhaIncorreta");
+                            TransactionStatus status = GetItemStatus(listTransactionStatus.Find(x => x.NameTag.Equals("SenhaIncorreta")).Name);
                             Bus.RaiseEvent(new DomainNotification(message.MessageType, status.Name));
                             Bus.RaiseEvent(new TransactionRegisteredEvent(Guid.NewGuid(), message.Amount, message.IdTransactionType, message.IdCard, status.Id, message.Number, message.TransactionDate));
                         }
@@ -135,12 +231,12 @@ namespace Karnak.Domain.CommandHandlers
             // cartao com saldo insuficiente para compra
             if (message.Amount > card.LimitAvailable)
             {
-                TransactionStatus statusNegada = GetItemStatus(config, "TransacaoNegada");
+                TransactionStatus statusNegada = GetItemStatus(listTransactionStatus.Find(x => x.NameTag.Equals("TransacaoNegada")).Name);
                 var transactionNgada = new Transaction(message.Id, message.Amount, message.IdTransactionType, message.IdCard, statusNegada.Id, message.Number, DateTime.Now);
                 _transactionTypeRepository.Add(transactionNgada);
                 if (Commit())
                 {
-                    TransactionStatus status = GetItemStatus(config, "SaldoInsuficiente");
+                    TransactionStatus status = GetItemStatus(listTransactionStatus.Find(x => x.NameTag.Equals("SaldoInsuficiente")).Name);
                     Bus.RaiseEvent(new DomainNotification(message.MessageType, status.Name));
                     Bus.RaiseEvent(new TransactionRegisteredEvent(Guid.NewGuid(), message.Amount, message.IdTransactionType, message.IdCard, status.Id, message.Number, message.TransactionDate));
                 }
@@ -151,7 +247,7 @@ namespace Karnak.Domain.CommandHandlers
             decimal changeCardLimitAvailable = card.LimitAvailable - message.Amount;
             card.LimitAvailable = changeCardLimitAvailable;
 
-            TransactionStatus statusWouu = GetItemStatus(config, "TransacaoAprovada");
+            TransactionStatus statusWouu = GetItemStatus(listTransactionStatus.Find(x => x.NameTag.Equals("TransacaoAprovada")).Name);
 
             var transaction = new Transaction(message.Id, message.Amount, message.IdTransactionType, message.IdCard, statusWouu.Id, message.Number, DateTime.Now);
 
@@ -201,11 +297,11 @@ namespace Karnak.Domain.CommandHandlers
             return null;
         }
 
-        public TransactionStatus GetItemStatus(IConfigurationRoot config, string configName)
+        public TransactionStatus GetItemStatus(string configName)
         {
             // pegar informacoes do status
             TransactionStatus itemStatus = _transactionStatusRepository
-            .GetByName(config.GetSection("TransactionStatus:" + configName + "").Value);
+            .GetByName(configName);
 
             return itemStatus;
         }
