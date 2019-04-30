@@ -85,7 +85,53 @@ Veja abaixo as senhas criptografadas no banco de dados.
 
 **Os cartões armazenados no banco de dados possuem senha 985471**
 
-### Sobre o Docker
+### Sobre o Docker do Servidor de Comunicações Karnak
+Para gerar uma imagem docker do servidor de comunicações seguir os passos:
+1. Abrir uma tela do PowerShell ou Command Prompt **em modo Administrador**
+2. Acessar a pasta do codigo fonte do projeto **/KarnakCore/src/**
+	* cd <local onde esta o codigo fonte>\microtef-hire-me6\Desafio_Stone\KarnakCore\src
+3. Digitar o command **docker build -t karnakservicesapi:dev .** 
+	* onde: karnakservicesapi é o nome da imagem
+	* dev: a versão
+	* .: local onde esta fisicamente o arquivo **Dockerfile**
+	* se tudo deu certo, o processo de criar imagem foi iniciado. Aguarde...
+![Docker Imagem - Servidor Comunicações Karnak](image/docker_imagem_servidor_comunicacoes_karnak.png)
+
+### Docker Servidor Comunicações - Iniciar Serviço
+Para iniciar a imagem Docker do servidor de comunicações seguir os passos:
+1. Abrir uma tela do PowerShell ou Command Prompt **em modo Administrador**
+2. Digitar o comando **docker images**
+3. Localizar o nome da imagem **karnakservicesapi**
+4. Pegar o **IMAGE ID**
+5. Digitar o comando: **docker run -p 5001:80 95255d998610**
+	* Onde: -p: porta
+	* 5001: porta de acesso (binding)
+	* 80: porta interna
+	* 95255d998610: id da imagem
+
+Se tudo deu certo, o resultado esperado é:
+PS C:\Users\stefa> docker run -p 5001:80 95255d998610
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[58]
+      Creating key {12f361a1-c392-4f68-b8ba-9d962a43da1f} with creation date 2019-04-30 09:53:23Z, activation date 2019-04-30 09:53:23Z, and expiration date 2019-07-29 09:53:23Z.
+warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
+      No XML encryptor configured. Key {12f361a1-c392-4f68-b8ba-9d962a43da1f} may be persisted to storage in unencrypted form.
+info: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[39]
+      Writing data to file '/root/.aspnet/DataProtection-Keys/key-12f361a1-c392-4f68-b8ba-9d962a43da1f.xml'.
+Hosting environment: Production
+Content root path: /app
+Now listening on: http://[::]:80
+Application started. Press Ctrl+C to shut down.
+
+**PARA ACESSAR API´S REST DO SERVIDOR, UTILIZAR POR EXEMPLO A URL http://192.168.0.11:5001/api/v1/cardtype-management/**
+
+O servidor de comunicações possuí diversas api´s rest de acesso. Para saber quais são acessar os controllers da aplicação.
+
+**Dica**: para ver os logs em tempo real dos containers docker utilizar o comando **docker logs -f <nome do container>**, 
+exemplo: docker logs -f karnakservicesapi 
+
+### Sobre o Docker - SQL Server
 O banco de dados **Microsoft SQL Server** foi instalado dentro de um container Docker
 
 Os procedimentos de instalação do Microsoft SQL Server dentro de um container Docker podem ser visualizadas aqui -> https://medium.com/@renato.groffe/net-sql-server-2017-parte-1-executando-o-sql-server-em-um-container-docker-83abbed8eb7e
