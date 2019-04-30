@@ -621,6 +621,8 @@ Essa arquitetura trabalha diretamente com microserviços, fila e event-driven.
 ## Swagger
 Todas as api´s rest podem ser utilizadas com Swagger ou através do projeto de testes unitários.
 
+* Link para acessar as api´s https://localhost:44338/swagger/index.html
+
 ![Api´s Rest Swagger](image/swagger.png)
 
 
