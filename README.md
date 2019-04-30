@@ -27,7 +27,7 @@
 
 ## Used Software
 * Microsft Windows 10 Pro
-* Microsoft Visual Studio Professional 2019 (versão 16.0.2)
+* Microsoft Visual Studio Professional 2019 (versÃ£o 16.0.2)
 * Docker Desktop Community Version 2.0.0.3 (31259) - Channel: stable - Build: 8858db3
 * Microsoft SQL Server 2017 (RTM-CU13) (KB4466404) - 14.0.3048.4 (X64) Developer Edition 
 * SQL Server Management Studio v17.4
@@ -35,70 +35,70 @@
 ## Sobre o Desafio:
 O desafio proposto pela Stone Payments pode ser acessado aqui -> https://github.com/stone-payments/microtef-hire-me
 
-Basicamente o desafio consiste na implementação de um sistema que simule o processo de uma transação financeira.
+Basicamente o desafio consiste na implementaÃ§Ã£o de um sistema que simule o processo de uma transaÃ§Ã£o financeira.
 
-Para simular um sistema de transação financeira foi implementado:
+Para simular um sistema de transaÃ§Ã£o financeira foi implementado:
 1. **Cliente WPF**
-2. **Servidor de comunicações**
+2. **Servidor de comunicaÃ§Ãµes**
 
-## Sobre as Regras de Negócio do Desafio Proposto pela Stone
+## Sobre as Regras de NegÃ³cio do Desafio Proposto pela Stone
 1. **Cliente WPF (AmonRa)**
 	
 	* Deve haver 4 telas principais:
-		* **Tela de transação**: input dos dados da transação e envio da transação para o servidor
-		* **Tela de consulta das transações efetuadas**: lista das transações efetuadas
-		* **Sondagem das transações**: listagem de todas as operações realizadas referente a um único cartão
-		* **Cadastro de clientes**: deverá ser capaz de cadastrar clientes que possam passar transações
+		* **Tela de transaÃ§Ã£o**: input dos dados da transaÃ§Ã£o e envio da transaÃ§Ã£o para o servidor
+		* **Tela de consulta das transaÃ§Ãµes efetuadas**: lista das transaÃ§Ãµes efetuadas
+		* **Sondagem das transaÃ§Ãµes**: listagem de todas as operaÃ§Ãµes realizadas referente a um Ãºnico cartÃ£o
+		* **Cadastro de clientes**: deverÃ¡ ser capaz de cadastrar clientes que possam passar transaÃ§Ãµes
 	
-	* Catálogo de cartões virtuais com o número razoável de cartões para testar diferentes cenários
-		* **Propriedades básicas**
-			* A senha de cada cartão do catálogo deve estar criptografada de algum jeito
-			* Com esse catálogo, a verificação da senha do cartão deve ser feita apenas pelo servidor
+	* CatÃ¡logo de cartÃµes virtuais com o nÃºmero razoÃ¡vel de cartÃµes para testar diferentes cenÃ¡rios
+		* **Propriedades bÃ¡sicas**
+			* A senha de cada cartÃ£o do catÃ¡logo deve estar criptografada de algum jeito
+			* Com esse catÃ¡logo, a verificaÃ§Ã£o da senha do cartÃ£o deve ser feita apenas pelo servidor
 
-2. **Servidor Comunicações (Karnak)**
-	* O servidor irá simular justamente o que a Stone é, uma **adquirente**
-	* Tipos de cartão aceitos: **crédito** e **débito**
+2. **Servidor ComunicaÃ§Ãµes (Karnak)**
+	* O servidor irÃ¡ simular justamente o que a Stone Ã©, uma **adquirente**
+	* Tipos de cartÃ£o aceitos: **crÃ©dito** e **dÃ©bito**
 	* Bandeiras: **Visa**, **MasterCard**, **American Express**
-	* O servidor deve esperar por uma transação
+	* O servidor deve esperar por uma transaÃ§Ã£o
 
-3. **Limite de Crédito**
-	* O limite de crédito para cada cliente deve ser considerado
+3. **Limite de CrÃ©dito**
+	* O limite de crÃ©dito para cada cliente deve ser considerado
 
-4. **Comunicação entre cliente e servidor**
-	* A comunicação pode acontecer em JSON ou XML
+4. **ComunicaÃ§Ã£o entre cliente e servidor**
+	* A comunicaÃ§Ã£o pode acontecer em JSON ou XML
 
 ## Como o desafio foi resolvido
 
 ### Sobre a Senha
-Como em qualquer transação do Mundo real, na solução do desafio proposta não foi diferente. 
+Como em qualquer transaÃ§Ã£o do Mundo real, na soluÃ§Ã£o do desafio proposta nÃ£o foi diferente. 
 
-Senha sempre é uma questão delicada, para não termos nenhum problema as senhas **sempre são transmitidas de forma criptografada**.
+Senha sempre Ã© uma questÃ£o delicada, para nÃ£o termos nenhum problema as senhas **sempre sÃ£o transmitidas de forma criptografada**.
 
-As senhas enviadas do cliente WPF (AmonRa) para o servidor de comunicações (Karnak) são transmitidas de forma criptografada utilizando criptografia de 256 bits.
+As senhas enviadas do cliente WPF (AmonRa) para o servidor de comunicaÃ§Ãµes (Karnak) sÃ£o transmitidas de forma criptografada utilizando criptografia de 256 bits.
 
-A verificação da senha fica a cargo do servidor de comunicações (Karnak), o qual verifica se a senha informada é a mesma armazenada no banco de dados.
+A verificaÃ§Ã£o da senha fica a cargo do servidor de comunicaÃ§Ãµes (Karnak), o qual verifica se a senha informada Ã© a mesma armazenada no banco de dados.
 
-Todas as senhas armazenadas no banco de dados são criptografadas utilizando criptografia de 256 bits.
+Todas as senhas armazenadas no banco de dados sÃ£o criptografadas utilizando criptografia de 256 bits.
 
 Veja abaixo as senhas criptografadas no banco de dados.
 ![AmonRa - Banco de dados - Senhas Criptografadas](image/senhas_criptografadas_armazenadas_bd.png)
 
-**Os cartões armazenados no banco de dados possuem senha 985471**
+**Os cartÃµes armazenados no banco de dados possuem senha 985471**
 
-### Sobre o Docker do Servidor de Comunicações Karnak
-Para gerar uma imagem docker do servidor de comunicações seguir os passos:
+### Sobre o Docker do Servidor de ComunicaÃ§Ãµes Karnak
+Para gerar uma imagem docker do servidor de comunicaÃ§Ãµes seguir os passos:
 1. Abrir uma tela do PowerShell ou Command Prompt **em modo Administrador**
 2. Acessar a pasta do codigo fonte do projeto **/KarnakCore/src/**
 	* cd <local onde esta o codigo fonte>\microtef-hire-me6\Desafio_Stone\KarnakCore\src
 3. Digitar o command **docker build -t karnakservicesapi:dev .** 
-	* onde: karnakservicesapi é o nome da imagem
-	* dev: a versão
+	* onde: karnakservicesapi Ã© o nome da imagem
+	* dev: a versÃ£o
 	* .: local onde esta fisicamente o arquivo **Dockerfile**
 	* se tudo deu certo, o processo de criar imagem foi iniciado. Aguarde...
-![Docker Imagem - Servidor Comunicações Karnak](image/docker_imagem_servidor_comunicacoes_karnak.png)
+![Docker Imagem - Servidor ComunicaÃ§Ãµes Karnak](image/docker_imagem_servidor_comunicacoes_karnak.png)
 
-### Docker Servidor Comunicações - Iniciar Serviço
-Para iniciar a imagem Docker do servidor de comunicações seguir os passos:
+### Docker Servidor ComunicaÃ§Ãµes - Iniciar ServiÃ§o
+Para iniciar a imagem Docker do servidor de comunicaÃ§Ãµes seguir os passos:
 1. Abrir uma tela do PowerShell ou Command Prompt **em modo Administrador**
 2. Digitar o comando **docker images**
 3. Localizar o nome da imagem **karnakservicesapi**
@@ -109,7 +109,7 @@ Para iniciar a imagem Docker do servidor de comunicações seguir os passos:
 	* 80: porta interna
 	* 95255d998610: id da imagem
 
-Se tudo deu certo, o resultado esperado é:
+Se tudo deu certo, o resultado esperado Ã©:
 PS C:\Users\stefa> docker run -p 5001:80 95255d998610
 info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
       User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
@@ -124,9 +124,9 @@ Content root path: /app
 Now listening on: http://[::]:80
 Application started. Press Ctrl+C to shut down.
 
-**PARA ACESSAR API´S REST DO SERVIDOR, UTILIZAR POR EXEMPLO A URL http://192.168.0.11:5001/api/v1/cardtype-management/**
+**PARA ACESSAR APIÂ´S REST DO SERVIDOR, UTILIZAR POR EXEMPLO A URL http://192.168.0.11:5001/api/v1/cardtype-management/**
 
-O servidor de comunicações possuí diversas api´s rest de acesso. Para saber quais são acessar os controllers da aplicação.
+O servidor de comunicaÃ§Ãµes possuÃ­ diversas apiÂ´s rest de acesso. Para saber quais sÃ£o acessar os controllers da aplicaÃ§Ã£o.
 
 **Dica**: para ver os logs em tempo real dos containers docker utilizar o comando **docker logs -f <nome do container>**, 
 exemplo: docker logs -f karnakservicesapi 
@@ -134,18 +134,18 @@ exemplo: docker logs -f karnakservicesapi
 ### Sobre o Docker - SQL Server
 O banco de dados **Microsoft SQL Server** foi instalado dentro de um container Docker
 
-Os procedimentos de instalação do Microsoft SQL Server dentro de um container Docker podem ser visualizadas aqui -> https://medium.com/@renato.groffe/net-sql-server-2017-parte-1-executando-o-sql-server-em-um-container-docker-83abbed8eb7e
+Os procedimentos de instalaÃ§Ã£o do Microsoft SQL Server dentro de um container Docker podem ser visualizadas aqui -> https://medium.com/@renato.groffe/net-sql-server-2017-parte-1-executando-o-sql-server-em-um-container-docker-83abbed8eb7e
 
-Os dados utilizados para instalação:
+Os dados utilizados para instalaÃ§Ã£o:
 1. Nome do servidor: localhost, 11433
-2. Autenticação:		
+2. AutenticaÃ§Ã£o:		
 	* Usuario: sa
 	* Senha: DockerSql2017!
-3. O scrit sql para geração dos objetos está aqui -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/KarnakCore/sql/GenerateDataBase.sql
+3. O scrit sql para geraÃ§Ã£o dos objetos estÃ¡ aqui -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/KarnakCore/sql/GenerateDataBase.sql
 4. O backup do banco de dados pode ser encontado aqui -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/KarnakCore/sql/KarnakStoneV13.bak
 
 ### Sobre o Microsoft SQL Server
-Os dados são armazenados no banco de dados Microsoft SQL Server.
+Os dados sÃ£o armazenados no banco de dados Microsoft SQL Server.
 
 A estrutura do banco de dados:
 
@@ -155,37 +155,37 @@ A estrutura do banco de dados:
 Para realizar a criptografia e descriptografia da senha foi utilizado a classe **StringCipher**.
 
 ### Mapemanento ORM
-Para atender ao desafio proposto pela Stone foi estruturado um banco de dados com algumas tabelas básicas para a operação do sistema.
+Para atender ao desafio proposto pela Stone foi estruturado um banco de dados com algumas tabelas bÃ¡sicas para a operaÃ§Ã£o do sistema.
 
-O sistema é composto por sete tabelas, abaixo suas estruturas e seus relacionamentos.
+O sistema Ã© composto por sete tabelas, abaixo suas estruturas e seus relacionamentos.
 
 ![AmonRa - Banco de dados - Mapeamento ORM](image/banco_de_dados_relacionamentos.png)
 Banco de dados - Mapeamento ORM
 
-### Possíveis Retornos do Servidor
-1. Senha inválida
-2. Cartão bloqueado
-3. Mínimo de 10 centavos
-4. Registro não encontrado
+### PossÃ­veis Retornos do Servidor
+1. Senha invÃ¡lida
+2. CartÃ£o bloqueado
+3. MÃ­nimo de 10 centavos
+4. Registro nÃ£o encontrado
 5. Senha Incorreta
 6. Aprovado
-7. Valor inválido
-8. Transação aprovada
+7. Valor invÃ¡lido
+8. TransaÃ§Ã£o aprovada
 9. Saldo insuficiente
-10. Senha entre 4 e 6 dítigos
-11. Transação negada
+10. Senha entre 4 e 6 dÃ­tigos
+11. TransaÃ§Ã£o negada
 12. Erro no tamanho da senha
-13. Cartão vencido
+13. CartÃ£o vencido
 
 ### Sobre Event Sourcing
-Por se tratar de um desafio, no qual são realizadas transações com cartões, visando uma maior segurança e rastreabilidade
+Por se tratar de um desafio, no qual sÃ£o realizadas transaÃ§Ãµes com cartÃµes, visando uma maior seguranÃ§a e rastreabilidade
 optou-se por implmentar o **Event Sourcing**.
 
-A finalidade do Event Sourcing é armazenar no banco de dados histórico de todas as operações recebidas ou enviadas 
-pelo servidor de comunicações (Karnak).
+A finalidade do Event Sourcing Ã© armazenar no banco de dados histÃ³rico de todas as operaÃ§Ãµes recebidas ou enviadas 
+pelo servidor de comunicaÃ§Ãµes (Karnak).
 
-### Funções Disponíveis por Tipo de Operação:
-1. **Tipo Transação**
+### FunÃ§Ãµes DisponÃ­veis por Tipo de OperaÃ§Ã£o:
+1. **Tipo TransaÃ§Ã£o**
 	* Incluir
 	* Alterar
 	* Excluir
@@ -194,7 +194,7 @@ pelo servidor de comunicações (Karnak).
 		* Por id
 	* Listagem
 	* Historico
-2. **Status Transação**
+2. **Status TransaÃ§Ã£o**
 	* Incluir
 	* Alterar
 	* Excluir
@@ -203,7 +203,7 @@ pelo servidor de comunicações (Karnak).
 		* Por id
 	* Listagem
 	* Historico
-3. **Bandeira Cartão**
+3. **Bandeira CartÃ£o**
 	* Incluir
 	* Alterar
 	* Excluir
@@ -212,7 +212,7 @@ pelo servidor de comunicações (Karnak).
 		* Por id
 	* Listagem
 	* Historico
-4. **Tipo Cartão**
+4. **Tipo CartÃ£o**
 	* Incluir
 	* Alterar
 	* Excluir
@@ -230,7 +230,7 @@ pelo servidor de comunicações (Karnak).
 		* Por id
 	* Listagem
 	* Historico
-6. **Cartões**
+6. **CartÃµes**
 	* Incluir
 	* Alterar
 	* Excluir
@@ -239,50 +239,50 @@ pelo servidor de comunicações (Karnak).
 		* Por id
 	* Listagem
 	* Historico
-7. **Transações**
+7. **TransaÃ§Ãµes**
 	* Incluir
 	* Consultar
 		* Por id
-	* Sondagem das transações efetuadas
-	* Listagem somente das transações efetuadas
-	* Listagem das transações com os relacionamentos de dados
+	* Sondagem das transaÃ§Ãµes efetuadas
+	* Listagem somente das transaÃ§Ãµes efetuadas
+	* Listagem das transaÃ§Ãµes com os relacionamentos de dados
 
-### Para resolver o desafio foi necessário criar 4 projetos distintos:
+### Para resolver o desafio foi necessÃ¡rio criar 4 projetos distintos:
 1. **AmonRa** - cliente WPF
-2. **EFCoreMapStone** - entity framework, cria o banco de dados, as tabelas, PK´s e FK´s
-3. **UnitTesteKarnakStone** - responsável por realizar os testes unitários e de integração
-4. **KarnakCore** - o coração do projeto, responsável por tudo, **é o cara!**
+2. **EFCoreMapStone** - entity framework, cria o banco de dados, as tabelas, PKÂ´s e FKÂ´s
+3. **UnitTesteKarnakStone** - responsÃ¡vel por realizar os testes unitÃ¡rios e de integraÃ§Ã£o
+4. **KarnakCore** - o coraÃ§Ã£o do projeto, responsÃ¡vel por tudo, **Ã© o cara!**
 
 # 1 - O Projeto AmonRa - Cliente WPF
 O nome AmonRa foi escolhido por se tratar do pai dos Deuses, o senhor da verdade, no antigo egito.
 
 Para atender aos requisitos do desafio, foram criadas telas adicionais:
 
-![AmonRa - Cliente WPF - Tela Transações](image/amonra_cliente_wpf_tela_transacoes.jpg)
-Cliente WPF - Tela Transações
+![AmonRa - Cliente WPF - Tela TransaÃ§Ãµes](image/amonra_cliente_wpf_tela_transacoes.jpg)
+Cliente WPF - Tela TransaÃ§Ãµes
 
-![AmonRa - Cliente WPF - Tela Tipo Transação](image/amonra_cliente_wpf_tela_tipo_transacao.jpg)
-Cliente WPF - Tela Tipo Transações
+![AmonRa - Cliente WPF - Tela Tipo TransaÃ§Ã£o](image/amonra_cliente_wpf_tela_tipo_transacao.jpg)
+Cliente WPF - Tela Tipo TransaÃ§Ãµes
 
-![AmonRa - Cliente WPF - Tela Status Transação](image/amonra_cliente_wpf_tela_status_transacao.jpg)
-Cliente WPF - Tela Tipo Transações
+![AmonRa - Cliente WPF - Tela Status TransaÃ§Ã£o](image/amonra_cliente_wpf_tela_status_transacao.jpg)
+Cliente WPF - Tela Tipo TransaÃ§Ãµes
 
-![AmonRa - Cliente WPF - Tela Bandeira Cartão](image/amonra_cliente_wpf_tela_bandeira_cartao.jpg)
+![AmonRa - Cliente WPF - Tela Bandeira CartÃ£o](image/amonra_cliente_wpf_tela_bandeira_cartao.jpg)
 Cliente WPF - Tela Bandeira Cartao
 
-![AmonRa - Cliente WPF - Tela Tipo Cartão](image/amonra_cliente_wpf_tela_tipo_cartao.jpg)
-Cliente WPF - Tela Tipo Cartão
+![AmonRa - Cliente WPF - Tela Tipo CartÃ£o](image/amonra_cliente_wpf_tela_tipo_cartao.jpg)
+Cliente WPF - Tela Tipo CartÃ£o
 
 ![AmonRa - Cliente WPF - Tela Clientes](image/amonra_cliente_wpf_tela_cliente.jpg)
 Cliente WPF - Tela Clientes
 
-![AmonRa - Cliente WPF - Tela Cartões](image/amonra_cliente_wpf_tela_cartoes.jpg)
-Cliente WPF - Tela Cartões
+![AmonRa - Cliente WPF - Tela CartÃµes](image/amonra_cliente_wpf_tela_cartoes.jpg)
+Cliente WPF - Tela CartÃµes
 
-![AmonRa - Cliente WPF - Tela Listagem Transações](image/amonra_cliente_wpf_tela_listagem_transacoes.jpg)
+![AmonRa - Cliente WPF - Tela Listagem TransaÃ§Ãµes](image/amonra_cliente_wpf_tela_listagem_transacoes.jpg)
 Cliente WPF - Tela Listagem Transacoes
 
-![AmonRa - Cliente WPF - Tela Sondagem das Transações](image/amonra_cliente_wpf_tela_sondagem_das_transacoes.jpg)
+![AmonRa - Cliente WPF - Tela Sondagem das TransaÃ§Ãµes](image/amonra_cliente_wpf_tela_sondagem_das_transacoes.jpg)
 Cliente WPF - Tela Sondagem das Transacoes
 
 ![AmonRa - Cliente WPF - Tela Cadastro de Clientes](image/amonra_cliente_wpf_tela_cadastro_cliente.jpg)
@@ -290,81 +290,81 @@ Cliente WPF - Tela Cadastro Cliente
 
 ![AmonRa - Cliente WPF - Estutura Pastas](image/amonra_estutura_pastas.png)
 
-O projeto está estruturado da seguinte forma:
+O projeto estÃ¡ estruturado da seguinte forma:
 1. **Pasta Common**: classes comuns ao projeto
-	* Classe StringCipher.cs: responsável por realizar a criptografia e descriptografia da senha
-2. **Pasta Core**: responsável por efetuar transações
-	* Classe TransactionServer.cs: enviar transações para o servidor Karnak  
+	* Classe StringCipher.cs: responsÃ¡vel por realizar a criptografia e descriptografia da senha
+2. **Pasta Core**: responsÃ¡vel por efetuar transaÃ§Ãµes
+	* Classe TransactionServer.cs: enviar transaÃ§Ãµes para o servidor Karnak  
 3. **Pasta Models**: os modelos de dados		  
-	* São as classes que ajudam na realização dos parser´s dos dados que são enviados para o servidor ou que chegam do mesmo
-4. **Pasta SendRequestToServer**: enviar requisições para o servidor Karnak 
-	* São as classes que realizam conexão diretamente com o api rest do servidor Karnak
-5. **Pasta Services**: são os serviços que chamam as classes do passo 4
-	* As telas WPF chamam as classes de serviços, que por sua vez chamam as classes do passo 4
+	* SÃ£o as classes que ajudam na realizaÃ§Ã£o dos parserÂ´s dos dados que sÃ£o enviados para o servidor ou que chegam do mesmo
+4. **Pasta SendRequestToServer**: enviar requisiÃ§Ãµes para o servidor Karnak 
+	* SÃ£o as classes que realizam conexÃ£o diretamente com o api rest do servidor Karnak
+5. **Pasta Services**: sÃ£o os serviÃ§os que chamam as classes do passo 4
+	* As telas WPF chamam as classes de serviÃ§os, que por sua vez chamam as classes do passo 4
 
-### Catálogo de Cartões Virtuais
-São os cartões cadastrados no banco de dados, as informações dos cartões são:
-1. Número do cartão (cardnumber)
-2. Senha do cartão (password), a senha será exigida somente para cartões com chip
-3. Valor da transação (amount)
-4. Tipo da transação (crédito ou débito)
-5. Pacelas, quantidade de parcelas exibida somente para compras do tipo crédito
-6. Validade do cartão
-7. Bandeira do cartão (visa, master, amex)
+### CatÃ¡logo de CartÃµes Virtuais
+SÃ£o os cartÃµes cadastrados no banco de dados, as informaÃ§Ãµes dos cartÃµes sÃ£o:
+1. NÃºmero do cartÃ£o (cardnumber)
+2. Senha do cartÃ£o (password), a senha serÃ¡ exigida somente para cartÃµes com chip
+3. Valor da transaÃ§Ã£o (amount)
+4. Tipo da transaÃ§Ã£o (crÃ©dito ou dÃ©bito)
+5. Pacelas, quantidade de parcelas exibida somente para compras do tipo crÃ©dito
+6. Validade do cartÃ£o
+7. Bandeira do cartÃ£o (visa, master, amex)
 
-### Sondagem das Transações
-Para ver as transações realizads por algum cartão, é necessário escolher um cartão na tela da **Listagem Transações**.
+### Sondagem das TransaÃ§Ãµes
+Para ver as transaÃ§Ãµes realizads por algum cartÃ£o, Ã© necessÃ¡rio escolher um cartÃ£o na tela da **Listagem TransaÃ§Ãµes**.
 
-### Listagem Transações
-São todas as transações realizadas pelo servidor. 
-É possível acompanhar o histórico das transações de um determinado cartão.
-Todas as transações possuem status de **aprovada** ou **negada**.
+### Listagem TransaÃ§Ãµes
+SÃ£o todas as transaÃ§Ãµes realizadas pelo servidor. 
+Ã‰ possÃ­vel acompanhar o histÃ³rico das transaÃ§Ãµes de um determinado cartÃ£o.
+Todas as transaÃ§Ãµes possuem status de **aprovada** ou **negada**.
 
-### Realizando uma transação 
-Passos para realizar uma transação:
+### Realizando uma transaÃ§Ã£o 
+Passos para realizar uma transaÃ§Ã£o:
 1. Informar o valor
-2. Escolher um cartão do catálogo
-	* Se o cartão escolhido for do tipo **CHIP** o campo de senha **SERÁ** exibido
-	* Se o cartão escolhido for do tipo **TARJA** o campo de senha **NÃO SERÁ** exibido
-3. Escolher crédito ou débito
-	* Se a opção escolhida for **CRÉDITO** a opção parcelamento **SERÁ** exibida
-	* Se a opção escolhida for **DÉBITO** a opção parcelamento **NÃO SERÁ** exibida
-4. Confirmar a transação pressionando o botão
-	* Se ao pressionar o botão **CONFIRMAR** estiver faltando alguma informação obrigatória, um alerta será exibido
-5. Pressionou o botão e todas as informações preenchidas
-	* Será enviada para o servidor de comunicações (Karnak) uma requisição para realizar uma transação
-	* O servidor irá validar as informações enviadas, caso ocorra alguma restrição, um ou mais erros podem ser retornados:
-6. Diversas validações são realizadas pelo servidor de comunicações, caso alguma não seja satisfatória o mesmo irá retornar com erro. Os possíveis retornos podem ser vistos no item **Possíveis Retornos do Servidor**
+2. Escolher um cartÃ£o do catÃ¡logo
+	* Se o cartÃ£o escolhido for do tipo **CHIP** o campo de senha **SERÃ** exibido
+	* Se o cartÃ£o escolhido for do tipo **TARJA** o campo de senha **NÃƒO SERÃ** exibido
+3. Escolher crÃ©dito ou dÃ©bito
+	* Se a opÃ§Ã£o escolhida for **CRÃ‰DITO** a opÃ§Ã£o parcelamento **SERÃ** exibida
+	* Se a opÃ§Ã£o escolhida for **DÃ‰BITO** a opÃ§Ã£o parcelamento **NÃƒO SERÃ** exibida
+4. Confirmar a transaÃ§Ã£o pressionando o botÃ£o
+	* Se ao pressionar o botÃ£o **CONFIRMAR** estiver faltando alguma informaÃ§Ã£o obrigatÃ³ria, um alerta serÃ¡ exibido
+5. Pressionou o botÃ£o e todas as informaÃ§Ãµes preenchidas
+	* SerÃ¡ enviada para o servidor de comunicaÃ§Ãµes (Karnak) uma requisiÃ§Ã£o para realizar uma transaÃ§Ã£o
+	* O servidor irÃ¡ validar as informaÃ§Ãµes enviadas, caso ocorra alguma restriÃ§Ã£o, um ou mais erros podem ser retornados:
+6. Diversas validaÃ§Ãµes sÃ£o realizadas pelo servidor de comunicaÃ§Ãµes, caso alguma nÃ£o seja satisfatÃ³ria o mesmo irÃ¡ retornar com erro. Os possÃ­veis retornos podem ser vistos no item **PossÃ­veis Retornos do Servidor**
 
-### Cadastro de Cliente e Cartão
-Passos para realizar o cadastro de um cliente e cartão
+### Cadastro de Cliente e CartÃ£o
+Passos para realizar o cadastro de um cliente e cartÃ£o
 1. Informar o nome
 2. Informar o e-mail
-3. Informar data de aniversário
-4. Escolher tipo do cartão
-	* Se cartão escolhido for **CHIP** a opção para informar senha do cartão será exibida
-5. Escolher a bandeira do cartão
-6. Informar o número do cartão
-7. Data de expiração do cartão
-8. Limite do cartão
+3. Informar data de aniversÃ¡rio
+4. Escolher tipo do cartÃ£o
+	* Se cartÃ£o escolhido for **CHIP** a opÃ§Ã£o para informar senha do cartÃ£o serÃ¡ exibida
+5. Escolher a bandeira do cartÃ£o
+6. Informar o nÃºmero do cartÃ£o
+7. Data de expiraÃ§Ã£o do cartÃ£o
+8. Limite do cartÃ£o
 9. Pressionar Salvar
 	* **Em caso de falha**
-		* Todas as informações serão validatas, caso alguma não satisfaça alguma condição, um ou mais erros podem retornar
-		* Validações diferentes são realizadas para cartão e cliente
-		* Caso o servidor de comunicações retorne erro(s) os mesmos serão exibidos na tela
-		* Diversas validações são realizadas pelo servidor de comunicações, caso alguma não seja satisfatória o mesmo irá retornar com erro. Os possíveis retornos podem ser vistos no item **Possíveis Retornos do Servidor**
+		* Todas as informaÃ§Ãµes serÃ£o validatas, caso alguma nÃ£o satisfaÃ§a alguma condiÃ§Ã£o, um ou mais erros podem retornar
+		* ValidaÃ§Ãµes diferentes sÃ£o realizadas para cartÃ£o e cliente
+		* Caso o servidor de comunicaÃ§Ãµes retorne erro(s) os mesmos serÃ£o exibidos na tela
+		* Diversas validaÃ§Ãµes sÃ£o realizadas pelo servidor de comunicaÃ§Ãµes, caso alguma nÃ£o seja satisfatÃ³ria o mesmo irÃ¡ retornar com erro. Os possÃ­veis retornos podem ser vistos no item **PossÃ­veis Retornos do Servidor**
 	* **Em caso de sucesso**
-		* Uma mensagem de **SUCESSO** será exibida para o cadastro do cliente e do cartão 
+		* Uma mensagem de **SUCESSO** serÃ¡ exibida para o cadastro do cliente e do cartÃ£o 
 
 ### App.config
-O arquivo App.config possuí a **KEY** de configuração de conexão com o servidor de comunicações (Karnak).
+O arquivo App.config possuÃ­ a **KEY** de configuraÃ§Ã£o de conexÃ£o com o servidor de comunicaÃ§Ãµes (Karnak).
 
-Caso seja necessário realizar a troca da url, o arquivo está aqui -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/AmonRa/AmonRa/App.config
+Caso seja necessÃ¡rio realizar a troca da url, o arquivo estÃ¡ aqui -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/AmonRa/AmonRa/App.config
 
 # 2 - Sobre o Entity Framework Core
-Após criar as tabelas necessárias e realizar os devidos relacionamentos, configurar o arquivo KarnakContext.cs
+ApÃ³s criar as tabelas necessÃ¡rias e realizar os devidos relacionamentos, configurar o arquivo KarnakContext.cs
 
-Pesquisar no arquivo pelo termo "optionsBuilder.UseSqlServer" e realizar os ajustes necessários.
+Pesquisar no arquivo pelo termo "optionsBuilder.UseSqlServer" e realizar os ajustes necessÃ¡rios.
 
 **Seguir os passos**:
 1. dotnet ef migrations add mig1 -p EFCoreMapStoneV13
@@ -372,14 +372,14 @@ Pesquisar no arquivo pelo termo "optionsBuilder.UseSqlServer" e realizar os ajus
 3. dotnet ef migrations list -p EFCoreMapStoneV13
 4. Wooouuuu, tudo pronto! Agora vamos criar o banco de dados e as tabelas.
 5. dotnet ef database -v update -v -p EFCoreMapStoneV13
-6. se tudo correu bem, os scripts devem começar a serem exibidos
+6. se tudo correu bem, os scripts devem comeÃ§ar a serem exibidos
 
-# 3 - Sobre os Testes Unitários
-Testes unitários foram realizados em todas as api´s rest.
+# 3 - Sobre os Testes UnitÃ¡rios
+Testes unitÃ¡rios foram realizados em todas as apiÂ´s rest.
 
 Abaixo a lista de todos os testes efetuados.
 
-1. Bandeira Cartão
+1. Bandeira CartÃ£o
 	* Post_CardBrand_The_Name_Is_Required
 	* Delete_ByIdCardBrand_Valido
 	* Get_ByNameCardBrand
@@ -401,7 +401,7 @@ Abaixo a lista de todos os testes efetuados.
 	* Put_CardBrand_The_Guid_is_empty
 	* Post_CardBrand_The_Name_must_have_between_2_and_30_characters
 	* Delete_ByIdCardBrand_The_Guid_is_invalid_and_contains_00000000
-2. Tipo Cartão
+2. Tipo CartÃ£o
 	* Put_CardType_The_card_type_name_has_already_been_taken
 	* Get_AllCardType
 	* Post_CardType_Valido
@@ -423,7 +423,7 @@ Abaixo a lista de todos os testes efetuados.
 	* Delete_ByIdCardType_The_Guid_is_empty
 	* Delete_ByIdCardType_Valido
 	* Put_CardType_The_Guid_is_empty
-3. Cartão
+3. CartÃ£o
 	* Get_ByCardNumber
 	* Get_HistorycByIdCard
 	* Get_ByIdCard
@@ -456,7 +456,7 @@ Abaixo a lista de todos os testes efetuados.
 	* PasswordDecryptFail
 	* PasswordDecryptSuccess
 	* PasswordEncrypt
-6. Transação Status
+6. TransaÃ§Ã£o Status
 	* Get_ByIdTransactionStatus
 	* Put_TransactionStatus_The_Guid_is_empty
 	* Put_TransactionStatus_The_Name_must_have_between_2_and_30_characters
@@ -478,7 +478,7 @@ Abaixo a lista de todos os testes efetuados.
 	* Put_TransactionStatus_The_Guid_is_invalid_and_contains_00000000
 	* Post_TransactionStatus_The_Name_Is_Required
 	* Post_TransactionStatus_The_transaction_status_name_has_already_been_taken
-7. Transação Tipo
+7. TransaÃ§Ã£o Tipo
 	* Post_TransactionType_The_Name_Is_Required
 	* Delete_ByIdTransactionType_The_Guid_is_empty
 	* Get_HistorycByIdTransactionType
@@ -500,7 +500,7 @@ Abaixo a lista de todos os testes efetuados.
 	* Put_TransactionType_Valido
 	* Put_TransactionType_The_Guid_is_invalid_and_contains_00000000
 	* Post_TransactionType_The_transaction_type_id_has_already_been_taken_Run_2_Times
-8. Transação
+8. TransaÃ§Ã£o
 	* Post_Transaction_CHIP
 	* Delete_ByIdTransaction_Valido
 	* Post_Transaction_TARJA
@@ -510,112 +510,115 @@ Abaixo a lista de todos os testes efetuados.
 	* Get_AllTransaction
 	* Get_ByNameTransaction
 
-# 4 - Sobre o KarnakCore - Servidor de Comunicações
+# 4 - Sobre o KarnakCore - Servidor de ComunicaÃ§Ãµes
 
-O servidor de comunicações é o projeto responsável por fazer tudo funcionar, **ele é o cara!**
+O servidor de comunicaÃ§Ãµes Ã© o projeto responsÃ¡vel por fazer tudo funcionar, **ele Ã© o cara!**
 
 Por que o nome **Karnak**:
 
-Templo de Carnaque, ou simplesmente Carnaque, é um templo dedicado ao deus Amom-Rá. 
+Templo de Carnaque, ou simplesmente Carnaque, Ã© um templo dedicado ao deus Amom-RÃ¡. 
 
-Tem esse nome devido a uma aldeia vizinha chamada Carnaque, mas no tempo dos antigos faraós a aldeia 
+Tem esse nome devido a uma aldeia vizinha chamada Carnaque, mas no tempo dos antigos faraÃ³s a aldeia 
 era conhecida como Ipet-sut.
 
-Maiores informações sobre o templo de Karnak aqui -> https://www.penaestrada.blog.br/luxor-o-templo-de-karnak/
+Maiores informaÃ§Ãµes sobre o templo de Karnak aqui -> https://www.penaestrada.blog.br/luxor-o-templo-de-karnak/
 
 
 ## Sobre CQRS
-CQRS significa Command Query Responsibility Segregation. Como o nome já diz, é sobre separar a responsabilidade de escrita e leitura de seus dados.
+CQRS significa Command Query Responsibility Segregation. Como o nome jÃ¡ diz, Ã© sobre separar a responsabilidade de escrita e leitura de seus dados.
 
-CQRS é um pattern, um padrão arquitetural assim como Event Sourcing, Transaction Script e etc. 
+CQRS Ã© um pattern, um padrÃ£o arquitetural assim como Event Sourcing, Transaction Script e etc. 
 
-O CQRS não é um estilo arquitetural como desenvolvimento em camadas, modelo client-server, REST e etc.
+O CQRS nÃ£o Ã© um estilo arquitetural como desenvolvimento em camadas, modelo client-server, REST e etc.
 
-Atualmente as aplicações não são mais para atender dez usuários simultâneos, a maioria das novas aplicações nascem com
-premisas de escalabilidade, performance e disponibilidade, fazer uma aplicação funcionar bem para cargas de trabalho 
-de forma elástica é uma tarefa extremamente complexa.
+Atualmente as aplicaÃ§Ãµes nÃ£o sÃ£o mais para atender dez usuÃ¡rios simultÃ¢neos, a maioria das novas aplicaÃ§Ãµes nascem com
+premisas de escalabilidade, performance e disponibilidade, fazer uma aplicaÃ§Ã£o funcionar bem para cargas de trabalho 
+de forma elÃ¡stica Ã© uma tarefa extremamente complexa.
 
-O CQRS prega a divisão de responsabilidade de gravação e escrita de forma conceitual e física. 
+O CQRS prega a divisÃ£o de responsabilidade de gravaÃ§Ã£o e escrita de forma conceitual e fÃ­sica. 
 
-Isto significa que além de ter meios separados para gravar e obter um dado os bancos de dados também são diferentes. 
+Isto significa que alÃ©m de ter meios separados para gravar e obter um dado os bancos de dados tambÃ©m sÃ£o diferentes. 
 
-As consultas são feitas de forma síncrona em uma base desnormalizada separada e as gravações de forma assíncrona em um banco normalizado.
+As consultas sÃ£o feitas de forma sÃ­ncrona em uma base desnormalizada separada e as gravaÃ§Ãµes de forma assÃ­ncrona em um banco normalizado.
 
-![Relação cliente-servidor com sonda](image/CQRS_FluxoSimples.jpg)
+![RelaÃ§Ã£o cliente-servidor com sonda](image/CQRS_FluxoSimples.jpg)
 
 ## Segregar as responsabilidades em QueryStack e CommandStack
-A ideia básica é segregar as responsabilidades da aplicação em:
+A ideia bÃ¡sica Ã© segregar as responsabilidades da aplicaÃ§Ã£o em:
 
 * Command
-	* Operações que modificam o estado dos dados na aplicação.
+	* OperaÃ§Ãµes que modificam o estado dos dados na aplicaÃ§Ã£o.
 * Query 
-	* Operações que recuperam informações dos dados na aplicação.
+	* OperaÃ§Ãµes que recuperam informaÃ§Ãµes dos dados na aplicaÃ§Ã£o.
 
 **Para resolver o desafio foi utilizado uma arquitetura de N camadas, separarando as responsabilidades em CommandStack e QueryStack.**
 
 ## QueryStack
-A QueryStack é uma camada síncrona que recupera os dados de um banco de leitura desnormalizado.
+A QueryStack Ã© uma camada sÃ­ncrona que recupera os dados de um banco de leitura desnormalizado.
 
 ## CommandStack
-O CommandStack por sua vez é potencialmente assíncrono. 
+O CommandStack por sua vez Ã© potencialmente assÃ­ncrono. 
 
-O CommandStack segue uma abordagem behavior-centric onde toda intenção de negócio é inicialmente disparada pela UI como um caso de uso. 
+O CommandStack segue uma abordagem behavior-centric onde toda intenÃ§Ã£o de negÃ³cio Ã© inicialmente disparada pela UI como um caso de uso. 
 
-Utilizamos o conceito de Commands para representar uma intenção de negócio. 
+Utilizamos o conceito de Commands para representar uma intenÃ§Ã£o de negÃ³cio. 
 
-Os Commands são declarados de forma imperativa (ex. Transaction) e são disparados assincronamente no formato de eventos, 
-são interpretados pelos CommandHandlers e retornam um evento de sucesso ou falha.
+Os Commands sÃ£o declarados de forma imperativa (ex. Transaction) e sÃ£o disparados assincronamente no formato de eventos, 
+sÃ£o interpretados pelos CommandHandlers e retornam um evento de sucesso ou falha.
 
-Toda vez que um Command é disparado e altera o estado de uma entidade no banco de gravação um processo tem que ser disparado para 
-os agentes que irão atualizar os dados necessários no banco de leitura.
+Toda vez que um Command Ã© disparado e altera o estado de uma entidade no banco de gravaÃ§Ã£o um processo tem que ser disparado para 
+os agentes que irÃ£o atualizar os dados necessÃ¡rios no banco de leitura.
 
 ## Arquitetura comparativa
-A imagem do lado esquerdo representa uma aplicação padrão.
+A imagem do lado esquerdo representa uma aplicaÃ§Ã£o padrÃ£o.
 
-A imagem do lado direito representa uma aplicação CQRS.
+A imagem do lado direito representa uma aplicaÃ§Ã£o CQRS.
 
 ![Arquitetura comparativa](image/arquitetura_comparativa.png)
 
-## Arquitetura utilizada na resolução do desafio Stone
+## Arquitetura utilizada na resoluÃ§Ã£o do desafio Stone
 
-![Relação cliente-servidor com sonda](image/CQRS_BUS.jpg)
+![RelaÃ§Ã£o cliente-servidor com sonda](image/CQRS_BUS.jpg)
 
 ## Vantagens de utilizar CQRS
-A implementação do CQRS quebra o conceito monolítico clássico de uma implementação de arquitetura em N camadas onde todo o processo 
-de escrita e leitura passa pelas mesma camadas e concorre entre si no processamento de regras de negócio e uso de banco de dados.
+A implementaÃ§Ã£o do CQRS quebra o conceito monolÃ­tico clÃ¡ssico de uma implementaÃ§Ã£o de arquitetura em N camadas onde todo o processo 
+de escrita e leitura passa pelas mesma camadas e concorre entre si no processamento de regras de negÃ³cio e uso de banco de dados.
 
-Este tipo de abordagem aumenta a disponibilidade e escalabilidade da aplicação e a melhoria na performance surge principalmente pelos aspectos:
+Este tipo de abordagem aumenta a disponibilidade e escalabilidade da aplicaÃ§Ã£o e a melhoria na performance surge principalmente pelos aspectos:
 
-* Todos comandos são assíncronos e processados em fila, assim diminui-se o tempo de espera.
+* Todos comandos sÃ£o assÃ­ncronos e processados em fila, assim diminui-se o tempo de espera.
 
-* Os processos que envolvem regras de negócio existem apenas no sentido da inclusão ou alteração do estado das informações.
+* Os processos que envolvem regras de negÃ³cio existem apenas no sentido da inclusÃ£o ou alteraÃ§Ã£o do estado das informaÃ§Ãµes.
 
-* As consultas na QueryStack são feitas de forma separada e independente e não dependem do processamento da CommandStack.
+* As consultas na QueryStack sÃ£o feitas de forma separada e independente e nÃ£o dependem do processamento da CommandStack.
 
-* É possível escalar separadamente os processos da CommandStack e da QueryStack.
+* Ã‰ possÃ­vel escalar separadamente os processos da CommandStack e da QueryStack.
  
-Uma outra vantagem de utilizar o CQRS é que toda representação do seu domínio será mais expressiva e reforçará a utilização da linguagem ubíqua 
-nas intenções de negócio.
+Uma outra vantagem de utilizar o CQRS Ã© que toda representaÃ§Ã£o do seu domÃ­nio serÃ¡ mais expressiva e reforÃ§arÃ¡ a utilizaÃ§Ã£o da linguagem ubÃ­qua 
+nas intenÃ§Ãµes de negÃ³cio.
 
-Toda a implementação do CQRS pattern pode ser feito manualmente, sendo necessário escrever diversos tipos de classes para cada aspecto, porém 
-é possível encontrar alguns frameworks de CQRS que vão facilitar um pouco a implementação e reduzir o tempo de codificação.
+Toda a implementaÃ§Ã£o do CQRS pattern pode ser feito manualmente, sendo necessÃ¡rio escrever diversos tipos de classes para cada aspecto, porÃ©m 
+Ã© possÃ­vel encontrar alguns frameworks de CQRS que vÃ£o facilitar um pouco a implementaÃ§Ã£o e reduzir o tempo de codificaÃ§Ã£o.
 
 ## Arquitetura Sugerida
-Abaixo arquitetura sugerida para resolução do desafio de uma forma mais escalável. 
+Abaixo arquitetura sugerida para resoluÃ§Ã£o do desafio de uma forma mais escalÃ¡vel. 
 
-Essa arquitetura trabalha diretamente com microserviços, fila e event-driven.
+Essa arquitetura trabalha diretamente com microserviÃ§os, fila e event-driven.
 
 ![Arquitetura Sugerida](image/arquitetura_sugerida.png)
 
 ![Arquitetura Sugerida Detalhada](image/arquitetura_sugerida_detalhada.png)
 
 ## Swagger
-Todas as api´s rest podem ser utilizadas com Swagger ou através do projeto de testes unitários.
+Todas as apiÂ´s rest podem ser utilizadas com Swagger ou atravÃ©s do projeto de testes unitÃ¡rios.
 
-![Api´s Rest Swagger](image/swagger.png)
+![ApiÂ´s Rest Swagger](image/swagger.png)
 
 
 ## Gerar Banco de Dados
 * Executar script -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/KarnakCore/sql/GenerateDataBase.sql
+
+## Restore Banco de Dados
+* O arquivo estÃ¡ aqui -> https://github.com/silvastefan/microtef-hire-me/blob/master/Desafio_Stone/KarnakCore/sql/KarnakStoneV13.bak
 
 
