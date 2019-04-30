@@ -101,11 +101,7 @@ Para gerar uma imagem docker do servidor de comunicações seguir os passos:
 
 ### Docker Servidor Comunicações - Iniciar Serviço
 
-=====================================================================================================================
-|                                                                                                                   |
-| A imagem Docker do servidor de comunicações pode ser baixada **docker pull stefansilva/stefansilva:karnakstone**  |
-|                                                                                                                   |
-=====================================================================================================================
+## A imagem Docker do servidor de comunicações pode ser baixada **docker pull stefansilva/stefansilva:karnakstone**
 
 Para iniciar a imagem Docker do servidor de comunicações seguir os passos:
 1. Abrir uma tela do PowerShell ou Command Prompt **em modo Administrador**
