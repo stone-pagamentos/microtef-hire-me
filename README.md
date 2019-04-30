@@ -135,7 +135,7 @@ exemplo: docker logs -f karnakservicesapi
 O banco de dados **Microsoft SQL Server** foi instalado dentro de um container Docker
 
 ***===================[ IMPORTANTE!!! ]===================*** 
-*Para restaurar o banco de dados, o arquivo ***KarnakStoneV13.bak*** deve ser copiado para a pasta ***C:\SQLServer2017\***
+* Para restaurar o banco de dados, o arquivo ***KarnakStoneV13.bak*** deve ser copiado para a pasta ***C:\SQLServer2017\***
 
 Os procedimentos de instalação do Microsoft SQL Server dentro de um container Docker podem ser visualizadas aqui -> https://medium.com/@renato.groffe/net-sql-server-2017-parte-1-executando-o-sql-server-em-um-container-docker-83abbed8eb7e
 
