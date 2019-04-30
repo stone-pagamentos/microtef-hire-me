@@ -140,7 +140,8 @@ O banco de dados **Microsoft SQL Server** foi instalado dentro de um container D
 Os procedimentos de instalação do Microsoft SQL Server dentro de um container Docker podem ser visualizadas aqui -> https://medium.com/@renato.groffe/net-sql-server-2017-parte-1-executando-o-sql-server-em-um-container-docker-83abbed8eb7e
 
 Os dados utilizados para instalação:
-1. Nome do servidor: localhost, 11433
+1. Nome do servidor: **localhost ou o IP** onde está instalado o banco de dados, 11433
+	* Exemplo: localhost, 11433
 2. Autenticação:		
 	* Usuario: sa
 	* Senha: DockerSql2017!
