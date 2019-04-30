@@ -99,6 +99,9 @@ Para gerar uma imagem docker do servidor de comunicações seguir os passos:
 	* se tudo deu certo, o processo de criar imagem foi iniciado. Aguarde...
 ![Docker Imagem - Servidor Comunicações Karnak](image/docker_imagem_servidor_comunicacoes_karnak.png)
 
+* **Tagear a imagem**: docker tag 0792b7f18a26(id da imagem) stefansilva/stefansilva:karnakstone
+* **Enviar para Docker Hub a imagem criada**: docker push stefansilva/stefansilva:karnakstone
+
 ### Docker Servidor Comunicações - Iniciar Serviço
 
 ## Docker - Baixar Imagem Servidor Comunicações Karnak
