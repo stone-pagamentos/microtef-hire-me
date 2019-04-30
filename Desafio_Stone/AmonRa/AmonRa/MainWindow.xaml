@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AmonRa"
         mc:Ignorable="d"
-        Title="Desafio Stone - Projeto Karnak / Amon-Ra" Height="745.699" Width="1232.335" WindowState="Maximized">
-    <Grid Margin="0,0,-0.4,-126">
-        <TabControl IsSynchronizedWithCurrentItem="True" SelectionChanged="TabControl_SelectionChanged" HorizontalAlignment="Left" Height="832" VerticalAlignment="Top" Width="1254" Margin="0,0,-28,0" Name="tab_control">
+        Title="Desafio Stone - Projeto Karnak / Amon-Ra" Height="814.699" Width="1232.335" WindowState="Maximized">
+    <Grid Margin="0,0,0,-61">
+        <TabControl IsSynchronizedWithCurrentItem="True" SelectionChanged="TabControl_SelectionChanged" HorizontalAlignment="Left" Height="749" VerticalAlignment="Top" Width="1254" Margin="0,0,-30,0" Name="tab_control">
             <TabItem Header="Transações" IsSelected="True">
-                <Grid Background="#f6f3ed " Margin="0,14,36.8,18.6" RenderTransformOrigin="0.605,0.574">
+                <Grid Background="#f6f3ed " Margin="0,14,37,-58" RenderTransformOrigin="0.605,0.574">
                     <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="18,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" Name="cartao_1"/>
                     <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="18,158,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" Name="cartao_2"/>
                     <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="18,294,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" Name="cartao_3"/>
@@ -102,88 +102,89 @@
                     <Label Content="Natanael Oliveirao" HorizontalAlignment="Left" Margin="945,433,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="210" />
                     <Label Content="08/2022" HorizontalAlignment="Left" Margin="949,519,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="2.355,-0.656" />
                     <RadioButton x:Name="CARTAO_4024217768458512" Content="4024217768458512" HorizontalAlignment="Left" Margin="954,483,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="191" Checked="RadioButton_Checked"/>
-                    <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="20,607,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" x:Name="cartao_11"/>
-                    <Image HorizontalAlignment="Left" Height="36" Margin="189,691,0,0" VerticalAlignment="Top" Width="36" Source="Image/visa_icon.png"/>
-                    <Label Content="Maria Fernanda" HorizontalAlignment="Left" Margin="20,610,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="210" />
-                    <Label Content="08/2022" HorizontalAlignment="Left" Margin="24,696,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="2.355,-0.656" />
-                    <RadioButton x:Name="CARTAO_4024207342152322" Content="4024207342152322" HorizontalAlignment="Left" Margin="29,660,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="191" Checked="RadioButton_Checked"/>
-                    <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="253,607,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" x:Name="cartao_13"/>
-                    <Label Content="Paulo Rufino" HorizontalAlignment="Left" Margin="255,609,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="210" />
-                    <Label Content="01/2027" HorizontalAlignment="Left" Margin="259,695,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="2.355,-0.656" />
-                    <RadioButton x:Name="CARTAO_4024207142113372" Content="4024207142113372" HorizontalAlignment="Left" Margin="264,659,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="191" Checked="RadioButton_Checked"/>
-                    <Image HorizontalAlignment="Left" Height="36" Margin="424,691,0,0" VerticalAlignment="Top" Width="36" Source="Image/mastercard_icon.png"/>
-                    <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="486,607,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" x:Name="cartao_15"/>
-                    <Image HorizontalAlignment="Left" Height="36" Margin="657,690,0,0" VerticalAlignment="Top" Width="36" Source="Image/visa_icon.png"/>
-                    <Label Content="Patricia Fernandes" HorizontalAlignment="Left" Margin="488,609,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="210" />
-                    <Label Content="08/2022" HorizontalAlignment="Left" Margin="492,695,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="2.355,-0.656" />
-                    <RadioButton x:Name="CARTAO_4024217342158522" Content="4024217342158522" HorizontalAlignment="Left" Margin="497,659,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="191" Checked="RadioButton_Checked"/>
-                    <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="717,607,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" x:Name="cartao_17"/>
-                    <Image HorizontalAlignment="Left" Height="36" Margin="888,690,0,0" VerticalAlignment="Top" Width="36" Source="Image/visa_icon.png"/>
-                    <Label Content="Joao Pedro Silva" HorizontalAlignment="Left" Margin="719,609,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="210" />
-                    <Label Content="08/2022" HorizontalAlignment="Left" Margin="723,695,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="2.355,-0.656" />
-                    <RadioButton x:Name="CARTAO_4024217768158522" Content="4024217768158522" HorizontalAlignment="Left" Margin="728,659,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="191" Checked="RadioButton_Checked"/>
-                    <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="948,607,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" x:Name="cartao_19"/>
-                    <Image HorizontalAlignment="Left" Height="36" Margin="1119,690,0,0" VerticalAlignment="Top" Width="36" Source="Image/visa_icon.png"/>
-                    <Label Content="Fernando Fernandes" HorizontalAlignment="Left" Margin="950,609,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="210" />
-                    <Label Content="08/2022" HorizontalAlignment="Left" Margin="954,695,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="2.355,-0.656" />
-                    <RadioButton x:Name="CARTAO_4024216768358512" Content="4024216768358512" HorizontalAlignment="Left" Margin="959,659,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="191" Checked="RadioButton_Checked"/>
+                    <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="20,573,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" x:Name="cartao_11"/>
+                    <Image HorizontalAlignment="Left" Height="36" Margin="189,657,0,0" VerticalAlignment="Top" Width="36" Source="Image/visa_icon.png"/>
+                    <Label Content="Maria Fernanda" HorizontalAlignment="Left" Margin="20,576,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="210" />
+                    <Label Content="08/2022" HorizontalAlignment="Left" Margin="24,662,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="2.355,-0.656" />
+                    <RadioButton x:Name="CARTAO_4024207342152322" Content="4024207342152322" HorizontalAlignment="Left" Margin="29,626,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="191" Checked="RadioButton_Checked"/>
+                    <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="253,573,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" x:Name="cartao_13"/>
+                    <Label Content="Paulo Rufino" HorizontalAlignment="Left" Margin="255,575,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="210" />
+                    <Label Content="01/2027" HorizontalAlignment="Left" Margin="259,661,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="2.355,-0.656" />
+                    <RadioButton x:Name="CARTAO_4024207142113372" Content="4024207142113372" HorizontalAlignment="Left" Margin="264,625,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="191" Checked="RadioButton_Checked"/>
+                    <Image HorizontalAlignment="Left" Height="36" Margin="424,657,0,0" VerticalAlignment="Top" Width="36" Source="Image/mastercard_icon.png"/>
+                    <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="486,573,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" x:Name="cartao_15"/>
+                    <Image HorizontalAlignment="Left" Height="36" Margin="657,656,0,0" VerticalAlignment="Top" Width="36" Source="Image/visa_icon.png"/>
+                    <Label Content="Patricia Fernandes" HorizontalAlignment="Left" Margin="488,575,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="210" />
+                    <Label Content="08/2022" HorizontalAlignment="Left" Margin="492,661,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="2.355,-0.656" />
+                    <RadioButton x:Name="CARTAO_4024217342158522" Content="4024217342158522" HorizontalAlignment="Left" Margin="497,625,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="191" Checked="RadioButton_Checked"/>
+                    <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="717,573,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" x:Name="cartao_17"/>
+                    <Image HorizontalAlignment="Left" Height="36" Margin="888,656,0,0" VerticalAlignment="Top" Width="36" Source="Image/visa_icon.png"/>
+                    <Label Content="Joao Pedro Silva" HorizontalAlignment="Left" Margin="719,575,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="210" />
+                    <Label Content="08/2022" HorizontalAlignment="Left" Margin="723,661,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="2.355,-0.656" />
+                    <RadioButton x:Name="CARTAO_4024217768158522" Content="4024217768158522" HorizontalAlignment="Left" Margin="728,625,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="191" Checked="RadioButton_Checked"/>
+                    <Rectangle Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="121" Margin="945,571,0,0" Stroke="Black" VerticalAlignment="Top" Width="210" x:Name="cartao_19"/>
+                    <Image HorizontalAlignment="Left" Height="36" Margin="1114,654,0,0" VerticalAlignment="Top" Width="36" Source="Image/visa_icon.png"/>
+                    <Label Content="Fernando Fernandes" HorizontalAlignment="Left" Margin="950,575,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="210" />
+                    <Label Content="08/2022" HorizontalAlignment="Left" Margin="954,661,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="2.355,-0.656" />
+                    <RadioButton x:Name="CARTAO_4024216768358512" Content="4024216768358512" HorizontalAlignment="Left" Margin="959,625,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="191" Checked="RadioButton_Checked"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Tipo Transação" IsSelected="false">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,24">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="523*"/>
                         <ColumnDefinition Width="726*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,647.8,10" VerticalAlignment="Stretch" x:Name="GridTransactionTypes" Grid.ColumnSpan="2"/>
+                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,648,30" VerticalAlignment="Stretch" x:Name="GridTransactionTypes" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Status Transação" IsSelected="false">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,14">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="124*"/>
                         <ColumnDefinition Width="399*"/>
                         <ColumnDefinition Width="726*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,647.8,10" VerticalAlignment="Stretch" x:Name="GridTransactionStatus" Grid.ColumnSpan="3"/>
+                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,648,30" VerticalAlignment="Stretch" x:Name="GridTransactionStatus" Grid.ColumnSpan="3"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Bandeira Cartão" IsSelected="false">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,25">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="124*"/>
                         <ColumnDefinition Width="115*"/>
                         <ColumnDefinition Width="285*"/>
                         <ColumnDefinition Width="726*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,647.8,10" VerticalAlignment="Stretch" x:Name="GridBandeiraCartao" Grid.ColumnSpan="4"/>
+                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,648,23" VerticalAlignment="Stretch" x:Name="GridBandeiraCartao" Grid.ColumnSpan="4"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Tipo Cartão" IsSelected="false">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,32">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="124*"/>
                         <ColumnDefinition Width="115*"/>
                         <ColumnDefinition Width="285*"/>
                         <ColumnDefinition Width="726*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,647.8,10" VerticalAlignment="Stretch" x:Name="GridTipoCartao" Grid.ColumnSpan="4"/>
+                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,648,23" VerticalAlignment="Stretch" x:Name="GridTipoCartao" Grid.ColumnSpan="4"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Clientes" IsSelected="false">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,27">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="124*"/>
                         <ColumnDefinition Width="115*"/>
                         <ColumnDefinition Width="217*"/>
                         <ColumnDefinition Width="67*"/>
-                        <ColumnDefinition Width="726*"/>
+                        <ColumnDefinition Width="34*"/>
+                        <ColumnDefinition Width="691*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,400.8,10" VerticalAlignment="Stretch" x:Name="GridCustomer" Grid.ColumnSpan="5"/>
+                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,401,27" VerticalAlignment="Stretch" x:Name="GridCustomer" Grid.ColumnSpan="6"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Cartões" IsSelected="false">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,26">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="124*"/>
                         <ColumnDefinition Width="115*"/>
@@ -192,23 +193,24 @@
                         <ColumnDefinition Width="158*"/>
                         <ColumnDefinition Width="567*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,44.8,10" VerticalAlignment="Stretch" x:Name="GridCard" Grid.ColumnSpan="6"/>
+                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,45,26" VerticalAlignment="Stretch" x:Name="GridCard" Grid.ColumnSpan="6"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Listagem Transações" IsSelected="false">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,32">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="124*"/>
                         <ColumnDefinition Width="115*"/>
                         <ColumnDefinition Width="217*"/>
                         <ColumnDefinition Width="67*"/>
-                        <ColumnDefinition Width="726*"/>
+                        <ColumnDefinition Width="195*"/>
+                        <ColumnDefinition Width="531*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,38.8,10" VerticalAlignment="Stretch" x:Name="GridListagemTransacoes" Grid.ColumnSpan="5" SelectionChanged="GridListagemTransacoes_SelectionChanged"/>
+                    <DataGrid HorizontalAlignment="Stretch" Margin="10,10,39,25" VerticalAlignment="Stretch" x:Name="GridListagemTransacoes" Grid.ColumnSpan="6" SelectionChanged="GridListagemTransacoes_SelectionChanged"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Sondagem das Transações" IsSelected="false">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,26">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="124*"/>
                         <ColumnDefinition Width="115*"/>
@@ -216,7 +218,7 @@
                         <ColumnDefinition Width="67*"/>
                         <ColumnDefinition Width="726*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Stretch" Margin="10,58,34.8,10" VerticalAlignment="Stretch" x:Name="GridSondagemTransacao" Grid.ColumnSpan="5"/>
+                    <DataGrid HorizontalAlignment="Stretch" Margin="10,58,35,24" VerticalAlignment="Stretch" x:Name="GridSondagemTransacao" Grid.ColumnSpan="5"/>
                     <Label Foreground="Red" Content="Atenção!!! Para visualizar as informações de sondagem selecione uma transação na aba Listagem Transações." Grid.Column="1" HorizontalAlignment="Left" Margin="94,16,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Width="855" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
                 </Grid>
             </TabItem>
