@@ -1,5 +1,5 @@
 ## Technologies Implemented:
-- Download .NET Core 2.2 -> https://dotnet.microsoft.com/download/dotnet-core/2.2 
+- Download .NET Core 2.2.0 (SDK 2.2.101) -> https://dotnet.microsoft.com/download/dotnet-core/2.2 
 - ASP.NET Core 2.2 (with .NET Core 2.2)
 - ASP.NET MVC Core 2.2
 - ASP.NET WebApi Core 2.2
