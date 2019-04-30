@@ -1,4 +1,6 @@
 ## Technologies Implemented:
+- Download .NET Core 2.2.0 (SDK 2.2.101) -> https://dotnet.microsoft.com/download/dotnet-core/2.2
+- .NET Framework 4.7.2 -> https://dotnet.microsoft.com/download/thank-you/net472
 - ASP.NET Core 2.2 (with .NET Core 2.2)
 - ASP.NET MVC Core 2.2
 - ASP.NET WebApi Core 2.2
@@ -97,11 +99,18 @@ Para gerar uma imagem docker do servidor de comunicações seguir os passos:
 	* se tudo deu certo, o processo de criar imagem foi iniciado. Aguarde...
 ![Docker Imagem - Servidor Comunicações Karnak](image/docker_imagem_servidor_comunicacoes_karnak.png)
 
+* **Tagear a imagem**: docker tag 0792b7f18a26(id da imagem) stefansilva/stefansilva:karnakstone
+* **Enviar para Docker Hub a imagem criada**: docker push stefansilva/stefansilva:karnakstone
+
 ### Docker Servidor Comunicações - Iniciar Serviço
+
+## Docker - Baixar Imagem Servidor Comunicações Karnak
+* **docker pull stefansilva/stefansilva:karnakstone**
+
 Para iniciar a imagem Docker do servidor de comunicações seguir os passos:
 1. Abrir uma tela do PowerShell ou Command Prompt **em modo Administrador**
 2. Digitar o comando **docker images**
-3. Localizar o nome da imagem **karnakservicesapi**
+3. Localizar o nome da imagem **karnakstone**
 4. Pegar o **IMAGE ID**
 5. Digitar o comando: **docker run -p 5001:80 95255d998610**
 	* Onde: -p: porta
@@ -128,8 +137,10 @@ Application started. Press Ctrl+C to shut down.
 
 O servidor de comunicações possuí diversas api´s rest de acesso. Para saber quais são acessar os controllers da aplicação.
 
-**Dica**: para ver os logs em tempo real dos containers docker utilizar o comando **docker logs -f <nome do container>**, 
+**Dica 1**: para ver os logs em tempo real dos containers docker utilizar o comando **docker logs -f <nome do container>**, 
 exemplo: docker logs -f karnakservicesapi 
+	
+**Dica 2**: Dockerhub, pull e push nas suas imagens -> https://medium.com/trainingcenter/docker-dockerhub-pull-e-push-nas-suas-imagens-57dffa0232ad
 
 ### Sobre o Docker - SQL Server
 O banco de dados **Microsoft SQL Server** foi instalado dentro de um container Docker
@@ -516,6 +527,10 @@ Abaixo a lista de todos os testes efetuados.
 
 # 4 - Sobre o KarnakCore - Servidor de Comunicações
 
+* Para que a conexão com banco de dados funcione é necessário configurar o arquivo appsettings.json
+* Na key **ConnectionStrings** alterar DefaultConnection para o IP do computador onde está rodando o servidor de comunicações
+* Setar o projeto **Karnak.Services.Api** como **StartUp Project**
+
 O servidor de comunicações é o projeto responsável por fazer tudo funcionar, **ele é o cara!**
 
 Por que o nome **Karnak**:
@@ -615,6 +630,8 @@ Essa arquitetura trabalha diretamente com microserviços, fila e event-driven.
 
 ## Swagger
 Todas as api´s rest podem ser utilizadas com Swagger ou através do projeto de testes unitários.
+
+* Link para acessar as api´s https://localhost:44338/swagger/index.html
 
 ![Api´s Rest Swagger](image/swagger.png)
 
