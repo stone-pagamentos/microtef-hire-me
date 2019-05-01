@@ -72,13 +72,13 @@ namespace Karnak.Domain.Validations
             RuleFor(c => c.Amount)
                 .Custom((info, context) =>
                 {
-                    if (info < 10)
+                    if (info < new decimal(0.10))
                     {
                         context.AddFailure("The amount must have greater than 10 cents");
                     }
                 });
         }
-
+ 
         protected void PasswordBetween4and6Digits()
         {
             RuleFor(c => new { c.HasPassword, c.Password })
