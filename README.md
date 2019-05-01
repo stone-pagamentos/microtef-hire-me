@@ -148,6 +148,8 @@ O banco de dados **Microsoft SQL Server** foi instalado dentro de um container D
 ***===================[ IMPORTANTE!!! ]===================*** 
 * Para restaurar o banco de dados, o arquivo ***KarnakStoneV13.bak*** deve ser copiado para a pasta ***C:\SQLServer2017\***
 
+A Microsoft disponibilizou informações de como **Configurar imagens de contêiner do SQL Server no Docker** o link esta aqui -> https://docs.microsoft.com/pt-br/sql/linux/sql-server-linux-configure-docker?view=sql-server-2017
+
 Os procedimentos de instalação do Microsoft SQL Server dentro de um container Docker podem ser visualizadas aqui -> https://medium.com/@renato.groffe/net-sql-server-2017-parte-1-executando-o-sql-server-em-um-container-docker-83abbed8eb7e
 
 Os dados utilizados para instalação:
