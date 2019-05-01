@@ -146,10 +146,10 @@ exemplo: docker logs -f karnakservicesapi
 Como alternativa a linha de comando podemos utilizar o Visual Studio Code.
 **Para alterar o IP de conexão com o banco de dados, seguir os passos abaixo**:
 
-** Passo 1 e passo 2**
+**Passo 1 e passo 2**
 ![Alterar IP banco de dados passo 1 e 2](image/banco_de_dados_alteracao_ip_passo_1.png)
 
-** Passo 3**
+**Passo 3**
 ![Alterar IP banco de dados passo 3](image/banco_de_dados_alteracao_ip_passo_2.png)
 
 ### Sobre o Docker - SQL Server
