@@ -18,3 +18,6 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "Karnak.Services.Api.dll"]
+
+RUN ["apt-get", "update"]
+RUN ["apt-get", "install", "-y", "vim"]
