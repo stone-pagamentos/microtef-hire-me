@@ -13,24 +13,20 @@ namespace UnitTesteKarnakStone
     {
         private readonly HttpClient _httpClient = new HttpClient();
 
-        private string requestUri = "https://localhost:44338/api/v1/Transaction-management/";
+        private string requestUri = "http://localhost:8080/api/v1/Transaction-management/";
 
-
-
-
-
-        [Fact(DisplayName = "CARTAO CHIP - COM SENHA")]
-        public async Task Post_Transaction_CHIP()
+        [Fact(DisplayName = "SENHA INCORRETA")]
+        public async Task Post_Transaction_SENHA_INCORRETA()
         {
             Guid guid = Guid.NewGuid();
 
 
 
 
-            
+
             #region Get Id Transaction Type
 
-            string requestUriTransactionType = "https://localhost:44338/api/v1/TransactionType-management/";
+            string requestUriTransactionType = "http://localhost:8080/api/v1/TransactionType-management/";
 
             string cardTypeName = "Crédito";
 
@@ -44,10 +40,194 @@ namespace UnitTesteKarnakStone
 
 
 
-            
+
             #region Get Id Card
 
-            string requestUriCard = "https://localhost:44338/api/v1/Card-management/";
+            string requestUriCard = "http://localhost:8080/api/v1/Card-management/";
+
+            string cardId = "92336F31-3138-467F-AD8F-461A490923AF";
+
+            var serviceCard = new CardService(_httpClient);
+            var resultCard = await serviceCard.GetByIdCard(requestUriCard, cardId);
+
+            Assert.False(resultCard.Status != HttpStatusCode.OK || resultCard.Data == null, "ERROR - Get Card");
+
+            #endregion
+
+
+
+
+            Transaction transaction = new Transaction
+            {
+                Id = guid,
+                Amount = 150,
+                IdTransactionType = resultTransactionType.Data.Id,
+                IdCard = resultCard.Data.Id,
+                IdTransactionStatus = Guid.Empty,
+                Number = 3,
+                TransactionDate = DateTime.Now,
+                Password = Common.StringCipher.Encrypt("1234", "StefanSilva@#@Stone##2019"),
+                HasPassword = "true"
+            };
+
+
+
+            var service = new TransactionService(_httpClient);
+            var result = await service.PostTransaction(requestUri, transaction);
+
+            if (result.Status == HttpStatusCode.OK)
+            {
+                Assert.True(result.Status == HttpStatusCode.OK, "OK");
+            }
+            else
+            {
+                List<string> listError = new List<string>();
+                foreach (string error in result.Data)
+                {
+                    listError.Add(error);
+                }
+                Assert.Collection(listError,
+                    item => Assert.Equal("Cartão bloqueado", item),
+                    item => Assert.Equal("Senha Incorreta", item),
+                    item => Assert.Equal("Password error size", item),
+                    item => Assert.Equal("Saldo insuficiente", item),
+                    item => Assert.Equal("Transação aprovada", item),
+                    item => Assert.Equal("Password between 4 and 6 digits", item),
+                    item => Assert.Equal("The amount must have greater than 10 cents", item),
+                    item => Assert.Equal("The transacion guid is empty", item),
+                    item => Assert.Equal("The transaction guid is invalid", item),
+                    item => Assert.Equal("The transaction guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion type guid is empty", item),
+                    item => Assert.Equal("The transaction type guid is invalid", item),
+                    item => Assert.Equal("The transaction type guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion card guid is empty", item),
+                    item => Assert.Equal("The transaction card guid is invalid", item),
+                    item => Assert.Equal("The transaction card guid is invalid and contains 00000000", item)
+                );
+            }
+        }
+
+        [Fact(DisplayName = "Password between 4 and 6 digits")]
+        public async Task Post_Transaction_Password_between_4_and_6_digits()
+        {
+            Guid guid = Guid.NewGuid();
+
+
+
+
+
+            #region Get Id Transaction Type
+
+            string requestUriTransactionType = "http://localhost:8080/api/v1/TransactionType-management/";
+
+            string cardTypeName = "Crédito";
+
+            var serviceTransactionType = new TransactionTypeService(_httpClient);
+            var resultTransactionType = await serviceTransactionType.GetByNameTransactionType(requestUriTransactionType, cardTypeName);
+
+            Assert.False(resultTransactionType.Status != HttpStatusCode.OK || resultTransactionType.Data == null, "ERROR - Get Card Type");
+
+            #endregion
+
+
+
+
+
+            #region Get Id Card
+
+            string requestUriCard = "http://localhost:8080/api/v1/Card-management/";
+
+            string cardId = "92336F31-3138-467F-AD8F-461A490923AF";
+
+            var serviceCard = new CardService(_httpClient);
+            var resultCard = await serviceCard.GetByIdCard(requestUriCard, cardId);
+
+            Assert.False(resultCard.Status != HttpStatusCode.OK || resultCard.Data == null, "ERROR - Get Card");
+
+            #endregion
+
+
+
+
+            Transaction transaction = new Transaction
+            {
+                Id = guid,
+                Amount = 150,
+                IdTransactionType = resultTransactionType.Data.Id,
+                IdCard = resultCard.Data.Id,
+                IdTransactionStatus = Guid.Empty,
+                Number = 3,
+                TransactionDate = DateTime.Now,
+                Password = Common.StringCipher.Encrypt("1", "StefanSilva@#@Stone##2019"),
+                HasPassword = "true"
+            };
+
+
+
+            var service = new TransactionService(_httpClient);
+            var result = await service.PostTransaction(requestUri, transaction);
+
+            if (result.Status == HttpStatusCode.OK)
+            {
+                Assert.True(result.Status == HttpStatusCode.OK, "OK");
+            }
+            else
+            {
+                List<string> listError = new List<string>();
+                foreach (string error in result.Data)
+                {
+                    listError.Add(error);
+                }
+                Assert.Collection(listError,
+                    item => Assert.Equal("Cartão bloqueado", item),
+                    item => Assert.Equal("Senha Incorreta", item),
+                    item => Assert.Equal("Password error size", item),
+                    item => Assert.Equal("Saldo insuficiente", item),
+                    item => Assert.Equal("Transação aprovada", item),
+                    item => Assert.Equal("Password between 4 and 6 digits", item),
+                    item => Assert.Equal("The amount must have greater than 10 cents", item),
+                    item => Assert.Equal("The transacion guid is empty", item),
+                    item => Assert.Equal("The transaction guid is invalid", item),
+                    item => Assert.Equal("The transaction guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion type guid is empty", item),
+                    item => Assert.Equal("The transaction type guid is invalid", item),
+                    item => Assert.Equal("The transaction type guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion card guid is empty", item),
+                    item => Assert.Equal("The transaction card guid is invalid", item),
+                    item => Assert.Equal("The transaction card guid is invalid and contains 00000000", item)
+                );
+            }
+        }
+
+        [Fact(DisplayName = "TRANSAÇÃO APROVADA")]
+        public async Task Post_Transaction_TRANSAÇÃO_APROVADA()
+        {
+            Guid guid = Guid.NewGuid();
+
+
+
+
+
+            #region Get Id Transaction Type
+
+            string requestUriTransactionType = "http://localhost:8080/api/v1/TransactionType-management/";
+
+            string cardTypeName = "Crédito";
+
+            var serviceTransactionType = new TransactionTypeService(_httpClient);
+            var resultTransactionType = await serviceTransactionType.GetByNameTransactionType(requestUriTransactionType, cardTypeName);
+
+            Assert.False(resultTransactionType.Status != HttpStatusCode.OK || resultTransactionType.Data == null, "ERROR - Get Card Type");
+
+            #endregion
+
+
+
+
+
+            #region Get Id Card
+
+            string requestUriCard = "http://localhost:8080/api/v1/Card-management/";
 
             string cardId = "92336F31-3138-467F-AD8F-461A490923AF";
 
@@ -111,16 +291,100 @@ namespace UnitTesteKarnakStone
             }
         }
 
-
-
-        [Fact(DisplayName = "CARTAO VENCIDO")]
-        public async Task Post_Transaction_Cartao_Vencido()
+        [Fact(DisplayName = "CARTAO CHIP - COM SENHA")]
+        public async Task Post_Transaction_CHIP()
         {
+            Guid guid = Guid.NewGuid();
 
+
+
+
+            
+            #region Get Id Transaction Type
+
+            string requestUriTransactionType = "http://localhost:8080/api/v1/TransactionType-management/";
+
+            string cardTypeName = "Crédito";
+
+            var serviceTransactionType = new TransactionTypeService(_httpClient);
+            var resultTransactionType = await serviceTransactionType.GetByNameTransactionType(requestUriTransactionType, cardTypeName);
+
+            Assert.False(resultTransactionType.Status != HttpStatusCode.OK || resultTransactionType.Data == null, "ERROR - Get Card Type");
+
+            #endregion
+
+
+
+
+            
+            #region Get Id Card
+
+            string requestUriCard = "http://localhost:8080/api/v1/Card-management/";
+
+            string cardId = "92336F31-3138-467F-AD8F-461A490923AF";
+
+            var serviceCard = new CardService(_httpClient);
+            var resultCard = await serviceCard.GetByIdCard(requestUriCard, cardId);
+
+            Assert.False(resultCard.Status != HttpStatusCode.OK || resultCard.Data == null, "ERROR - Get Card");
+
+            #endregion
+
+
+
+
+            Transaction transaction = new Transaction
+            {
+                Id = guid,
+                Amount = 150,
+                IdTransactionType = resultTransactionType.Data.Id,
+                IdCard = resultCard.Data.Id,
+                IdTransactionStatus = Guid.Empty,
+                Number = 3,
+                TransactionDate = DateTime.Now,
+                Password = Common.StringCipher.Encrypt("985471", "StefanSilva@#@Stone##2019"),
+                HasPassword = "true"
+            };
+
+
+
+            var service = new TransactionService(_httpClient);
+            var result = await service.PostTransaction(requestUri, transaction);
+
+            if (result.Status == HttpStatusCode.OK)
+            {
+                Assert.True(result.Status == HttpStatusCode.OK, "OK");
+            }
+            else
+            {
+                List<string> listError = new List<string>();
+                foreach (string error in result.Data)
+                {
+                    listError.Add(error);
+                }
+                Assert.Collection(listError,
+                    item => Assert.Equal("Cartão bloqueado", item),
+                    item => Assert.Equal("Senha Incorreta", item),
+                    item => Assert.Equal("Password error size", item),
+                    item => Assert.Equal("Saldo insuficiente", item),
+                    item => Assert.Equal("Transação aprovada", item),
+                    item => Assert.Equal("Password between 4 and 6 digits", item),
+                    item => Assert.Equal("The amount must have greater than 10 cents", item),
+                    item => Assert.Equal("The transacion guid is empty", item),
+                    item => Assert.Equal("The transaction guid is invalid", item),
+                    item => Assert.Equal("The transaction guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion type guid is empty", item),
+                    item => Assert.Equal("The transaction type guid is invalid", item),
+                    item => Assert.Equal("The transaction type guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion card guid is empty", item),
+                    item => Assert.Equal("The transaction card guid is invalid", item),
+                    item => Assert.Equal("The transaction card guid is invalid and contains 00000000", item)
+                );
+            }
         }
 
-        [Fact(DisplayName = "CARTAO TARJA - SEM SENHA")]
-        public async Task Post_Transaction_TARJA()
+        [Fact(DisplayName = "CARTAO SALDO INSUFICIENTE")]
+        public async Task Post_Transaction_Cartao_Saldo_Insuficiente()
         {
             Guid guid = Guid.NewGuid();
 
@@ -130,7 +394,7 @@ namespace UnitTesteKarnakStone
 
             #region Get Id Transaction Type
 
-            string requestUriTransactionType = "https://localhost:44338/api/v1/TransactionType-management/";
+            string requestUriTransactionType = "http://localhost:8080/api/v1/TransactionType-management/";
 
             string cardTypeName = "Crédito";
 
@@ -147,7 +411,376 @@ namespace UnitTesteKarnakStone
 
             #region Get Id Card
 
-            string requestUriCard = "https://localhost:44338/api/v1/Card-management/";
+            string requestUriCard = "http://localhost:8080/api/v1/Card-management/";
+
+            string cardId = "92336F31-3138-467F-AD8F-461A490923AF";
+
+            var serviceCard = new CardService(_httpClient);
+            var resultCard = await serviceCard.GetByIdCard(requestUriCard, cardId);
+
+            Assert.False(resultCard.Status != HttpStatusCode.OK || resultCard.Data == null, "ERROR - Get Card");
+
+            #endregion
+
+
+
+
+            Transaction transaction = new Transaction
+            {
+                Id = guid,
+                Amount = 50000,
+                IdTransactionType = resultTransactionType.Data.Id,
+                IdCard = resultCard.Data.Id,
+                IdTransactionStatus = Guid.Empty,
+                Number = 3,
+                TransactionDate = DateTime.Now,
+                Password = Common.StringCipher.Encrypt("985471", "StefanSilva@#@Stone##2019"),
+                HasPassword = "true"
+            };
+
+
+
+            var service = new TransactionService(_httpClient);
+            var result = await service.PostTransaction(requestUri, transaction);
+
+            if (result.Status == HttpStatusCode.OK)
+            {
+                Assert.True(result.Status == HttpStatusCode.OK, "OK");
+            }
+            else
+            {
+                List<string> listError = new List<string>();
+                foreach (string error in result.Data)
+                {
+                    listError.Add(error);
+                }
+                Assert.Collection(listError,
+                    item => Assert.Equal("Cartão bloqueado", item),
+                    item => Assert.Equal("Senha Incorreta", item),
+                    item => Assert.Equal("Password error size", item),
+                    item => Assert.Equal("Saldo insuficiente", item),
+                    item => Assert.Equal("Transação aprovada", item),
+                    item => Assert.Equal("Password between 4 and 6 digits", item),
+                    item => Assert.Equal("The amount must have greater than 10 cents", item),
+                    item => Assert.Equal("The transacion guid is empty", item),
+                    item => Assert.Equal("The transaction guid is invalid", item),
+                    item => Assert.Equal("The transaction guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion type guid is empty", item),
+                    item => Assert.Equal("The transaction type guid is invalid", item),
+                    item => Assert.Equal("The transaction type guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion card guid is empty", item),
+                    item => Assert.Equal("The transaction card guid is invalid", item),
+                    item => Assert.Equal("The transaction card guid is invalid and contains 00000000", item)
+                );
+            }
+        }
+
+
+        [Fact(DisplayName = "CARTAO VENCIDO")]
+        public async Task Post_Transaction_Cartao_Vencido()
+        {
+            Guid guid = Guid.NewGuid();
+
+
+
+
+
+            #region Get Id Transaction Type
+
+            string requestUriTransactionType = "http://localhost:8080/api/v1/TransactionType-management/";
+
+            string cardTypeName = "Crédito";
+
+            var serviceTransactionType = new TransactionTypeService(_httpClient);
+            var resultTransactionType = await serviceTransactionType.GetByNameTransactionType(requestUriTransactionType, cardTypeName);
+
+            Assert.False(resultTransactionType.Status != HttpStatusCode.OK || resultTransactionType.Data == null, "ERROR - Get Card Type");
+
+            #endregion
+
+
+
+
+
+            #region Get Id Card
+
+            string requestUriCard = "http://localhost:8080/api/v1/Card-management/";
+
+            string cardId = "A6DB977C-7222-4103-AFD7-B02DDC0D0612";
+
+            var serviceCard = new CardService(_httpClient);
+            var resultCard = await serviceCard.GetByIdCard(requestUriCard, cardId);
+
+            Assert.False(resultCard.Status != HttpStatusCode.OK || resultCard.Data == null, "ERROR - Get Card");
+
+            #endregion
+
+
+
+
+            Transaction transaction = new Transaction
+            {
+                Id = guid,
+                Amount = 150,
+                IdTransactionType = resultTransactionType.Data.Id,
+                IdCard = resultCard.Data.Id,
+                IdTransactionStatus = Guid.Empty,
+                Number = 3,
+                TransactionDate = DateTime.Now,
+                Password = Common.StringCipher.Encrypt("985471", "StefanSilva@#@Stone##2019"),
+                HasPassword = "true"
+            };
+
+
+
+            var service = new TransactionService(_httpClient);
+            var result = await service.PostTransaction(requestUri, transaction);
+
+            if (result.Status == HttpStatusCode.OK)
+            {
+                Assert.True(result.Status == HttpStatusCode.OK, "OK");
+            }
+            else
+            {
+                List<string> listError = new List<string>();
+                foreach (string error in result.Data)
+                {
+                    listError.Add(error);
+                }
+                Assert.Collection(listError,
+                    item => Assert.Equal("Cartão bloqueado", item),
+                    item => Assert.Equal("Senha Incorreta", item),
+                    item => Assert.Equal("Password error size", item),
+                    item => Assert.Equal("Saldo insuficiente", item),
+                    item => Assert.Equal("Transação aprovada", item),
+                    item => Assert.Equal("Password between 4 and 6 digits", item),
+                    item => Assert.Equal("The amount must have greater than 10 cents", item),
+                    item => Assert.Equal("The transacion guid is empty", item),
+                    item => Assert.Equal("The transaction guid is invalid", item),
+                    item => Assert.Equal("The transaction guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion type guid is empty", item),
+                    item => Assert.Equal("The transaction type guid is invalid", item),
+                    item => Assert.Equal("The transaction type guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion card guid is empty", item),
+                    item => Assert.Equal("The transaction card guid is invalid", item),
+                    item => Assert.Equal("The transaction card guid is invalid and contains 00000000", item)
+                );
+            }
+        }
+
+        [Fact(DisplayName = "CARTAO BLOQUEADO")]
+        public async Task Post_Transaction_Cartao_Bloqueado()
+        {
+            Guid guid = Guid.NewGuid();
+
+
+
+
+
+            #region Get Id Transaction Type
+
+            string requestUriTransactionType = "http://localhost:8080/api/v1/TransactionType-management/";
+
+            string cardTypeName = "Crédito";
+
+            var serviceTransactionType = new TransactionTypeService(_httpClient);
+            var resultTransactionType = await serviceTransactionType.GetByNameTransactionType(requestUriTransactionType, cardTypeName);
+
+            Assert.False(resultTransactionType.Status != HttpStatusCode.OK || resultTransactionType.Data == null, "ERROR - Get Card Type");
+
+            #endregion
+
+
+
+
+
+            #region Get Id Card
+
+            string requestUriCard = "http://localhost:8080/api/v1/Card-management/";
+
+            string cardId = "1794C159-971E-409B-994A-04B850A9C573";
+
+            var serviceCard = new CardService(_httpClient);
+            var resultCard = await serviceCard.GetByIdCard(requestUriCard, cardId);
+
+            Assert.False(resultCard.Status != HttpStatusCode.OK || resultCard.Data == null, "ERROR - Get Card");
+
+            #endregion
+
+
+
+
+            Transaction transaction = new Transaction
+            {
+                Id = guid,
+                Amount = 150,
+                IdTransactionType = resultTransactionType.Data.Id,
+                IdCard = resultCard.Data.Id,
+                IdTransactionStatus = Guid.Empty,
+                Number = 3,
+                TransactionDate = DateTime.Now,
+                Password = Common.StringCipher.Encrypt("985471", "StefanSilva@#@Stone##2019"),
+                HasPassword = "true"
+            };
+
+
+
+            var service = new TransactionService(_httpClient);
+            var result = await service.PostTransaction(requestUri, transaction);
+
+            if (result.Status == HttpStatusCode.OK)
+            {
+                Assert.True(result.Status == HttpStatusCode.OK, "OK");
+            }
+            else
+            {
+                List<string> listError = new List<string>();
+                foreach (string error in result.Data)
+                {
+                    listError.Add(error);
+                }
+                Assert.Collection(listError,
+                    item => Assert.Equal("Cartão bloqueado", item),
+                    item => Assert.Equal("Senha Incorreta", item),
+                    item => Assert.Equal("Password error size", item),
+                    item => Assert.Equal("Saldo insuficiente", item),
+                    item => Assert.Equal("Transação aprovada", item),
+                    item => Assert.Equal("Password between 4 and 6 digits", item),
+                    item => Assert.Equal("The amount must have greater than 10 cents", item),
+                    item => Assert.Equal("The transacion guid is empty", item),
+                    item => Assert.Equal("The transaction guid is invalid", item),
+                    item => Assert.Equal("The transaction guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion type guid is empty", item),
+                    item => Assert.Equal("The transaction type guid is invalid", item),
+                    item => Assert.Equal("The transaction type guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion card guid is empty", item),
+                    item => Assert.Equal("The transaction card guid is invalid", item),
+                    item => Assert.Equal("The transaction card guid is invalid and contains 00000000", item)
+                );
+            }
+        }
+
+        [Fact(DisplayName = "VALOR 10 CENTAVOS")]
+        public async Task Post_Transaction_Valor_10_Centavos()
+        {
+            Guid guid = Guid.NewGuid();
+
+
+
+
+
+            #region Get Id Transaction Type
+
+            string requestUriTransactionType = "http://localhost:8080/api/v1/TransactionType-management/";
+
+            string cardTypeName = "Crédito";
+
+            var serviceTransactionType = new TransactionTypeService(_httpClient);
+            var resultTransactionType = await serviceTransactionType.GetByNameTransactionType(requestUriTransactionType, cardTypeName);
+
+            Assert.False(resultTransactionType.Status != HttpStatusCode.OK || resultTransactionType.Data == null, "ERROR - Get Card Type");
+
+            #endregion
+
+
+
+
+
+            #region Get Id Card
+
+            string requestUriCard = "http://localhost:8080/api/v1/Card-management/";
+
+            string cardId = "A6DB977C-7222-4103-AFD7-B02DDC0D0612";
+
+            var serviceCard = new CardService(_httpClient);
+            var resultCard = await serviceCard.GetByIdCard(requestUriCard, cardId);
+
+            Assert.False(resultCard.Status != HttpStatusCode.OK || resultCard.Data == null, "ERROR - Get Card");
+
+            #endregion
+
+
+
+
+            Transaction transaction = new Transaction
+            {
+                Id = guid,
+                Amount = new decimal(0.09),
+                IdTransactionType = resultTransactionType.Data.Id,
+                IdCard = resultCard.Data.Id,
+                IdTransactionStatus = Guid.Empty,
+                Number = 3,
+                TransactionDate = DateTime.Now,
+                Password = Common.StringCipher.Encrypt("985471", "StefanSilva@#@Stone##2019"),
+                HasPassword = "true"
+            };
+
+
+
+            var service = new TransactionService(_httpClient);
+            var result = await service.PostTransaction(requestUri, transaction);
+
+            if (result.Status == HttpStatusCode.OK)
+            {
+                Assert.True(result.Status == HttpStatusCode.OK, "OK");
+            }
+            else
+            {
+                List<string> listError = new List<string>();
+                foreach (string error in result.Data)
+                {
+                    listError.Add(error);
+                }
+                Assert.Collection(listError,
+                    item => Assert.Equal("Cartão bloqueado", item),
+                    item => Assert.Equal("Senha Incorreta", item),
+                    item => Assert.Equal("Password error size", item),
+                    item => Assert.Equal("Saldo insuficiente", item),
+                    item => Assert.Equal("Transação aprovada", item),
+                    item => Assert.Equal("Password between 4 and 6 digits", item),
+                    item => Assert.Equal("The amount must have greater than 10 cents", item),
+                    item => Assert.Equal("The transacion guid is empty", item),
+                    item => Assert.Equal("The transaction guid is invalid", item),
+                    item => Assert.Equal("The transaction guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion type guid is empty", item),
+                    item => Assert.Equal("The transaction type guid is invalid", item),
+                    item => Assert.Equal("The transaction type guid is invalid and contains 00000000", item),
+                    item => Assert.Equal("The transacion card guid is empty", item),
+                    item => Assert.Equal("The transaction card guid is invalid", item),
+                    item => Assert.Equal("The transaction card guid is invalid and contains 00000000", item)
+                );
+            }
+        }
+
+        [Fact(DisplayName = "CARTAO TARJA - SEM SENHA")]
+        public async Task Post_Transaction_TARJA()
+        {
+            Guid guid = Guid.NewGuid();
+
+
+
+
+
+            #region Get Id Transaction Type
+
+            string requestUriTransactionType = "http://localhost:8080/api/v1/TransactionType-management/";
+
+            string cardTypeName = "Crédito";
+
+            var serviceTransactionType = new TransactionTypeService(_httpClient);
+            var resultTransactionType = await serviceTransactionType.GetByNameTransactionType(requestUriTransactionType, cardTypeName);
+
+            Assert.False(resultTransactionType.Status != HttpStatusCode.OK || resultTransactionType.Data == null, "ERROR - Get Card Type");
+
+            #endregion
+
+
+
+
+
+            #region Get Id Card
+
+            string requestUriCard = "http://localhost:8080/api/v1/Card-management/";
 
             string cardId = "92336F31-3138-467F-AD8F-461A490923AF";
 
